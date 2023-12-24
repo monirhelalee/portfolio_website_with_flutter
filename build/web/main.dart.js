@@ -18132,7 +18132,7 @@ $1(a){var s=$.b5
 s=(s==null?$.b5=A.cQ(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/54a7145303f0dd9d0f93424a2e124eb4abef5091/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/3f3e560236539b7e2702f5ac790b2a4691b32d49/":s)+a},
 $S:92}
 A.Vu.prototype={
 $1(a){this.a.remove()
@@ -49544,7 +49544,7 @@ return s},
 $S:29}
 A.OO.prototype={}
 A.x9.prototype={
-S(a){return new A.oG(B.B3,"Flutter Demo",A.a1L(null,A.a6V(B.R,B.AN),!0),!1,null)}}
+S(a){return new A.oG(B.B3,"Monir's Portfolio",A.a1L(null,A.a6V(B.R,B.AN),!0),!1,null)}}
 A.oT.prototype={
 ao(){return new A.Ci(B.q)}}
 A.Ci.prototype={
