@@ -38,27 +38,15 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       endDrawer: const ColumnMenuWidget(),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
+      body: const Padding(
+        padding: EdgeInsets.all(24),
         child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 100,
-                ),
-                const FlutterLogo(
-                  size: 100,
-                ),
-                const Text(
-                  'Md. Monir Haider Helalee',
-                ),
-                Text(
-                  'Flutter Developer',
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
+                HomeWidget(),
               ],
             ),
           ),

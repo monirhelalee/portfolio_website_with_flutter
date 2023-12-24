@@ -7,64 +7,46 @@ class RowMenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          'Home',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'Home', onTap: () {}),
         const SizedBox(
-          width: 50,
+          width: 30,
         ),
-        Text(
-          'About Me',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'About', onTap: () {}),
         const SizedBox(
-          width: 50,
+          width: 30,
         ),
-        Text(
-          'Experience',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'Experience', onTap: () {}),
         const SizedBox(
-          width: 50,
+          width: 30,
         ),
-        Text(
-          'Projects',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'Projects', onTap: () {}),
         const SizedBox(
-          width: 50,
+          width: 30,
         ),
-        Text(
-          'Skills',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'Skills', onTap: () {}),
         const SizedBox(
-          width: 50,
+          width: 30,
         ),
-        Text(
-          'Contact',
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
-        ),
+        _nameWidget(context, title: 'Contact', onTap: () {}),
       ],
+    );
+  }
+
+  Widget _nameWidget(context,
+      {required String title, required VoidCallback onTap}) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+        ),
+      ),
     );
   }
 }

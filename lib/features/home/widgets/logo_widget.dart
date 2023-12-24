@@ -5,23 +5,29 @@ class LogoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Icon(
-          Icons.code,
-          size: 24,
+    return InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.code,
+              size: 24,
+            ),
+            const SizedBox(
+              width: 5,
+            ),
+            Text(
+              'MH',
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
+            ),
+          ],
         ),
-        const SizedBox(
-          width: 5,
-        ),
-        Text(
-          'MH',
-          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontSize: 24,
-                color: Colors.white,
-              ),
-        ),
-      ],
+      ),
     );
   }
 }
