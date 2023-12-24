@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_flutter/features/home/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,45 +14,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Monir's Portfolio",
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const FlutterLogo(
-              size: 100,
-            ),
-            const Text(
-              'Md. Monir Haider Helalee',
-            ),
-            Text(
-              'Flutter Developer',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        brightness: Brightness.dark,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blueGrey.shade900,
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blueGrey,
+          background: Colors.blueGrey.shade900,
+          brightness: Brightness.dark,
+        ),
+      ),
+      home: const HomeView(),
+      //const Breakpoint(start: 801, end: 1920, name: DESKTOP),
     );
   }
 }
