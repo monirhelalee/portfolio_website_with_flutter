@@ -38,17 +38,15 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       endDrawer: const ColumnMenuWidget(),
-      body: const Padding(
-        padding: EdgeInsets.all(24),
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                HomeWidget(),
-              ],
-            ),
+      body: const SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              HomeWidget(),
+              AboutWidget(),
+            ],
           ),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
