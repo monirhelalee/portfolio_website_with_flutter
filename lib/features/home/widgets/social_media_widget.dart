@@ -13,6 +13,7 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
   Widget build(BuildContext context) {
     return const SizedBox(
       height: 44,
+      width: 105 + (28 * 7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

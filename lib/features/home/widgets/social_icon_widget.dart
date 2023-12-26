@@ -23,8 +23,11 @@ class _SocialIconWidgetState extends State<SocialIconWidget> {
         setState(() {});
       },
       hoverColor: Colors.transparent,
-      child: Container(
+      child: AnimatedContainer(
+        height: iconSize + 2,
+        width: iconSize + 2,
         padding: const EdgeInsets.all(2),
+        duration: const Duration(milliseconds: 100),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(100),
