@@ -41,10 +41,9 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       endDrawer: const ColumnMenuWidget(),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        controller: homeVM.scrollController,
-        child: const Center(
+      body: const SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
