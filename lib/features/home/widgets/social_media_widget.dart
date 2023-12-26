@@ -38,16 +38,19 @@ class SocialMediaWidget extends StatelessWidget {
   }
 
   Widget _icon({required String name}) {
-    return Container(
-      padding: const EdgeInsets.all(2),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(100),
-      ),
-      child: Image.asset(
-        'assets/$name.png',
-        height: 28,
-        width: 28,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: Image.asset(
+          'assets/$name.png',
+          height: 28,
+          width: 28,
+        ),
       ),
     );
   }

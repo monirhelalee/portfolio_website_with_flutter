@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/widgets/exports.dart';
 
+import 'view_model/home_view_model.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({
     super.key,
@@ -15,6 +17,7 @@ class _HomeViewState extends State<HomeView> {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
+    var homeVM = HomeViewModel.read(context);
     return Scaffold(
       key: _key,
       appBar: AppBar(
@@ -38,9 +41,10 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       endDrawer: const ColumnMenuWidget(),
-      body: const SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Center(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        controller: homeVM.scrollController,
+        child: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

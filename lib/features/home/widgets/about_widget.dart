@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
+import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
 import 'package:my_portfolio_flutter/features/home/widgets/exports.dart';
 
 class AboutWidget extends StatelessWidget {
@@ -7,6 +8,7 @@ class AboutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var homeVM = HomeViewModel.read(context);
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Responsive.isDesktop(context) || Responsive.isTablet(context)
@@ -14,7 +16,7 @@ class AboutWidget extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    _aboutMe(context),
+                    _aboutMe(context, homeVM),
                     const SizedBox(
                       height: 24,
                     ),
@@ -44,7 +46,7 @@ class AboutWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    _aboutMe(context),
+                    _aboutMe(context, homeVM),
                     const SizedBox(
                       height: 24,
                     ),
@@ -73,7 +75,7 @@ class AboutWidget extends StatelessWidget {
     );
   }
 
-  Widget _aboutMe(context) {
+  Widget _aboutMe(context, homeVM) {
     return Text(
       'About Me',
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(

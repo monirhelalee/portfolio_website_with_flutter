@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
 
 class RowMenuWidget extends StatelessWidget {
   const RowMenuWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var homeVM = HomeViewModel.read(context);
     return Row(
       children: [
         _nameWidget(context, title: 'Home', onTap: () {}),

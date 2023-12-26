@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/features/home/home_view.dart';
+import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,24 +13,31 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Monir's Portfolio",
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blueGrey.shade900,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<HomeViewModel>(
+          create: (context) => HomeViewModel(),
         ),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blueGrey,
-          background: Colors.blueGrey.shade800,
+      ],
+      child: MaterialApp(
+        title: "Monir's Portfolio",
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.dark,
+        theme: ThemeData(
+          useMaterial3: true,
           brightness: Brightness.dark,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.blueGrey.shade900,
+          ),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.blueGrey,
+            background: Colors.blueGrey.shade800,
+            brightness: Brightness.dark,
+          ),
         ),
+        home: const HomeView(),
+        //const Breakpoint(start: 801, end: 1920, name: DESKTOP),
       ),
-      home: const HomeView(),
-      //const Breakpoint(start: 801, end: 1920, name: DESKTOP),
     );
   }
 }

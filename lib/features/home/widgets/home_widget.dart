@@ -35,7 +35,7 @@ class HomeWidget extends StatelessWidget {
                       _contactButton(),
                     ],
                   ),
-                  _animatedImage(),
+                  _animatedImage(context),
                 ],
               )
             : Column(
@@ -58,7 +58,7 @@ class HomeWidget extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  _animatedImage(),
+                  _animatedImage(context),
                 ],
               ),
       ),
@@ -107,10 +107,18 @@ class HomeWidget extends StatelessWidget {
     );
   }
 
-  Widget _animatedImage() {
+  Widget _animatedImage(context) {
     return Stack(
       children: [
-        Lottie.asset('assets/image_background.json', height: 500),
+        if (Responsive.isMobile(context))
+          Lottie.asset(
+            'assets/image_background.json',
+          )
+        else
+          Lottie.asset(
+            'assets/image_background.json',
+            height: 500,
+          ),
         Image.asset('assets/my.png'),
       ],
     );
