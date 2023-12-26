@@ -1,56 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_flutter/features/home/widgets/exports.dart';
 
-class SocialMediaWidget extends StatelessWidget {
+class SocialMediaWidget extends StatefulWidget {
   const SocialMediaWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _icon(name: 'email'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'facebook'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'instagram'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'linkedin'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'github'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'x'),
-        const SizedBox(
-          width: 10,
-        ),
-        _icon(name: 'whatsapp'),
-      ],
-    );
-  }
+  State<SocialMediaWidget> createState() => _SocialMediaWidgetState();
+}
 
-  Widget _icon({required String name}) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Image.asset(
-          'assets/$name.png',
-          height: 28,
-          width: 28,
-        ),
+class _SocialMediaWidgetState extends State<SocialMediaWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      height: 44,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SocialIconWidget(name: 'email'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'facebook'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'instagram'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'linkedin'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'github'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'x'),
+          SizedBox(
+            width: 10,
+          ),
+          SocialIconWidget(name: 'whatsapp'),
+        ],
       ),
     );
   }

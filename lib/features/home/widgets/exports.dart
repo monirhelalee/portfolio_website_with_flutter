@@ -7,4 +7,5 @@ export 'navigation_bar_widget.dart';
 export 'row_menu_widget.dart';
 export 'skill_card_widget.dart';
 export 'skills_widget.dart';
+export 'social_icon_widget.dart';
 export 'social_media_widget.dart';
