@@ -18,7 +18,7 @@ class HomeWidget extends StatelessWidget {
         ),
         child: Responsive.isDesktop(context) || Responsive.isTablet(context)
             ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

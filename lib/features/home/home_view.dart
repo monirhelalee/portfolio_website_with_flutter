@@ -50,6 +50,7 @@ class _HomeViewState extends State<HomeView> {
             children: [
               HomeWidget(),
               AboutWidget(),
+              SkillsWidget(),
             ],
           ),
         ),

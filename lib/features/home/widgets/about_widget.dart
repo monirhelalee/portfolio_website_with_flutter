@@ -13,6 +13,7 @@ class AboutWidget extends StatelessWidget {
       padding: const EdgeInsets.all(24),
       child: Responsive.isDesktop(context) || Responsive.isTablet(context)
           ? Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
@@ -27,7 +28,6 @@ class AboutWidget extends StatelessWidget {
                     _resumeDownloadButton(),
                   ],
                 ),
-                const Spacer(),
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width / 2,
                   child: Text(
@@ -38,7 +38,6 @@ class AboutWidget extends StatelessWidget {
                         ),
                   ),
                 ),
-                const Spacer(),
               ],
             )
           : Column(
