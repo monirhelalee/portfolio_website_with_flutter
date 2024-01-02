@@ -26,7 +26,7 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
   double iconSizeMobile = 30;
   double iconSizeDesk = 60;
   double titleSizeMobile = 10;
-  double titleSizeDesk = 16;
+  double titleSizeDesk = 14;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -38,14 +38,14 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
           iconSizeMobile = 35;
           iconSizeDesk = 65;
           titleSizeMobile = 12;
-          titleSizeDesk = 18;
+          titleSizeDesk = 16;
         } else {
           mobileHeight = 90;
           deskHeight = 150;
           iconSizeMobile = 30;
           iconSizeDesk = 60;
           titleSizeMobile = 10;
-          titleSizeDesk = 16;
+          titleSizeDesk = 14;
         }
         setState(() {});
       },
@@ -53,7 +53,7 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
       child: AnimatedContainer(
         height: Responsive.isMobile(context) ? mobileHeight : deskHeight,
         width: Responsive.isMobile(context) ? mobileHeight : deskHeight,
-        padding: EdgeInsets.all(Responsive.isMobile(context) ? 12 : 20),
+        padding: EdgeInsets.all(Responsive.isMobile(context) ? 12 : 18),
         decoration: BoxDecoration(
           color: Colors.blueGrey.shade900,
           borderRadius: BorderRadius.circular(12),

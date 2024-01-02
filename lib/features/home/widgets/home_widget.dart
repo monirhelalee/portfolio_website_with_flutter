@@ -99,7 +99,7 @@ class HomeWidget extends StatelessWidget {
 
   Widget _flutterDev(context) {
     return Text(
-      "Flutter Developer",
+      "Software Engineer",
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontSize: 28,
             color: Colors.white,
@@ -109,6 +109,7 @@ class HomeWidget extends StatelessWidget {
 
   Widget _animatedImage(context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         if (Responsive.isMobile(context))
           Lottie.asset(
@@ -117,9 +118,13 @@ class HomeWidget extends StatelessWidget {
         else
           Lottie.asset(
             'assets/image_background.json',
-            height: 500,
+            height: 400,
           ),
-        Image.asset('assets/my.png'),
+        Image.asset(
+          'assets/my2.png',
+          height: 500,
+          // height: 500,
+        ),
       ],
     );
   }
