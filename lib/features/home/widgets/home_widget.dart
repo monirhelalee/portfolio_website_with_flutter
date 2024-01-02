@@ -109,11 +109,12 @@ class HomeWidget extends StatelessWidget {
 
   Widget _animatedImage(context) {
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.topCenter,
       children: [
         if (Responsive.isMobile(context))
           Lottie.asset(
             'assets/image_background.json',
+            fit: BoxFit.fitWidth,
           )
         else
           Lottie.asset(
@@ -123,6 +124,7 @@ class HomeWidget extends StatelessWidget {
         Image.asset(
           'assets/my2.png',
           height: 500,
+          fit: BoxFit.fitHeight,
           // height: 500,
         ),
       ],
