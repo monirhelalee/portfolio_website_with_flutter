@@ -28,39 +28,42 @@ class SkillsWidget extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: [
                 SkillCartWidget(
-                  iconPath:
-                      'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg',
+                  iconPath: 'https://img.icons8.com/color/144/flutter.png',
                   title: 'Flutter',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
-                  iconPath:
-                      'https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg',
+                  iconPath: 'https://img.icons8.com/color/144/dart.png',
                   title: 'Dart',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
+                      'https://img.icons8.com/color/144/google-firebase-console.png',
                   title: 'Firebase',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
-                  iconPath: 'assets/postman.svg',
+                  iconPath:
+                      'https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png',
                   title: 'Postman',
-                  isLink: false,
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg',
+                      'https://img.icons8.com/external-those-icons-flat-those-icons/96/external-Git-Logo-social-media-those-icons-flat-those-icons.png',
                   title: 'git',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
-                  iconPath:
-                      'https://www.vectorlogo.zone/logos/github/github-icon.svg',
+                  iconPath: 'https://img.icons8.com/3d-fluency/94/github.png',
                   title: 'Github',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
-                  iconPath:
-                      'https://www.vectorlogo.zone/logos/gitlab/gitlab-icon.svg',
+                  iconPath: 'https://img.icons8.com/color/144/gitlab.png',
                   title: 'Gitlab',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
@@ -69,28 +72,60 @@ class SkillsWidget extends StatelessWidget {
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-icon.svg',
+                      'https://img.icons8.com/color/144/visual-studio-code-2019.png',
                   title: 'VS code',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://www.vectorlogo.zone/logos/android/android-icon.svg',
+                      'https://img.icons8.com/external-those-icons-flat-those-icons/96/external-Android-logos-and-brands-those-icons-flat-those-icons.png',
                   title: 'Android',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://upload.wikimedia.org/wikipedia/commons/9/95/Android_Studio_Icon_3.6.svg',
+                      'https://img.icons8.com/color/144/android-studio--v2.png',
                   title: 'Android Studio',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
                   iconPath:
-                      'https://www.vectorlogo.zone/logos/google_play/google_play-icon.svg',
+                      'https://img.icons8.com/fluency/96/google-play-store-new.png',
                   title: 'Play Store',
+                  isSvg: false,
                 ),
                 SkillCartWidget(
-                  iconPath: 'assets/app-store.svg',
+                  iconPath:
+                      'https://img.icons8.com/fluency/144/apple-app-store.png',
                   title: 'App Store',
-                  isLink: false,
+                  isSvg: false,
+                ),
+                SkillCartWidget(
+                  iconPath:
+                      'https://img.icons8.com/ios-filled/100/ios-logo.png',
+                  title: 'iOS',
+                  isSvg: false,
+                ),
+                SkillCartWidget(
+                  iconPath:
+                      'https://img.icons8.com/external-those-icons-flat-those-icons/96/external-Linux-logos-and-brands-those-icons-flat-those-icons.png',
+                  title: 'Linux',
+                  isSvg: false,
+                ),
+                SkillCartWidget(
+                  iconPath: 'https://img.icons8.com/color/144/mac-os-logo.png',
+                  title: 'macOS',
+                  isSvg: false,
+                ),
+                SkillCartWidget(
+                  iconPath: 'https://img.icons8.com/fluency/144/windows-11.png',
+                  title: 'Windows',
+                  isSvg: false,
+                ),
+                SkillCartWidget(
+                  iconPath: 'https://img.icons8.com/color/96/ubuntu--v1.png',
+                  title: 'Ubuntu',
+                  isSvg: false,
                 ),
               ],
             ),

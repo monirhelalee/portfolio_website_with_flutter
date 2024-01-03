@@ -23,8 +23,8 @@ class SkillCartWidget extends StatefulWidget {
 class _SkillCartWidgetState extends State<SkillCartWidget> {
   double mobileHeight = 90;
   double deskHeight = 150;
-  double iconSizeMobile = 30;
-  double iconSizeDesk = 60;
+  double iconSizeMobile = 35;
+  double iconSizeDesk = 65;
   double titleSizeMobile = 10;
   double titleSizeDesk = 14;
   @override
@@ -62,28 +62,38 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            if (widget.isLink)
-              SvgPicture.network(
-                widget.iconPath,
-                height: Responsive.isMobile(context)
-                    ? iconSizeMobile
-                    : iconSizeDesk,
-                width: Responsive.isMobile(context)
-                    ? iconSizeMobile
-                    : iconSizeDesk,
-                fit: BoxFit.cover,
-              )
-            else
-              SvgPicture.asset(
-                widget.iconPath,
-                height: Responsive.isMobile(context)
-                    ? iconSizeMobile
-                    : iconSizeDesk,
-                width: Responsive.isMobile(context)
-                    ? iconSizeMobile
-                    : iconSizeDesk,
-                fit: BoxFit.cover,
-              ),
+            widget.isSvg
+                ? (widget.isLink
+                    ? SvgPicture.network(
+                        widget.iconPath,
+                        height: Responsive.isMobile(context)
+                            ? iconSizeMobile
+                            : iconSizeDesk,
+                        width: Responsive.isMobile(context)
+                            ? iconSizeMobile
+                            : iconSizeDesk,
+                        fit: BoxFit.fill,
+                      )
+                    : SvgPicture.asset(
+                        widget.iconPath,
+                        height: Responsive.isMobile(context)
+                            ? iconSizeMobile
+                            : iconSizeDesk,
+                        width: Responsive.isMobile(context)
+                            ? iconSizeMobile
+                            : iconSizeDesk,
+                        fit: BoxFit.fill,
+                      ))
+                : Image.network(
+                    widget.iconPath,
+                    height: Responsive.isMobile(context)
+                        ? iconSizeMobile
+                        : iconSizeDesk,
+                    width: Responsive.isMobile(context)
+                        ? iconSizeMobile
+                        : iconSizeDesk,
+                    fit: BoxFit.fill,
+                  ),
             Text(
               widget.title,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(

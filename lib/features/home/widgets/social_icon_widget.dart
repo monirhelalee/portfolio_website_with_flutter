@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
 class SocialIconWidget extends StatefulWidget {
-  const SocialIconWidget({super.key, required this.name});
-  final String name;
+  const SocialIconWidget({
+    super.key,
+    this.name,
+    this.isNetworkImage = false,
+    this.url,
+    this.onTap,
+  });
+  final String? name;
+  final String? url;
+  final bool isNetworkImage;
+  final VoidCallback? onTap;
 
   @override
   State<SocialIconWidget> createState() => _SocialIconWidgetState();
@@ -13,7 +22,7 @@ class _SocialIconWidgetState extends State<SocialIconWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: widget.onTap,
       onHover: (v) {
         if (v) {
           iconSize = 40;
@@ -32,11 +41,20 @@ class _SocialIconWidgetState extends State<SocialIconWidget> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(100),
         ),
-        child: Image.asset(
-          'assets/${widget.name}.png',
-          height: iconSize,
-          width: iconSize,
-        ),
+        child: widget.isNetworkImage
+            ? Center(
+                child: Image.network(
+                  widget.url!,
+                  height: iconSize,
+                  width: iconSize,
+                  fit: BoxFit.cover,
+                ),
+              )
+            : Image.asset(
+                'assets/${widget.name}.png',
+                height: iconSize,
+                width: iconSize,
+              ),
       ),
     );
     ;
