@@ -30,6 +30,10 @@ class RowMenuWidget extends StatelessWidget {
           width: 30,
         ),
         _nameWidget(context, title: 'Contact', onTap: () {}),
+        const SizedBox(
+          width: 30,
+        ),
+        _nameWidget(context, title: 'Blog', onTap: () {}),
       ],
     );
   }

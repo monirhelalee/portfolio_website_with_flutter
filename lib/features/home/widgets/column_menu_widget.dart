@@ -64,6 +64,16 @@ class ColumnMenuWidget extends StatelessWidget {
                 color: Colors.white,
               ),
         ),
+        const SizedBox(
+          width: 50,
+        ),
+        Text(
+          'Blog',
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+        ),
       ],
     );
   }
