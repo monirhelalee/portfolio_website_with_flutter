@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_flutter/features/home/home_view.dart';
 import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
 import 'package:provider/provider.dart';
+
+import 'core/go_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,8 @@ class _MyAppState extends State<MyApp> {
           create: (context) => HomeViewModel(),
         ),
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerConfig: router,
         title: "Monir's Portfolio",
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.dark,
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
             brightness: Brightness.dark,
           ),
         ),
-        home: const HomeView(),
+
         //const Breakpoint(start: 801, end: 1920, name: DESKTOP),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
+import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
 import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
-import 'package:my_portfolio_flutter/features/home/widgets/exports.dart';
 
 class AboutWidget extends StatelessWidget {
   const AboutWidget({super.key});

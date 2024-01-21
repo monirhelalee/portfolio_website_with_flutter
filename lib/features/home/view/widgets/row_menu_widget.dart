@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
+import 'package:go_router/go_router.dart';
 
 class RowMenuWidget extends StatelessWidget {
   const RowMenuWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var homeVM = HomeViewModel.read(context);
     return Row(
       children: [
         _nameWidget(context, title: 'Home', onTap: () {}),
@@ -33,7 +32,9 @@ class RowMenuWidget extends StatelessWidget {
         const SizedBox(
           width: 30,
         ),
-        _nameWidget(context, title: 'Blog', onTap: () {}),
+        _nameWidget(context, title: 'Blog', onTap: () {
+          context.go('/blog');
+        }),
       ],
     );
   }

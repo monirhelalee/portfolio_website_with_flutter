@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../../core/responsive.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});

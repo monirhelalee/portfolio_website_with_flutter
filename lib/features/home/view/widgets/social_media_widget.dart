@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_flutter/features/home/widgets/exports.dart';
+import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialMediaWidget extends StatefulWidget {
