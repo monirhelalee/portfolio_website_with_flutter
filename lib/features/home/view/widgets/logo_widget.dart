@@ -7,6 +7,7 @@ class LogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
+      borderRadius: BorderRadius.circular(8),
       child: Padding(
         padding: const EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
         child: Row(

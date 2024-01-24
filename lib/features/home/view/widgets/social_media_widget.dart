@@ -58,7 +58,17 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           const SizedBox(
             width: 10,
           ),
-          const SocialIconWidget(
+          SocialIconWidget(
+            onTap: () async {
+              String instagramProfileLink =
+                  'https://www.instagram.com/m.h.helalee/';
+
+              if (await canLaunchUrl(Uri.parse(instagramProfileLink))) {
+                await launchUrl(Uri.parse(instagramProfileLink));
+              } else {
+                throw 'Could not launch $instagramProfileLink';
+              }
+            },
             name: 'instagram',
             isNetworkImage: true,
             url: 'https://img.icons8.com/fluency/96/instagram-new.png',
@@ -66,7 +76,17 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           const SizedBox(
             width: 10,
           ),
-          const SocialIconWidget(
+          SocialIconWidget(
+            onTap: () async {
+              String linkedinProfileLink =
+                  'https://www.linkedin.com/in/helalee/';
+
+              if (await canLaunchUrl(Uri.parse(linkedinProfileLink))) {
+                await launchUrl(Uri.parse(linkedinProfileLink));
+              } else {
+                throw 'Could not launch $linkedinProfileLink';
+              }
+            },
             name: 'linkedin',
             isNetworkImage: true,
             url: 'https://img.icons8.com/fluency/96/linkedin.png',
@@ -74,7 +94,16 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           const SizedBox(
             width: 10,
           ),
-          const SocialIconWidget(
+          SocialIconWidget(
+            onTap: () async {
+              String githubProfileLink = 'https://github.com/monirhelalee';
+
+              if (await canLaunchUrl(Uri.parse(githubProfileLink))) {
+                await launchUrl(Uri.parse(githubProfileLink));
+              } else {
+                throw 'Could not launch $githubProfileLink';
+              }
+            },
             name: 'github',
             isNetworkImage: true,
             url: 'https://img.icons8.com/sf-black-filled/128/github.png',
@@ -82,7 +111,16 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           const SizedBox(
             width: 10,
           ),
-          const SocialIconWidget(
+          SocialIconWidget(
+            onTap: () async {
+              String xProfileLink = 'https://twitter.com/MonirHelale';
+
+              if (await canLaunchUrl(Uri.parse(xProfileLink))) {
+                await launchUrl(Uri.parse(xProfileLink));
+              } else {
+                throw 'Could not launch $xProfileLink';
+              }
+            },
             name: 'x',
             isNetworkImage: true,
             url: 'https://img.icons8.com/ios-glyphs/90/twitterx--v2.png',
@@ -90,7 +128,16 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
           const SizedBox(
             width: 10,
           ),
-          const SocialIconWidget(
+          SocialIconWidget(
+            onTap: () async {
+              var contact = "+8801786416417";
+              var whatsappUrl = "https://wa.me/$contact";
+              if (await canLaunchUrl(Uri.parse(whatsappUrl))) {
+                await launchUrl(Uri.parse(whatsappUrl));
+              } else {
+                throw 'Could not launch $whatsappUrl';
+              }
+            },
             name: 'whatsapp',
             isNetworkImage: true,
             url: 'https://img.icons8.com/color/96/whatsapp--v1.png',
