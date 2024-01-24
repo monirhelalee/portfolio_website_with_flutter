@@ -19,15 +19,11 @@ class ColumnMenuWidget extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          _nameWidget(context, title: 'Experience', onTap: () {}),
+          _nameWidget(context, title: 'Skills', onTap: () {}),
           const SizedBox(
             height: 30,
           ),
           _nameWidget(context, title: 'Projects', onTap: () {}),
-          const SizedBox(
-            height: 30,
-          ),
-          _nameWidget(context, title: 'Skills', onTap: () {}),
           const SizedBox(
             height: 30,
           ),

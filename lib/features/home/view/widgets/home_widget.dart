@@ -65,7 +65,7 @@ class HomeWidget extends StatelessWidget {
   }
 
   Widget _helloWorld(context) {
-    return Text(
+    return SelectableText(
       'Hello World!',
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontSize: 28,
@@ -77,14 +77,14 @@ class HomeWidget extends StatelessWidget {
   Widget _name(context) {
     return const Row(
       children: [
-        Text(
+        SelectableText(
           "I'm ",
           style: TextStyle(
             fontSize: 38,
             color: Colors.white,
           ),
         ),
-        Text(
+        SelectableText(
           "Monir Haider",
           style: TextStyle(
             fontSize: 38,
@@ -97,7 +97,7 @@ class HomeWidget extends StatelessWidget {
   }
 
   Widget _flutterDev(context) {
-    return Text(
+    return SelectableText(
       "Software Engineer",
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontSize: 28,
@@ -135,7 +135,13 @@ class HomeWidget extends StatelessWidget {
       onPressed: () {},
       child: const Padding(
         padding: EdgeInsets.all(12),
-        child: Text("Contact"),
+        child: SelectableText(
+          "Hire me",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
       ),
     );
   }

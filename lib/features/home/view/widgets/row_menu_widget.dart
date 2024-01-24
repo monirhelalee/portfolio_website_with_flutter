@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 
 class RowMenuWidget extends StatelessWidget {
   const RowMenuWidget({super.key});
@@ -9,32 +10,49 @@ class RowMenuWidget extends StatelessWidget {
     return Row(
       children: [
         _nameWidget(context, title: 'Home', onTap: () {}),
-        const SizedBox(
-          width: 30,
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
         ),
         _nameWidget(context, title: 'About', onTap: () {}),
-        const SizedBox(
-          width: 30,
-        ),
-        _nameWidget(context, title: 'Experience', onTap: () {}),
-        const SizedBox(
-          width: 30,
-        ),
-        _nameWidget(context, title: 'Projects', onTap: () {}),
-        const SizedBox(
-          width: 30,
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
         ),
         _nameWidget(context, title: 'Skills', onTap: () {}),
-        const SizedBox(
-          width: 30,
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
+        ),
+        _nameWidget(context, title: 'Projects', onTap: () {}),
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
         ),
         _nameWidget(context, title: 'Contact', onTap: () {}),
-        const SizedBox(
-          width: 30,
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
         ),
         _nameWidget(context, title: 'Blog', onTap: () {
           context.go('/blog');
         }),
+        AnimatedContainer(
+          width: Responsive.isDesktop(context) ? 30 : 15,
+          duration: const Duration(
+            milliseconds: 100,
+          ),
+        ),
       ],
     );
   }
