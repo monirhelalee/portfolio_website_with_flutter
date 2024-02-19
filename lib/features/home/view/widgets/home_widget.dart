@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
@@ -65,12 +66,20 @@ class HomeWidget extends StatelessWidget {
   }
 
   Widget _helloWorld(context) {
-    return SelectableText(
-      'Hello World!',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 28,
-            color: Colors.white,
+    return AnimatedTextKit(
+      isRepeatingAnimation: true,
+      totalRepeatCount: 1000,
+      animatedTexts: [
+        TyperAnimatedText(
+          'Hello World! 🌍',
+          speed: const Duration(
+            milliseconds: 100,
           ),
+          textStyle: const TextStyle(
+            fontSize: 28.0,
+          ),
+        ),
+      ],
     );
   }
 
