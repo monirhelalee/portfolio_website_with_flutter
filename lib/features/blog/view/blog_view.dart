@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
+import 'package:scroll_pos/scroll_pos.dart';
 
 class BlogView extends StatefulWidget {
   const BlogView({super.key});
@@ -13,9 +14,10 @@ class _BlogViewState extends State<BlogView> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
+    final controller = ScrollPosController(itemCount: 3);
     return Scaffold(
       appBar: AppBar(
-        title: const NavigationBarWidget(),
+        title: NavigationBarWidget(controller: controller),
         automaticallyImplyLeading: false,
         actions: [
           if (Responsive.isMobile(context))

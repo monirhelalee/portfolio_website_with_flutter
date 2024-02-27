@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
+import 'package:scroll_pos/scroll_pos.dart';
 
 import '../view_model/home_view_model.dart';
 
@@ -18,10 +19,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     var homeVM = HomeViewModel.read(context);
+    final controller = ScrollPosController(itemCount: 3);
     return Scaffold(
       key: _key,
       appBar: AppBar(
-        title: const NavigationBarWidget(),
+        title: NavigationBarWidget(
+          controller: controller,
+        ),
         automaticallyImplyLeading: false,
         actions: [
           if (Responsive.isMobile(context))
@@ -44,6 +48,7 @@ class _HomeViewState extends State<HomeView> {
       body: Center(
         child: ListView(
           physics: const BouncingScrollPhysics(),
+          controller: controller,
           children: const [
             HomeWidget(),
             AboutWidget(),
