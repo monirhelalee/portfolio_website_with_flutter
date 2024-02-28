@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -32,7 +33,7 @@ class HomeWidget extends StatelessWidget {
                       const SizedBox(
                         height: 24,
                       ),
-                      _contactButton(),
+                      _resumeDownloadButton(),
                     ],
                   ),
                   _animatedImage(context),
@@ -52,7 +53,7 @@ class HomeWidget extends StatelessWidget {
                       const SizedBox(
                         height: 24,
                       ),
-                      _contactButton(),
+                      _resumeDownloadButton(),
                     ],
                   ),
                   const SizedBox(
@@ -139,18 +140,21 @@ class HomeWidget extends StatelessWidget {
     );
   }
 
-  Widget _contactButton() {
+  Widget _resumeDownloadButton() {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () async {
+        String resumeLink =
+            'https://drive.google.com/file/d/1XmZlZuCxG7amVAXLAYQZTQFHebCH1l2X/view?usp=sharing';
+
+        if (await canLaunchUrl(Uri.parse(resumeLink))) {
+          await launchUrl(Uri.parse(resumeLink));
+        } else {
+          throw 'Could not launch $resumeLink';
+        }
+      },
       child: const Padding(
         padding: EdgeInsets.all(12),
-        child: SelectableText(
-          "Hire me",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
+        child: Text("Download Resume"),
       ),
     );
   }

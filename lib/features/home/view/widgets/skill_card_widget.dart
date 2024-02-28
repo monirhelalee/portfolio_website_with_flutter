@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_portfolio_flutter/core/expotrs.dart';
 
 class SkillCartWidget extends StatefulWidget {
   const SkillCartWidget({
@@ -21,39 +20,30 @@ class SkillCartWidget extends StatefulWidget {
 }
 
 class _SkillCartWidgetState extends State<SkillCartWidget> {
-  double mobileHeight = 90;
-  double deskHeight = 150;
-  double iconSizeMobile = 35;
-  double iconSizeDesk = 65;
-  double titleSizeMobile = 10;
-  double titleSizeDesk = 14;
+  double deskHeight = 80;
+  double iconSizeDesk = 30;
+  double titleSizeDesk = 10;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       onHover: (v) {
         if (v) {
-          mobileHeight = 100;
-          deskHeight = 160;
-          iconSizeMobile = 35;
-          iconSizeDesk = 65;
-          titleSizeMobile = 12;
-          titleSizeDesk = 16;
+          deskHeight = 85;
+          iconSizeDesk = 35;
+          titleSizeDesk = 12;
         } else {
-          mobileHeight = 90;
-          deskHeight = 150;
-          iconSizeMobile = 30;
-          iconSizeDesk = 60;
-          titleSizeMobile = 10;
-          titleSizeDesk = 14;
+          deskHeight = 80;
+          iconSizeDesk = 30;
+          titleSizeDesk = 10;
         }
         setState(() {});
       },
       hoverColor: Colors.transparent,
       child: AnimatedContainer(
-        height: Responsive.isMobile(context) ? mobileHeight : deskHeight,
-        width: Responsive.isMobile(context) ? mobileHeight : deskHeight,
-        padding: EdgeInsets.all(Responsive.isMobile(context) ? 12 : 18),
+        height: deskHeight,
+        width: deskHeight,
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: Colors.blueGrey.shade900,
           borderRadius: BorderRadius.circular(12),
@@ -66,40 +56,27 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
                 ? (widget.isLink
                     ? SvgPicture.network(
                         widget.iconPath,
-                        height: Responsive.isMobile(context)
-                            ? iconSizeMobile
-                            : iconSizeDesk,
-                        width: Responsive.isMobile(context)
-                            ? iconSizeMobile
-                            : iconSizeDesk,
+                        height: iconSizeDesk,
+                        width: iconSizeDesk,
                         fit: BoxFit.fill,
                       )
                     : SvgPicture.asset(
                         widget.iconPath,
-                        height: Responsive.isMobile(context)
-                            ? iconSizeMobile
-                            : iconSizeDesk,
-                        width: Responsive.isMobile(context)
-                            ? iconSizeMobile
-                            : iconSizeDesk,
+                        height: iconSizeDesk,
+                        width: iconSizeDesk,
                         fit: BoxFit.fill,
                       ))
                 : Image.network(
                     widget.iconPath,
-                    height: Responsive.isMobile(context)
-                        ? iconSizeMobile
-                        : iconSizeDesk,
-                    width: Responsive.isMobile(context)
-                        ? iconSizeMobile
-                        : iconSizeDesk,
+                    height: iconSizeDesk,
+                    width: iconSizeDesk,
                     fit: BoxFit.fill,
                   ),
             Text(
               widget.title,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontSize: Responsive.isMobile(context)
-                        ? titleSizeMobile
-                        : titleSizeDesk,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    fontSize: titleSizeDesk,
                     color: Colors.white,
                   ),
             ),

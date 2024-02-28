@@ -28,7 +28,7 @@ class RowMenuWidget extends StatelessWidget {
             milliseconds: 100,
           ),
         ),
-        _nameWidget(context, title: 'Skills', onTap: () {
+        _nameWidget(context, title: 'Experience', onTap: () {
           controller.scrollToItem(2, center: false);
         }),
         AnimatedContainer(

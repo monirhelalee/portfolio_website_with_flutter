@@ -52,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
           children: const [
             HomeWidget(),
             AboutWidget(),
-            SkillsWidget(),
+            ExperienceWidget(),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

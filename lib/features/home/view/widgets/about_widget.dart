@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
-import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
+import 'package:my_portfolio_flutter/features/home/view/widgets/skills_widget.dart';
+import 'package:my_portfolio_flutter/features/home/view/widgets/social_media_widget.dart';
 import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class AboutWidget extends StatelessWidget {
   const AboutWidget({super.key});
@@ -13,69 +13,181 @@ class AboutWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Responsive.isDesktop(context) || Responsive.isTablet(context)
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+          ? Column(
               children: [
-                Column(
-                  children: [
-                    _aboutMe(context, homeVM),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    const SocialMediaWidget(),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    _resumeDownloadButton(),
-                  ],
+                _aboutMe(
+                  context,
+                ),
+                const PillShapeUnderTitleWidget(),
+                const SizedBox(
+                  height: 12,
                 ),
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width / 2,
                   child: Text(
-                    Constant.about,
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    Constant.aboutMeShort,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           fontSize: 18,
                           color: Colors.white,
                         ),
                   ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        _getToKnowMe(context),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.sizeOf(context).width / 3,
+                              child: Text(
+                                Constant.aboutMeLong,
+                                textAlign: TextAlign.justify,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.white60,
+                                    ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                            SizedBox(
+                              width: MediaQuery.sizeOf(context).width / 3,
+                              child: Text(
+                                'Feel free to Connect or Follow: ',
+                                textAlign: TextAlign.justify,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.white60,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                              ),
+                            ),
+                            const SocialMediaWidget(),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        _mySkills(context),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width / 3,
+                          child: const SkillsWidget(),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             )
           : Column(
               children: [
+                _aboutMe(
+                  context,
+                ),
+                const PillShapeUnderTitleWidget(),
+                const SizedBox(
+                  height: 12,
+                ),
+                SizedBox(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Text(
+                    Constant.aboutMeShort,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    _aboutMe(context, homeVM),
+                    _getToKnowMe(context),
                     const SizedBox(
                       height: 24,
                     ),
-                    const SocialMediaWidget(),
-                    const SizedBox(
-                      height: 24,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width,
+                          child: Text(
+                            Constant.aboutMeLong,
+                            textAlign: TextAlign.justify,
+                            style:
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.white60,
+                                    ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.sizeOf(context).width,
+                          child: Text(
+                            'Feel free to Connect or Follow: ',
+                            textAlign: TextAlign.justify,
+                            style:
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      fontSize: 18,
+                                      color: Colors.white60,
+                                      fontStyle: FontStyle.italic,
+                                    ),
+                          ),
+                        ),
+                        const SocialMediaWidget(),
+                      ],
                     ),
-                    _resumeDownloadButton(),
                   ],
                 ),
                 const SizedBox(
                   height: 24,
                 ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width,
-                  child: Text(
-                    'Nunc ut lectus elementum, euismod quam quis, finibus dui. Vestibulum commodo eleifend accumsan. Duis eu diam dignissim, cursus risus imperdiet, mattis nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam egestas tristique risus eget sodales. Sed eu magna a sem dictum suscipit et in dui. Donec maximus odio sit amet dolor facilisis, eget fermentum dui aliquam. Pellentesque tristique neque ut dignissim aliquet. Maecenas augue purus, pharetra et leo eu, tristique ultricies justo. Fusce feugiat arcu vel quam feugiat, aliquam finibus mi convallis. Suspendisse sagittis tincidunt faucibus. Vivamus tincidunt dignissim tortor, quis convallis leo finibus at. Aliquam erat volutpat.',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                  ),
+                Column(
+                  children: [
+                    _mySkills(context),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width,
+                      child: const SkillsWidget(),
+                    ),
+                  ],
                 ),
               ],
             ),
     );
   }
 
-  Widget _aboutMe(context, homeVM) {
+  Widget _aboutMe(context) {
     return Text(
       'About Me',
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -85,22 +197,23 @@ class AboutWidget extends StatelessWidget {
     );
   }
 
-  Widget _resumeDownloadButton() {
-    return ElevatedButton(
-      onPressed: () async {
-        String resumeLink =
-            'https://drive.google.com/file/d/1XmZlZuCxG7amVAXLAYQZTQFHebCH1l2X/view?usp=sharing';
+  Widget _getToKnowMe(context) {
+    return Text(
+      'Get to know me!',
+      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontSize: 24,
+            color: Colors.white,
+          ),
+    );
+  }
 
-        if (await canLaunchUrl(Uri.parse(resumeLink))) {
-          await launchUrl(Uri.parse(resumeLink));
-        } else {
-          throw 'Could not launch $resumeLink';
-        }
-      },
-      child: const Padding(
-        padding: EdgeInsets.all(12),
-        child: Text("Download Resume"),
-      ),
+  Widget _mySkills(context) {
+    return Text(
+      'My skills',
+      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontSize: 24,
+            color: Colors.white,
+          ),
     );
   }
 }

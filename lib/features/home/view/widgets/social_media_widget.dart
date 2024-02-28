@@ -16,7 +16,7 @@ class _SocialMediaWidgetState extends State<SocialMediaWidget> {
       height: 44,
       width: 105 + (28 * 7),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SocialIconWidget(
             onTap: () async {

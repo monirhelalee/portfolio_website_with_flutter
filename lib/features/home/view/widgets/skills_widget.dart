@@ -12,10 +12,6 @@ class SkillsWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _mySkills(context),
-          const SizedBox(
-            height: 24,
-          ),
           SizedBox(
             width: Responsive.isMobile(context)
                 ? MediaQuery.sizeOf(context).width
@@ -132,17 +128,6 @@ class SkillsWidget extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _mySkills(context) {
-    return Text(
-      'My Skills',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 48,
-            color: Colors.white,
-            fontWeight: FontWeight.w900,
-          ),
     );
   }
 }

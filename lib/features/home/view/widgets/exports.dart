@@ -1,5 +1,6 @@
 export 'about_widget.dart';
 export 'column_menu_widget.dart';
+export 'experience_widget.dart';
 export 'home_widget.dart';
 export 'logo_widget.dart';
 export 'name_widget.dart';
