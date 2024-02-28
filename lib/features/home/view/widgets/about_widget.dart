@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
 import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutWidget extends StatelessWidget {
   const AboutWidget({super.key});
@@ -31,7 +32,7 @@ class AboutWidget extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width / 2,
                   child: Text(
-                    'Nunc ut lectus elementum, euismod quam quis, finibus dui. Vestibulum commodo eleifend accumsan. Duis eu diam dignissim, cursus risus imperdiet, mattis nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam egestas tristique risus eget sodales. Sed eu magna a sem dictum suscipit et in dui. Donec maximus odio sit amet dolor facilisis, eget fermentum dui aliquam. Pellentesque tristique neque ut dignissim aliquet. Maecenas augue purus, pharetra et leo eu, tristique ultricies justo. Fusce feugiat arcu vel quam feugiat, aliquam finibus mi convallis. Suspendisse sagittis tincidunt faucibus. Vivamus tincidunt dignissim tortor, quis convallis leo finibus at. Aliquam erat volutpat.',
+                    Constant.about,
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontSize: 18,
                           color: Colors.white,
@@ -86,7 +87,16 @@ class AboutWidget extends StatelessWidget {
 
   Widget _resumeDownloadButton() {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () async {
+        String resumeLink =
+            'https://drive.google.com/file/d/1XmZlZuCxG7amVAXLAYQZTQFHebCH1l2X/view?usp=sharing';
+
+        if (await canLaunchUrl(Uri.parse(resumeLink))) {
+          await launchUrl(Uri.parse(resumeLink));
+        } else {
+          throw 'Could not launch $resumeLink';
+        }
+      },
       child: const Padding(
         padding: EdgeInsets.all(12),
         child: Text("Download Resume"),

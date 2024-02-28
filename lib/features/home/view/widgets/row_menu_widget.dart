@@ -20,7 +20,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'About', onTap: () {
-          controller.scrollToItem(1);
+          controller.scrollToItem(1, center: false);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
@@ -29,7 +29,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Skills', onTap: () {
-          controller.scrollToItem(2);
+          controller.scrollToItem(2, center: false);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
