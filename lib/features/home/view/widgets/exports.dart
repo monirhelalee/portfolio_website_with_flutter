@@ -5,6 +5,8 @@ export 'home_widget.dart';
 export 'logo_widget.dart';
 export 'name_widget.dart';
 export 'navigation_bar_widget.dart';
+export 'project_card_widget.dart';
+export 'project_widget.dart';
 export 'row_menu_widget.dart';
 export 'skill_card_widget.dart';
 export 'skills_widget.dart';

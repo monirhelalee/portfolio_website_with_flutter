@@ -37,7 +37,9 @@ class RowMenuWidget extends StatelessWidget {
             milliseconds: 100,
           ),
         ),
-        _nameWidget(context, title: 'Projects', onTap: () {}),
+        _nameWidget(context, title: 'Projects', onTap: () {
+          controller.scrollToItem(3, center: false);
+        }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
           duration: const Duration(

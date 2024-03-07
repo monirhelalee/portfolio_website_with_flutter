@@ -19,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     var homeVM = HomeViewModel.read(context);
-    final controller = ScrollPosController(itemCount: 3);
+    final controller = ScrollPosController(itemCount: 4);
     return Scaffold(
       key: _key,
       appBar: AppBar(
@@ -53,6 +53,7 @@ class _HomeViewState extends State<HomeView> {
             HomeWidget(),
             AboutWidget(),
             ExperienceWidget(),
+            ProjectWidget(),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

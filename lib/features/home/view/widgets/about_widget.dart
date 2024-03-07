@@ -23,7 +23,7 @@ class AboutWidget extends StatelessWidget {
                   height: 12,
                 ),
                 SizedBox(
-                  width: MediaQuery.sizeOf(context).width / 2,
+                  width: MediaQuery.sizeOf(context).width / 3,
                   child: Text(
                     Constant.aboutMeShort,
                     textAlign: TextAlign.center,
@@ -53,7 +53,7 @@ class AboutWidget extends StatelessWidget {
                               width: MediaQuery.sizeOf(context).width / 3,
                               child: Text(
                                 Constant.aboutMeLong,
-                                textAlign: TextAlign.justify,
+                                textAlign: TextAlign.left,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodySmall
@@ -70,7 +70,7 @@ class AboutWidget extends StatelessWidget {
                               width: MediaQuery.sizeOf(context).width / 3,
                               child: Text(
                                 'Feel free to Connect or Follow: ',
-                                textAlign: TextAlign.justify,
+                                textAlign: TextAlign.left,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodySmall
@@ -93,7 +93,7 @@ class AboutWidget extends StatelessWidget {
                           height: 12,
                         ),
                         SizedBox(
-                          width: MediaQuery.sizeOf(context).width / 3,
+                          width: MediaQuery.sizeOf(context).width / 2,
                           child: const SkillsWidget(),
                         ),
                       ],
@@ -138,7 +138,7 @@ class AboutWidget extends StatelessWidget {
                           width: MediaQuery.sizeOf(context).width,
                           child: Text(
                             Constant.aboutMeLong,
-                            textAlign: TextAlign.justify,
+                            textAlign: TextAlign.left,
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
                                       fontSize: 18,
@@ -153,7 +153,7 @@ class AboutWidget extends StatelessWidget {
                           width: MediaQuery.sizeOf(context).width,
                           child: Text(
                             'Feel free to Connect or Follow: ',
-                            textAlign: TextAlign.justify,
+                            textAlign: TextAlign.left,
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
                                       fontSize: 18,

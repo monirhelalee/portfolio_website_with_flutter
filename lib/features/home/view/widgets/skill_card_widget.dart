@@ -23,64 +23,63 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
   double deskHeight = 80;
   double iconSizeDesk = 30;
   double titleSizeDesk = 10;
+  double scale = 1;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       onHover: (v) {
         if (v) {
-          deskHeight = 85;
-          iconSizeDesk = 35;
-          titleSizeDesk = 12;
+          scale = 1.2;
         } else {
-          deskHeight = 80;
-          iconSizeDesk = 30;
-          titleSizeDesk = 10;
+          scale = 1;
         }
         setState(() {});
       },
       hoverColor: Colors.transparent,
-      child: AnimatedContainer(
-        height: deskHeight,
-        width: deskHeight,
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: Colors.blueGrey.shade900,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        duration: const Duration(milliseconds: 100),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            widget.isSvg
-                ? (widget.isLink
-                    ? SvgPicture.network(
-                        widget.iconPath,
-                        height: iconSizeDesk,
-                        width: iconSizeDesk,
-                        fit: BoxFit.fill,
-                      )
-                    : SvgPicture.asset(
-                        widget.iconPath,
-                        height: iconSizeDesk,
-                        width: iconSizeDesk,
-                        fit: BoxFit.fill,
-                      ))
-                : Image.network(
-                    widget.iconPath,
-                    height: iconSizeDesk,
-                    width: iconSizeDesk,
-                    fit: BoxFit.fill,
-                  ),
-            Text(
-              widget.title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: titleSizeDesk,
-                    color: Colors.white,
-                  ),
-            ),
-          ],
+      child: Transform.scale(
+        scale: scale,
+        child: Container(
+          height: deskHeight,
+          width: deskHeight,
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.blueGrey.shade900,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              widget.isSvg
+                  ? (widget.isLink
+                      ? SvgPicture.network(
+                          widget.iconPath,
+                          height: iconSizeDesk,
+                          width: iconSizeDesk,
+                          fit: BoxFit.fill,
+                        )
+                      : SvgPicture.asset(
+                          widget.iconPath,
+                          height: iconSizeDesk,
+                          width: iconSizeDesk,
+                          fit: BoxFit.fill,
+                        ))
+                  : Image.network(
+                      widget.iconPath,
+                      height: iconSizeDesk,
+                      width: iconSizeDesk,
+                      fit: BoxFit.fill,
+                    ),
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontSize: titleSizeDesk,
+                      color: Colors.white,
+                    ),
+              ),
+            ],
+          ),
         ),
       ),
     );
