@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCartWidget extends StatefulWidget {
@@ -103,8 +104,8 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                         }
                       },
                       child: AnimatedContainer(
-                        height: storeHeight,
-                        width: storeHeight,
+                        height: Responsive.isMobile(context) ? 30 : storeHeight,
+                        width: Responsive.isMobile(context) ? 30 : storeHeight,
                         duration: const Duration(milliseconds: 100),
                         child: Image.network(
                           'https://img.icons8.com/fluency/96/google-play-store-new.png',
@@ -115,7 +116,7 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                   if (widget.playStoreLink != null &&
                       widget.appStoreLink != null)
                     AnimatedContainer(
-                      width: storeHeight,
+                      width: Responsive.isMobile(context) ? 30 : storeHeight,
                       duration: const Duration(milliseconds: 100),
                     ),
                   if (widget.appStoreLink != null)
@@ -130,8 +131,8 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                         }
                       },
                       child: AnimatedContainer(
-                        height: storeHeight,
-                        width: storeHeight,
+                        height: Responsive.isMobile(context) ? 30 : storeHeight,
+                        width: Responsive.isMobile(context) ? 30 : storeHeight,
                         duration: const Duration(milliseconds: 100),
                         child: Image.network(
                           'https://img.icons8.com/fluency/144/apple-app-store.png',
