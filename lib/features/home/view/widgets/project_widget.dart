@@ -82,10 +82,24 @@ class ProjectWidget extends StatelessWidget {
                           'https://play-lh.googleusercontent.com/JDCXkDuZEqnm2kZgc_UGaUeMS9CXCWJY2RGr2obpW4e4GdctnA8aqzbh87os63-2codG=w240-h480-rw',
                       title: 'JobXprss',
                       isSvg: false,
-                      playStoreLink:
-                          'https://play.google.com/store/apps/details?id=com.ishraak.jobxprss',
-                      appStoreLink:
-                          'https://apps.apple.com/in/app/jobxprss/id1528878611',
+                      apkLink:
+                          'https://apkpure.net/jobxprss/com.ishraak.jobxprss',
+                      // playStoreLink:
+                      //     'https://play.google.com/store/apps/details?id=com.ishraak.jobxprss',
+                      // appStoreLink:
+                      //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
+                    ),
+                    ProjectCartWidget(
+                      iconPath:
+                          'https://image.winudf.com/v2/image1/Y29tLmlzaHJhYWsuc2tpbGx4cHJzc19pY29uXzE2MzIxMDEzODhfMDY4/icon.webp?w=280&fakeurl=1&type=.webp',
+                      title: 'SkillXprss',
+                      isSvg: false,
+                      apkLink:
+                          'https://apkpure.net/skillxprss/com.ishraak.skillxprss',
+                      // playStoreLink:
+                      //     'https://play.google.com/store/apps/details?id=com.ishraak.jobxprss',
+                      // appStoreLink:
+                      //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
                     ),
                   ],
                 ),

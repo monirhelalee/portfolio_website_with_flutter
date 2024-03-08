@@ -13,6 +13,7 @@ class ProjectCartWidget extends StatefulWidget {
     this.playStoreLink,
     this.appStoreLink,
     this.githubLink,
+    this.apkLink,
   });
 
   final String iconPath;
@@ -20,6 +21,7 @@ class ProjectCartWidget extends StatefulWidget {
   final String? playStoreLink;
   final String? appStoreLink;
   final String? githubLink;
+  final String? apkLink;
   final bool isSvg;
   final bool isLink;
 
@@ -136,6 +138,32 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                         duration: const Duration(milliseconds: 100),
                         child: Image.network(
                           'https://img.icons8.com/fluency/144/apple-app-store.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  if (widget.appStoreLink != null && widget.apkLink != null)
+                    AnimatedContainer(
+                      width: Responsive.isMobile(context) ? 30 : storeHeight,
+                      duration: const Duration(milliseconds: 100),
+                    ),
+                  if (widget.apkLink != null)
+                    InkWell(
+                      onTap: () async {
+                        String link = widget.apkLink ?? '';
+
+                        if (await canLaunchUrl(Uri.parse(link))) {
+                          await launchUrl(Uri.parse(link));
+                        } else {
+                          throw 'Could not launch $link';
+                        }
+                      },
+                      child: AnimatedContainer(
+                        height: Responsive.isMobile(context) ? 30 : storeHeight,
+                        width: Responsive.isMobile(context) ? 30 : storeHeight,
+                        duration: const Duration(milliseconds: 100),
+                        child: Image.network(
+                          'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png',
                           fit: BoxFit.fill,
                         ),
                       ),
