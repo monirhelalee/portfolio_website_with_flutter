@@ -101,6 +101,18 @@ class ProjectWidget extends StatelessWidget {
                       // appStoreLink:
                       //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
                     ),
+                    ProjectCartWidget(
+                      iconPath:
+                          'https://image.winudf.com/v2/image1/Y29tLmFtYXJpc2Nob29sLmFtYXJpc2Nob29sX2ljb25fMTY2NDI4NTM1Ml8wMjg/icon.webp?w=280&fakeurl=1&type=.webp',
+                      title: 'Amar iSchool',
+                      isSvg: false,
+                      apkLink:
+                          'https://apkpure.net/amar-ischool/com.amarischool.amarischool',
+                      // playStoreLink:
+                      //     'https://play.google.com/store/apps/details?id=com.ishraak.jobxprss',
+                      // appStoreLink:
+                      //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
+                    ),
                   ],
                 ),
               ),
