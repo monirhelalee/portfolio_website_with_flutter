@@ -123,6 +123,12 @@ class SkillsWidget extends StatelessWidget {
                   title: 'Ubuntu',
                   isSvg: false,
                 ),
+                SkillCartWidget(
+                  iconPath: 'assets/hive.png',
+                  title: 'Hive',
+                  isSvg: false,
+                  isLink: false,
+                ),
               ],
             ),
           ),
