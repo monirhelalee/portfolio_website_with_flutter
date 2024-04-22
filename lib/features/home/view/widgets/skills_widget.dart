@@ -129,6 +129,18 @@ class SkillsWidget extends StatelessWidget {
                   isSvg: false,
                   isLink: false,
                 ),
+                SkillCartWidget(
+                  iconPath: 'assets/getx.png',
+                  title: 'Getx',
+                  isSvg: false,
+                  isLink: false,
+                ),
+                SkillCartWidget(
+                  iconPath: 'assets/provider.png',
+                  title: 'Provider',
+                  isSvg: false,
+                  isLink: false,
+                ),
               ],
             ),
           ),
