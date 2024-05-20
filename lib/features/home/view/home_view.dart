@@ -54,6 +54,7 @@ class _HomeViewState extends State<HomeView> {
             AboutWidget(),
             ExperienceWidget(),
             ProjectWidget(),
+            FooterWidget(),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
