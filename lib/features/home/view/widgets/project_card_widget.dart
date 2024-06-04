@@ -94,6 +94,39 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  InkWell(
+                    onTap: () async {
+                      String link = widget.playStoreLink ?? '';
+
+                      if (await canLaunchUrl(Uri.parse(link))) {
+                        await launchUrl(Uri.parse(link));
+                      } else {
+                        throw 'Could not launch $link';
+                      }
+                    },
+                    child: AnimatedContainer(
+                      height: (defaultTargetPlatform == TargetPlatform.iOS ||
+                              defaultTargetPlatform == TargetPlatform.android)
+                          ? 30
+                          : storeHeight,
+                      width: (defaultTargetPlatform == TargetPlatform.iOS ||
+                              defaultTargetPlatform == TargetPlatform.android)
+                          ? 30
+                          : storeHeight,
+                      duration: const Duration(milliseconds: 100),
+                      child: Image.network(
+                        'https://img.icons8.com/?size=100&id=80410&format=png&color=000000',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                  AnimatedContainer(
+                    width: (defaultTargetPlatform == TargetPlatform.iOS ||
+                            defaultTargetPlatform == TargetPlatform.android)
+                        ? 30
+                        : storeHeight,
+                    duration: const Duration(milliseconds: 100),
+                  ),
                   if (widget.playStoreLink != null)
                     InkWell(
                       onTap: () async {
