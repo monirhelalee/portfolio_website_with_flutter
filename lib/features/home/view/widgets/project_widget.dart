@@ -113,6 +113,18 @@ class ProjectWidget extends StatelessWidget {
                       // appStoreLink:
                       //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
                     ),
+                    ProjectCartWidget(
+                      iconPath:
+                          'https://play-lh.googleusercontent.com/ziZdh_-IycQFxqlvdrlXC7y9o3YERbExHjIKsOCWzg_FBh5FkCIb2W3H0nbPBhFE0Q=w240-h480-rw',
+                      title: 'PicScanner - PDF Maker',
+                      isSvg: false,
+                      // apkLink:
+                      //     'https://apkpure.net/amar-ischool/com.amarischool.amarischool',
+                      playStoreLink:
+                          'https://play.google.com/store/apps/details?id=ltd.onesoft.pic_scanner_app',
+                      // appStoreLink:
+                      //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
+                    ),
                   ],
                 ),
               ),
