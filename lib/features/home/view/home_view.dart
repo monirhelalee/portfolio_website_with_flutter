@@ -5,21 +5,21 @@ import 'package:scroll_pos/scroll_pos.dart';
 
 import '../view_model/home_view_model.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({
+class HomeViewWidget extends StatefulWidget {
+  const HomeViewWidget({
     super.key,
   });
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HomeViewWidget> createState() => _HomeViewWidgetState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewWidgetState extends State<HomeViewWidget> {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {
     var homeVM = HomeViewModel.read(context);
-    final controller = ScrollPosController(itemCount: 4);
+    final controller = ScrollPosController(itemCount: 5);
     return Scaffold(
       key: _key,
       appBar: AppBar(
@@ -50,11 +50,12 @@ class _HomeViewState extends State<HomeView> {
           physics: const BouncingScrollPhysics(),
           controller: controller,
           children: const [
-            HomeWidget(),
-            AboutWidget(),
-            ExperienceWidget(),
-            ProjectWidget(),
-            FooterWidget(),
+            HomeViewWidget(),
+            AboutViewWidget(),
+            ExperienceViewWidget(),
+            ProjectViewWidget(),
+            BlogViewWidget(),
+            FooterViewWidget(),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

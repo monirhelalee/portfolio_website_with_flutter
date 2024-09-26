@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:scroll_pos/scroll_pos.dart';
 
@@ -47,7 +46,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Contact', onTap: () {
-          controller.scrollToEnd();
+          controller.scrollToItem(4, center: false);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
@@ -56,7 +55,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Blog', onTap: () {
-          context.go('/blog');
+          controller.scrollToEnd();
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
