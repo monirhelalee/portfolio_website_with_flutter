@@ -5,16 +5,16 @@ import 'package:scroll_pos/scroll_pos.dart';
 
 import '../view_model/home_view_model.dart';
 
-class HomeViewWidget extends StatefulWidget {
-  const HomeViewWidget({
+class HomeView extends StatefulWidget {
+  const HomeView({
     super.key,
   });
 
   @override
-  State<HomeViewWidget> createState() => _HomeViewWidgetState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewWidgetState extends State<HomeViewWidget> {
+class _HomeViewState extends State<HomeView> {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
   @override
   Widget build(BuildContext context) {

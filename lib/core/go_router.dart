@@ -8,7 +8,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const HomeViewWidget();
+        return const HomeView();
       },
       routes: const <RouteBase>[
         // GoRoute(

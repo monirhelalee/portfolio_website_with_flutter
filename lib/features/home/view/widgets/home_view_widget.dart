@@ -4,8 +4,8 @@ import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeViewWidget extends StatelessWidget {
+  const HomeViewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
