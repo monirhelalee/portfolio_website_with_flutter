@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MaterialApp.router(
         routerConfig: router,
-        title: "Monir's Portfolio",
+        title: "Monir - Portfolio",
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.dark,
         theme: ThemeData(

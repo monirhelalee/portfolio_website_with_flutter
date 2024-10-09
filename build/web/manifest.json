@@ -1,11 +1,11 @@
 {
-    "name": "my_portfolio_flutter",
-    "short_name": "my_portfolio_flutter",
+    "name": "Monir - Portfolio",
+    "short_name": "Monir - Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Monir Haider Helalee",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
