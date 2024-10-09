@@ -10,7 +10,7 @@ class HomeViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey.shade900,
+      color: Colors.blueGrey,
       child: Padding(
         padding: const EdgeInsets.only(
           left: 64,
@@ -22,8 +22,17 @@ class HomeViewWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Center(
+                        child: Image.asset(
+                          'assets/my_logo.png',
+                          height: 100,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 24,
+                      ),
                       _helloWorld(context),
                       _name(context),
                       _flutterDev(context),

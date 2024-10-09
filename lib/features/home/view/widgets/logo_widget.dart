@@ -15,12 +15,9 @@ class LogoWidget extends StatelessWidget {
         padding: const EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
         child: Row(
           children: [
-            Text(
-              '<MH>',
-              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                    fontSize: 24,
-                    color: Colors.white,
-                  ),
+            Image.asset(
+              'assets/my_logo.png',
+              height: 36,
             ),
           ],
         ),

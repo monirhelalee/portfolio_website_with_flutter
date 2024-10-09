@@ -19,7 +19,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'About', onTap: () {
-          controller.scrollToItem(1, center: false);
+          controller.scrollToItem(1, animate: true);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
@@ -28,7 +28,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Experience', onTap: () {
-          controller.scrollToItem(2, center: false);
+          controller.scrollToItem(2, animate: true);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
@@ -37,7 +37,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Projects', onTap: () {
-          controller.scrollToItem(3, center: false);
+          controller.scrollToItem(3, animate: true);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
@@ -46,7 +46,7 @@ class RowMenuWidget extends StatelessWidget {
           ),
         ),
         _nameWidget(context, title: 'Contact', onTap: () {
-          controller.scrollToItem(4, center: false);
+          controller.scrollToItem(4, animate: true);
         }),
         AnimatedContainer(
           width: Responsive.isDesktop(context) ? 30 : 15,
