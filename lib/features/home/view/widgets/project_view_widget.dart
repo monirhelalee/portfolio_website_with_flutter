@@ -40,6 +40,8 @@ class ProjectViewWidget extends StatelessWidget {
                       isSvg: false,
                       playStoreLink:
                           'https://play.google.com/store/apps/details?id=com.martechhouse.salahbd',
+                      apkLink:
+                          'https://apkpure.net/ramadan-bd-2023/com.martechhouse.salahbd',
                     ),
                     ProjectCartWidget(
                       iconPath:
@@ -48,6 +50,8 @@ class ProjectViewWidget extends StatelessWidget {
                       isSvg: false,
                       playStoreLink:
                           'https://play.google.com/store/apps/details?id=com.nodesdigitalbd.orcamarine',
+                      apkLink:
+                          'https://apkpure.net/orca-marine/com.nodesdigitalbd.orcamarine',
                     ),
                     ProjectCartWidget(
                       iconPath:
@@ -61,21 +65,23 @@ class ProjectViewWidget extends StatelessWidget {
                     ),
                     ProjectCartWidget(
                       iconPath:
-                          'https://play-lh.googleusercontent.com/3XT_DS-LGgsjm7_O-4-YzytGPehnkdZJ1Q1YFYNUurSMJomUz-2QglIL4lXkcv7wETQ=w480-h960-rw',
-                      title: 'e-irrigation',
+                          'https://play-lh.googleusercontent.com/mY2r0_alAV1sIIaSkQn-_wsPBpyZsEtC1jjTmZWpb_PjuLq_Ior1yhDcUs7J0YSOOpYh=w480-h960-rw',
+                      title: 'Agritech',
                       isSvg: false,
                       playStoreLink:
                           'https://play.google.com/store/apps/details?id=com.nodesdigitalbd.agritech',
+                      apkLink:
+                          'https://apkpure.net/agritech/com.nodesdigitalbd.agritech',
                     ),
                     ProjectCartWidget(
                       iconPath:
                           'https://play-lh.googleusercontent.com/9BiAJdmRgWvbkZmDxp20FojPLHDOy0SyoJPPqYNoy4NcWMLVGCf2TuyKRW-aMr5xhrHs=w480-h960-rw',
                       title: 'Rakhsaani',
                       isSvg: false,
-                      playStoreLink:
-                          'https://play.google.com/store/apps/details?id=org.rakhsaani.app',
                       appStoreLink:
                           'https://apps.apple.com/sa/app/rakhsaani/id1665444120',
+                      apkLink:
+                          'https://apkpure.net/rakhsaani/org.rakhsaani.app',
                     ),
                     ProjectCartWidget(
                       iconPath:
