@@ -8,12 +8,14 @@ class SkillCartWidget extends StatefulWidget {
     required this.title,
     this.isSvg = true,
     this.isLink = true,
+    this.isAsset = false,
   });
 
   final String iconPath;
   final String title;
   final bool isSvg;
   final bool isLink;
+  final bool isAsset;
 
   @override
   State<SkillCartWidget> createState() => _SkillCartWidgetState();
@@ -50,26 +52,34 @@ class _SkillCartWidgetState extends State<SkillCartWidget> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              widget.isSvg
-                  ? (widget.isLink
-                      ? SvgPicture.network(
-                          widget.iconPath,
-                          height: iconSizeDesk,
-                          width: iconSizeDesk,
-                          fit: BoxFit.fill,
-                        )
-                      : SvgPicture.asset(
-                          widget.iconPath,
-                          height: iconSizeDesk,
-                          width: iconSizeDesk,
-                          fit: BoxFit.fill,
-                        ))
-                  : Image.network(
-                      widget.iconPath,
-                      height: iconSizeDesk,
-                      width: iconSizeDesk,
-                      fit: BoxFit.fill,
-                    ),
+              if (widget.isAsset)
+                Image.asset(
+                  widget.iconPath,
+                  height: iconSizeDesk,
+                  width: iconSizeDesk,
+                  fit: BoxFit.fill,
+                )
+              else
+                widget.isSvg
+                    ? (widget.isLink
+                        ? SvgPicture.network(
+                            widget.iconPath,
+                            height: iconSizeDesk,
+                            width: iconSizeDesk,
+                            fit: BoxFit.fill,
+                          )
+                        : SvgPicture.asset(
+                            widget.iconPath,
+                            height: iconSizeDesk,
+                            width: iconSizeDesk,
+                            fit: BoxFit.fill,
+                          ))
+                    : Image.network(
+                        widget.iconPath,
+                        height: iconSizeDesk,
+                        width: iconSizeDesk,
+                        fit: BoxFit.fill,
+                      ),
               Text(
                 widget.title,
                 textAlign: TextAlign.center,
