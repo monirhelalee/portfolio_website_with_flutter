@@ -152,8 +152,7 @@ class HomeViewWidget extends StatelessWidget {
   Widget _resumeDownloadButton() {
     return ElevatedButton(
       onPressed: () async {
-        String resumeLink =
-            'https://drive.google.com/file/d/1XmZlZuCxG7amVAXLAYQZTQFHebCH1l2X/view?usp=sharing';
+        String resumeLink = Constant.resumeDownloadLink;
 
         if (await canLaunchUrl(Uri.parse(resumeLink))) {
           await launchUrl(Uri.parse(resumeLink));
