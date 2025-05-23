@@ -28127,7 +28127,7 @@ case 8:k=A.auD(c2,c3)
 break
 case 9:b3=c2.cu()
 if(b3>=6){s.B(0,"Unsupported matte type: "+b3)
-break}b0=B.JT[b3]
+break}b0=B.JS[b3]
 if(b0===B.ud)s.B(0,"Unsupported matte type: Luma")
 else if(b0===B.ue)s.B(0,"Unsupported matte type: Luma Inverted");++c3.e
 break
@@ -44435,7 +44435,7 @@ continue}q=r-257
 p=B.KU[q]+l.ir(B.L3[q])
 o=l.Ef(b)
 if(o<0||o>29)return-1
-n=B.KV[o]+l.ir(B.JU[o])
+n=B.KV[o]+l.ir(B.JT[o])
 for(m=-n;p>n;){s.Jr(s.Kz(m))
 p-=n}if(p===n)s.Jr(s.Kz(m))
 else s.Jr(s.m4(m,p-n))}for(;s=l.e,s>=8;){l.e=s-8
@@ -86521,7 +86521,7 @@ if(A.au(a,p,t.w).w.a.a<750)r.push(new A.d7(B.He,A.k8(!1,p,!0,B.Ic,p,!0,p,p,p,p,p
 else r.push(A.eT(p,p,B.y,p,p,p,p,p,p,p,p,p,p))
 r=A.ayT(r,!1,new A.N_(s,p))
 q=A.ay([null,0],t.LO,t.S)
-return A.aCx(r,A.iX(new A.Mt(new A.ahv(!0,!0,!0,B.JW,q),p,B.aZ,!1,s,p,B.B5,!1,p,6,B.ah,B.Q5,p,B.a2,B.aq,p),p,p),B.Gd,this.d)}}
+return A.aCx(r,A.iX(new A.Mt(new A.ahv(!0,!0,!0,B.JV,q),p,B.aZ,!1,s,p,B.B5,!1,p,6,B.ah,B.Q5,p,B.a2,B.aq,p),p,p),B.Gd,this.d)}}
 A.anS.prototype={
 $0(){this.a.d.gN().WS()},
 $S:0}
@@ -86733,7 +86733,7 @@ s=t.w
 if(A.au(a,q,s).w.a.a<750)s=A.au(a,B.at,s).w.a.a
 else s=A.OL(a)?A.au(a,B.at,s).w.a.a/1.2:A.au(a,B.at,s).w.a.a/1.5
 r=t.p
-return A.cY(A.a([B.zd,p,B.hc,B.c7,new A.d7(B.ja,A.cY(A.a([A.dH(B.ZJ,q,s)],r),B.E,B.M,B.F),q)],r),B.E,B.M,B.F)}}
+return A.cY(A.a([B.zd,p,B.hc,B.c7,new A.d7(B.ja,A.cY(A.a([A.dH(B.ZK,q,s)],r),B.E,B.M,B.F),q)],r),B.E,B.M,B.F)}}
 A.OW.prototype={
 O(a){var s=this,r=null,q=s.pN(a,new A.afr(s),"Home"),p=t.w,o=A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15),n=s.pN(a,new A.afs(s),"About"),m=A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15),l=s.pN(a,new A.aft(s),"Experience"),k=A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15),j=s.pN(a,new A.afu(s),"Projects"),i=A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15),h=s.pN(a,new A.afv(s),"Contact"),g=A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15),f=s.pN(a,new A.afw(s),"Blog")
 return A.nM(A.a([q,o,n,m,l,k,j,i,h,g,f,A.kV(r,r,B.a4,r,r,A.au(a,r,p).w.a.a>=1100?30:15)],t.p),B.E,B.M,B.F)},
@@ -86786,7 +86786,7 @@ A.PR.prototype={
 O(a){var s=t.w
 if(A.au(a,null,s).w.a.a<750)s=A.au(a,B.at,s).w.a.a
 else s=A.OL(a)?A.au(a,B.at,s).w.a.a/1.2:A.au(a,B.at,s).w.a.a/1.5
-return new A.d7(B.ja,A.cY(A.a([A.dH(B.ZK,null,s)],t.p),B.E,B.M,B.F),null)}}
+return new A.d7(B.ja,A.cY(A.a([A.dH(B.ZJ,null,s)],t.p),B.E,B.M,B.F),null)}}
 A.js.prototype={
 aq(){return new A.Xt()}}
 A.Xt.prototype={
@@ -94710,8 +94710,8 @@ B.jY=new A.lw(2,"invert")
 B.ud=new A.lw(3,"luma")
 B.ue=new A.lw(4,"lumaInverted")
 B.Nf=new A.lw(5,"unknown")
-B.JT=A.a(s([B.jX,B.Ne,B.jY,B.ud,B.ue,B.Nf]),A.a5("m<lw>"))
-B.JU=A.a(s([0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13]),t.t)
+B.JS=A.a(s([B.jX,B.Ne,B.jY,B.ud,B.ue,B.Nf]),A.a5("m<lw>"))
+B.JT=A.a(s([0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13]),t.t)
 B.u=A.a(s([1353184337,1399144830,3282310938,2522752826,3412831035,4047871263,2874735276,2466505547,1442459680,4134368941,2440481928,625738485,4242007375,3620416197,2151953702,2409849525,1230680542,1729870373,2551114309,3787521629,41234371,317738113,2744600205,3338261355,3881799427,2510066197,3950669247,3663286933,763608788,3542185048,694804553,1154009486,1787413109,2021232372,1799248025,3715217703,3058688446,397248752,1722556617,3023752829,407560035,2184256229,1613975959,1165972322,3765920945,2226023355,480281086,2485848313,1483229296,436028815,2272059028,3086515026,601060267,3791801202,1468997603,715871590,120122290,63092015,2591802758,2768779219,4068943920,2997206819,3127509762,1552029421,723308426,2461301159,4042393587,2715969870,3455375973,3586000134,526529745,2331944644,2639474228,2689987490,853641733,1978398372,971801355,2867814464,111112542,1360031421,4186579262,1023860118,2919579357,1186850381,3045938321,90031217,1876166148,4279586912,620468249,2548678102,3426959497,2006899047,3175278768,2290845959,945494503,3689859193,1191869601,3910091388,3374220536,0,2206629897,1223502642,2893025566,1316117100,4227796733,1446544655,517320253,658058550,1691946762,564550760,3511966619,976107044,2976320012,266819475,3533106868,2660342555,1338359936,2720062561,1766553434,370807324,179999714,3844776128,1138762300,488053522,185403662,2915535858,3114841645,3366526484,2233069911,1275557295,3151862254,4250959779,2670068215,3170202204,3309004356,880737115,1982415755,3703972811,1761406390,1676797112,3403428311,277177154,1076008723,538035844,2099530373,4164795346,288553390,1839278535,1261411869,4080055004,3964831245,3504587127,1813426987,2579067049,4199060497,577038663,3297574056,440397984,3626794326,4019204898,3343796615,3251714265,4272081548,906744984,3481400742,685669029,646887386,2764025151,3835509292,227702864,2613862250,1648787028,3256061430,3904428176,1593260334,4121936770,3196083615,2090061929,2838353263,3004310991,999926984,2809993232,1852021992,2075868123,158869197,4095236462,28809964,2828685187,1701746150,2129067946,147831841,3873969647,3650873274,3459673930,3557400554,3598495785,2947720241,824393514,815048134,3227951669,935087732,2798289660,2966458592,366520115,1251476721,4158319681,240176511,804688151,2379631990,1303441219,1414376140,3741619940,3820343710,461924940,3089050817,2136040774,82468509,1563790337,1937016826,776014843,1511876531,1389550482,861278441,323475053,2355222426,2047648055,2383738969,2302415851,3995576782,902390199,3991215329,1018251130,1507840668,1064563285,2043548696,3208103795,3939366739,1537932639,342834655,2262516856,2180231114,1053059257,741614648,1598071746,1925389590,203809468,2336832552,1100287487,1895934009,3736275976,2632234200,2428589668,1636092795,1890988757,1952214088,1113045200]),t.t)
 B.nY=A.a(s([B.nT,B.nU,B.nV]),A.a5("m<uC>"))
 B.I2=new A.LN(null)
@@ -94720,7 +94720,7 @@ B.HC=new A.Lb(null)
 B.PA=new A.NS(null)
 B.AU=new A.Jh(null)
 B.HY=new A.Ls(null)
-B.JW=A.a(s([B.I2,B.Ah,B.HC,B.PA,B.AU,B.HY]),t.p)
+B.JV=A.a(s([B.I2,B.Ah,B.HC,B.PA,B.AU,B.HY]),t.p)
 B.bc=new A.rp(0,"clamp")
 B.hM=new A.rp(1,"repeated")
 B.hN=new A.rp(2,"mirror")
@@ -95583,7 +95583,7 @@ B.Kd=A.a(s([8589934850,8589934850,8589934851,null]),t.Z)
 B.u7=new A.cs(["*",B.Jj,"+",B.Jk,"-",B.Jl,".",B.Jm,"/",B.Jn,"0",B.Jo,"1",B.Jp,"2",B.Jr,"3",B.Jt,"4",B.Ju,"5",B.Jv,"6",B.Jw,"7",B.Jx,"8",B.Jy,"9",B.JA,"Alt",B.Ka,"AltGraph",B.J8,"ArrowDown",B.J9,"ArrowLeft",B.Ja,"ArrowRight",B.Jb,"ArrowUp",B.Jc,"Clear",B.Jh,"Control",B.Kb,"Delete",B.J7,"End",B.Jd,"Enter",B.J6,"Home",B.Je,"Insert",B.Ji,"Meta",B.Kc,"PageDown",B.Jf,"PageUp",B.Jg,"Shift",B.Kd],A.a5("cs<h,Q<o?>>"))
 B.Jz=A.a(s([B.od,null,null,B.tU]),t.L)
 B.KH=A.a(s([B.tG,null,null,B.tV]),t.L)
-B.JV=A.a(s([B.tH,null,null,B.tW]),t.L)
+B.JU=A.a(s([B.tH,null,null,B.tW]),t.L)
 B.Kf=A.a(s([B.tI,null,null,B.cw]),t.L)
 B.J1=A.a(s([B.tJ,null,null,B.tX]),t.L)
 B.KX=A.a(s([B.tK,null,null,B.jQ]),t.L)
@@ -95613,7 +95613,7 @@ B.JJ=A.a(s([B.ek,B.ek,B.h0,null]),t.L)
 B.K1=A.a(s([B.eg,null,null,B.em]),t.L)
 B.Kq=A.a(s([B.eh,null,null,B.eo]),t.L)
 B.JK=A.a(s([B.c0,B.c0,B.cv,null]),t.L)
-B.MS=new A.cs(["*",B.Jz,"+",B.KH,"-",B.JV,".",B.Kf,"/",B.J1,"0",B.KX,"1",B.KP,"2",B.JG,"3",B.L0,"4",B.KO,"5",B.JD,"6",B.J5,"7",B.JQ,"8",B.KI,"9",B.KJ,"Alt",B.JH,"AltGraph",B.KY,"ArrowDown",B.JX,"ArrowLeft",B.JY,"ArrowRight",B.JZ,"ArrowUp",B.L_,"Clear",B.KM,"Control",B.JI,"Delete",B.Km,"End",B.K_,"Enter",B.JC,"Home",B.K0,"Insert",B.KN,"Meta",B.JJ,"PageDown",B.K1,"PageUp",B.Kq,"Shift",B.JK],A.a5("cs<h,Q<f?>>"))
+B.MS=new A.cs(["*",B.Jz,"+",B.KH,"-",B.JU,".",B.Kf,"/",B.J1,"0",B.KX,"1",B.KP,"2",B.JG,"3",B.L0,"4",B.KO,"5",B.JD,"6",B.J5,"7",B.JQ,"8",B.KI,"9",B.KJ,"Alt",B.JH,"AltGraph",B.KY,"ArrowDown",B.JX,"ArrowLeft",B.JY,"ArrowRight",B.JZ,"ArrowUp",B.L_,"Clear",B.KM,"Control",B.JI,"Delete",B.Km,"End",B.K_,"Enter",B.JC,"Home",B.K0,"Insert",B.KN,"Meta",B.JJ,"PageDown",B.K1,"PageUp",B.Kq,"Shift",B.JK],A.a5("cs<h,Q<f?>>"))
 B.ND={multiply:0,screen:1,overlay:2,darken:3,lighten:4,"color-dodge":5,"color-burn":6,"hard-light":7,"soft-light":8,difference:9,exclusion:10,hue:11,saturation:12,color:13,luminosity:14}
 B.AL=new A.ea(24,"multiply")
 B.AA=new A.ea(14,"screen")
@@ -96950,19 +96950,6 @@ B.ZG=new A.od(5,"spaceEvenly")
 B.l8=new A.Ed(0,"start")
 B.ZH=new A.Ed(1,"end")
 B.ZI=new A.Ed(2,"center")
-B.Pt=new A.fF("https://play-lh.googleusercontent.com/xpF8JkKuR2pUKXVKcyLJ20jr3-y_z54QA28aKe6t1lIQPLia8mGF5bXTk9iOjuHS_bE=w480-h960-rw","Tabby - AI Bookkeeper","https://play.google.com/store/apps/details?id=com.usetabby.app","https://apps.apple.com/us/app/tabby-ai-bookkeeper/id6743497417",null,null)
-B.Py=new A.fF("https://play-lh.googleusercontent.com/4qiylGNgVdCTVqzJItOS3Nj52r23OXgX0evLXI7Fx_BAspNpe356RC0MXB6ef0veHTc=w480-h960-rw","Tabby - AI Bookkeeper","https://play.google.com/store/apps/details?id=com.smartsohay.education",null,null,null)
-B.Ps=new A.fF("https://play-lh.googleusercontent.com/07fxFTaHE3m-2-4dAKJEDSCPvh770ZBJgDJO9B8ieYI0E-wjS_z_y7vFzLQxobBG4jA-=w240-h480-rw","Muslim Minds","https://play.google.com/store/apps/details?id=com.martechhouse.salahbd",null,"https://apkpure.net/ramadan-bd-2023/com.martechhouse.salahbd",null)
-B.Pu=new A.fF("https://play-lh.googleusercontent.com/peKaWiLMPyQrbMeSKhYX7Y23hxwFaNwA7-0fJz7iJcTQZ3oXnHfLMPNGb_lUUpE1kfw5=w480-h960-rw","ORCA Marine","https://play.google.com/store/apps/details?id=com.nodesdigitalbd.orcamarine",null,"https://apkpure.net/orca-marine/com.nodesdigitalbd.orcamarine",null)
-B.Pv=new A.fF("https://play-lh.googleusercontent.com/BcVtmhXzsFik9R-J3qwa58M67U0NLWeQARURpDxzfzUlXoAswCR2GPewXaig9B6biA=w480-h960-rw","We Telly-BD","https://play.google.com/store/apps/details?id=org.wetelly.wetelly","https://apps.apple.com/us/app/we-telly-bd/id6466303189",null,null)
-B.Pq=new A.fF("https://play-lh.googleusercontent.com/mY2r0_alAV1sIIaSkQn-_wsPBpyZsEtC1jjTmZWpb_PjuLq_Ior1yhDcUs7J0YSOOpYh=w480-h960-rw","Agritech","https://play.google.com/store/apps/details?id=com.nodesdigitalbd.agritech",null,"https://apkpure.net/agritech/com.nodesdigitalbd.agritech",null)
-B.Px=new A.fF("https://play-lh.googleusercontent.com/9BiAJdmRgWvbkZmDxp20FojPLHDOy0SyoJPPqYNoy4NcWMLVGCf2TuyKRW-aMr5xhrHs=w480-h960-rw","Rakhsaani",null,"https://apps.apple.com/sa/app/rakhsaani/id1665444120","https://apkpure.net/rakhsaani/org.rakhsaani.app",null)
-B.Pp=new A.fF("https://play-lh.googleusercontent.com/JDCXkDuZEqnm2kZgc_UGaUeMS9CXCWJY2RGr2obpW4e4GdctnA8aqzbh87os63-2codG=w240-h480-rw","JobXprss",null,null,"https://apkpure.net/jobxprss/com.ishraak.jobxprss",null)
-B.Pr=new A.fF("https://image.winudf.com/v2/image1/Y29tLmlzaHJhYWsuc2tpbGx4cHJzc19pY29uXzE2MzIxMDEzODhfMDY4/icon.webp?w=280&fakeurl=1&type=.webp","SkillXprss",null,null,"https://apkpure.net/skillxprss/com.ishraak.skillxprss",null)
-B.Pz=new A.fF("https://image.winudf.com/v2/image1/Y29tLmFtYXJpc2Nob29sLmFtYXJpc2Nob29sX2ljb25fMTY2NDI4NTM1Ml8wMjg/icon.webp?w=280&fakeurl=1&type=.webp","Amar iSchool",null,null,"https://apkpure.net/amar-ischool/com.amarischool.amarischool",null)
-B.Pw=new A.fF("https://play-lh.googleusercontent.com/ziZdh_-IycQFxqlvdrlXC7y9o3YERbExHjIKsOCWzg_FBh5FkCIb2W3H0nbPBhFE0Q=w240-h480-rw","PicScanner - PDF Maker","https://play.google.com/store/apps/details?id=ltd.onesoft.pic_scanner_app",null,null,null)
-B.JS=A.a(s([B.Pt,B.Py,B.Ps,B.Pu,B.Pv,B.Pq,B.Px,B.Pp,B.Pr,B.Pz,B.Pw]),t.p)
-B.ZJ=new A.Ec(B.JS,null)
 B.S6=new A.d9("https://img.icons8.com/color/144/flutter.png","Flutter",!1,!0,!1,null)
 B.Si=new A.d9("https://img.icons8.com/color/144/dart.png","Dart",!1,!0,!1,null)
 B.Sb=new A.d9("https://img.icons8.com/color/144/google-firebase-console.png","Firebase",!1,!0,!1,null)
@@ -96985,7 +96972,20 @@ B.Se=new A.d9("assets/hive.png","Hive",!1,!1,!0,null)
 B.S4=new A.d9("assets/getx.png","Getx",!1,!1,!0,null)
 B.S0=new A.d9("assets/provider.png","Provider",!1,!1,!0,null)
 B.KR=A.a(s([B.S6,B.Si,B.Sb,B.Sf,B.S_,B.Sg,B.S3,B.S7,B.Sa,B.Sh,B.S1,B.S5,B.S8,B.Sc,B.S2,B.Sd,B.Sj,B.S9,B.Se,B.S4,B.S0]),t.p)
-B.ZK=new A.Ec(B.KR,null)
+B.ZJ=new A.Ec(B.KR,null)
+B.Pt=new A.fF("https://play-lh.googleusercontent.com/xpF8JkKuR2pUKXVKcyLJ20jr3-y_z54QA28aKe6t1lIQPLia8mGF5bXTk9iOjuHS_bE=w480-h960-rw","Tabby - AI Bookkeeper","https://play.google.com/store/apps/details?id=com.usetabby.app","https://apps.apple.com/us/app/tabby-ai-bookkeeper/id6743497417",null,null)
+B.Pw=new A.fF("https://play-lh.googleusercontent.com/4qiylGNgVdCTVqzJItOS3Nj52r23OXgX0evLXI7Fx_BAspNpe356RC0MXB6ef0veHTc=w480-h960-rw","Smart Sohay","https://play.google.com/store/apps/details?id=com.smartsohay.education",null,null,null)
+B.Ps=new A.fF("https://play-lh.googleusercontent.com/07fxFTaHE3m-2-4dAKJEDSCPvh770ZBJgDJO9B8ieYI0E-wjS_z_y7vFzLQxobBG4jA-=w240-h480-rw","Muslim Minds","https://play.google.com/store/apps/details?id=com.martechhouse.salahbd",null,"https://apkpure.net/ramadan-bd-2023/com.martechhouse.salahbd",null)
+B.Pu=new A.fF("https://play-lh.googleusercontent.com/peKaWiLMPyQrbMeSKhYX7Y23hxwFaNwA7-0fJz7iJcTQZ3oXnHfLMPNGb_lUUpE1kfw5=w480-h960-rw","ORCA Marine","https://play.google.com/store/apps/details?id=com.nodesdigitalbd.orcamarine",null,"https://apkpure.net/orca-marine/com.nodesdigitalbd.orcamarine",null)
+B.Pv=new A.fF("https://play-lh.googleusercontent.com/BcVtmhXzsFik9R-J3qwa58M67U0NLWeQARURpDxzfzUlXoAswCR2GPewXaig9B6biA=w480-h960-rw","We Telly-BD","https://play.google.com/store/apps/details?id=org.wetelly.wetelly","https://apps.apple.com/us/app/we-telly-bd/id6466303189",null,null)
+B.Pq=new A.fF("https://play-lh.googleusercontent.com/mY2r0_alAV1sIIaSkQn-_wsPBpyZsEtC1jjTmZWpb_PjuLq_Ior1yhDcUs7J0YSOOpYh=w480-h960-rw","Agritech","https://play.google.com/store/apps/details?id=com.nodesdigitalbd.agritech",null,"https://apkpure.net/agritech/com.nodesdigitalbd.agritech",null)
+B.Py=new A.fF("https://play-lh.googleusercontent.com/9BiAJdmRgWvbkZmDxp20FojPLHDOy0SyoJPPqYNoy4NcWMLVGCf2TuyKRW-aMr5xhrHs=w480-h960-rw","Rakhsaani",null,"https://apps.apple.com/sa/app/rakhsaani/id1665444120","https://apkpure.net/rakhsaani/org.rakhsaani.app",null)
+B.Pp=new A.fF("https://play-lh.googleusercontent.com/JDCXkDuZEqnm2kZgc_UGaUeMS9CXCWJY2RGr2obpW4e4GdctnA8aqzbh87os63-2codG=w240-h480-rw","JobXprss",null,null,"https://apkpure.net/jobxprss/com.ishraak.jobxprss",null)
+B.Pr=new A.fF("https://image.winudf.com/v2/image1/Y29tLmlzaHJhYWsuc2tpbGx4cHJzc19pY29uXzE2MzIxMDEzODhfMDY4/icon.webp?w=280&fakeurl=1&type=.webp","SkillXprss",null,null,"https://apkpure.net/skillxprss/com.ishraak.skillxprss",null)
+B.Pz=new A.fF("https://image.winudf.com/v2/image1/Y29tLmFtYXJpc2Nob29sLmFtYXJpc2Nob29sX2ljb25fMTY2NDI4NTM1Ml8wMjg/icon.webp?w=280&fakeurl=1&type=.webp","Amar iSchool",null,null,"https://apkpure.net/amar-ischool/com.amarischool.amarischool",null)
+B.Px=new A.fF("https://play-lh.googleusercontent.com/ziZdh_-IycQFxqlvdrlXC7y9o3YERbExHjIKsOCWzg_FBh5FkCIb2W3H0nbPBhFE0Q=w240-h480-rw","PicScanner - PDF Maker","https://play.google.com/store/apps/details?id=ltd.onesoft.pic_scanner_app",null,null,null)
+B.JW=A.a(s([B.Pt,B.Pw,B.Ps,B.Pu,B.Pv,B.Pq,B.Py,B.Pp,B.Pr,B.Pz,B.Px]),t.p)
+B.ZK=new A.Ec(B.JW,null)
 B.ZL=new A.d2("'",0,"SINGLE_QUOTE")
 B.ZM=new A.m7(1,"CDATA")
 B.ZN=new A.m7(10,"PROCESSING")

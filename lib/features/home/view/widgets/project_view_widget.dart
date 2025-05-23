@@ -46,7 +46,7 @@ class ProjectViewWidget extends StatelessWidget {
                     ProjectCartWidget(
                       iconPath:
                           'https://play-lh.googleusercontent.com/4qiylGNgVdCTVqzJItOS3Nj52r23OXgX0evLXI7Fx_BAspNpe356RC0MXB6ef0veHTc=w480-h960-rw',
-                      title: 'Tabby - AI Bookkeeper',
+                      title: 'Smart Sohay',
                       isSvg: false,
                       playStoreLink:
                           'https://play.google.com/store/apps/details?id=com.smartsohay.education',
