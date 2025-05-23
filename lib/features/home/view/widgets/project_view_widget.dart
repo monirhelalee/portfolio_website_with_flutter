@@ -35,6 +35,24 @@ class ProjectViewWidget extends StatelessWidget {
                   children: [
                     ProjectCartWidget(
                       iconPath:
+                          'https://play-lh.googleusercontent.com/xpF8JkKuR2pUKXVKcyLJ20jr3-y_z54QA28aKe6t1lIQPLia8mGF5bXTk9iOjuHS_bE=w480-h960-rw',
+                      title: 'Tabby - AI Bookkeeper',
+                      isSvg: false,
+                      playStoreLink:
+                          'https://play.google.com/store/apps/details?id=com.usetabby.app',
+                      appStoreLink:
+                          'https://apps.apple.com/us/app/tabby-ai-bookkeeper/id6743497417',
+                    ),
+                    ProjectCartWidget(
+                      iconPath:
+                          'https://play-lh.googleusercontent.com/4qiylGNgVdCTVqzJItOS3Nj52r23OXgX0evLXI7Fx_BAspNpe356RC0MXB6ef0veHTc=w480-h960-rw',
+                      title: 'Tabby - AI Bookkeeper',
+                      isSvg: false,
+                      playStoreLink:
+                          'https://play.google.com/store/apps/details?id=com.smartsohay.education',
+                    ),
+                    ProjectCartWidget(
+                      iconPath:
                           'https://play-lh.googleusercontent.com/07fxFTaHE3m-2-4dAKJEDSCPvh770ZBJgDJO9B8ieYI0E-wjS_z_y7vFzLQxobBG4jA-=w240-h480-rw',
                       title: 'Muslim Minds',
                       isSvg: false,
