@@ -151,7 +151,7 @@ class ProjectViewWidget extends StatelessWidget {
                     ),
                     ProjectCartWidget(
                       iconPath:
-                          'https://github.com/monirhelalee/portfolio_website_with_flutter/blob/master/assets/labook.svg',
+                          'https://raw.githubusercontent.com/monirhelalee/portfolio_website_with_flutter/c6f9963f56253576b5f2deeb1fb7a81a70b122a1/assets/labook.svg',
                       title: 'Labook',
                       isSvg: true,
                       apkLink:
