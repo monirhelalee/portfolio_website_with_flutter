@@ -149,6 +149,14 @@ class ProjectViewWidget extends StatelessWidget {
                       // appStoreLink:
                       //     'https://apps.apple.com/in/app/jobxprss/id1528878611',
                     ),
+                    ProjectCartWidget(
+                      iconPath: 'assets/labook.svg',
+                      title: 'Labook',
+                      isSvg: true,
+                      isLink: false,
+                      apkLink:
+                          'https://apkcombo.com/ar/labook-employee/com.labookempl.app/',
+                    ),
                   ],
                 ),
               ),
