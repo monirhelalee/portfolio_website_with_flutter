@@ -152,10 +152,18 @@ class ProjectViewWidget extends StatelessWidget {
                     ProjectCartWidget(
                       iconPath:
                           'https://raw.githubusercontent.com/monirhelalee/portfolio_website_with_flutter/c6f9963f56253576b5f2deeb1fb7a81a70b122a1/assets/labook.svg',
-                      title: 'Labook',
+                      title: 'Labook Employee',
                       isSvg: true,
                       apkLink:
                           'https://apkcombo.com/ar/labook-employee/com.labookempl.app/',
+                    ),
+                    ProjectCartWidget(
+                      iconPath:
+                          'https://raw.githubusercontent.com/monirhelalee/portfolio_website_with_flutter/c6f9963f56253576b5f2deeb1fb7a81a70b122a1/assets/labook.svg',
+                      title: 'Labook Asistencia de Empleados',
+                      isSvg: true,
+                      apkLink:
+                          'https://apkcombo.com/ar/labook-asistencia-de-empleados/com.labook.app/',
                     ),
                   ],
                 ),
