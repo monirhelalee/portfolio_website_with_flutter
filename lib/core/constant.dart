@@ -5,5 +5,5 @@ class Constant {
   static const String aboutMeShort =
       'Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology';
   static const String resumeDownloadLink =
-      'https://drive.google.com/file/d/1ph0Grw7wFVxM5w3LMFUaoa3MTh-qlIHK/view?usp=sharing';
+      'https://drive.google.com/file/d/14OyNsdPK1GRJd1y08_6jGgXP_RRyxJSJ/view?usp=sharing';
 }
