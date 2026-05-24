@@ -117,7 +117,7 @@ class HomeViewWidget extends StatelessWidget {
 
   Widget _flutterDev(context) {
     return SelectableText(
-      "Software Engineer",
+      "Senior Software Engineer",
       style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontSize: 28,
             color: Colors.white,
