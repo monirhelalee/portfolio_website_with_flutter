@@ -76,6 +76,9 @@ fi
 echo "==> Fetching latest changes from $REMOTE..."
 git fetch "$REMOTE"
 
+echo "==> Pulling latest changes from $REMOTE/$BRANCH..."
+git pull "$REMOTE" "$BRANCH" --rebase --autostash
+
 echo "==> Cleaning Flutter build cache..."
 flutter clean
 
