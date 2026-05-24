@@ -18,6 +18,7 @@ dependencies:
   animated_text_kit: ^4.2.3
   scroll_pos: ^0.5.0
   lecle_bubble_timeline: ^0.0.1+1
+  http: ^1.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
