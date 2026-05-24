@@ -73,6 +73,9 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
+echo "==> Fetching latest changes from $REMOTE..."
+git fetch "$REMOTE"
+
 echo "==> Cleaning Flutter build cache..."
 flutter clean
 
