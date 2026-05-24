@@ -79,17 +79,8 @@ flutter clean
 echo "==> Building Flutter web (release)..."
 flutter build web --release
 
-echo "==> Staging source files and web build output..."
-git add \
-  lib/ \
-  web/ \
-  assets/ \
-  pubspec.yaml \
-  pubspec.lock \
-  package.json \
-  vercel.json \
-  .nvmrc \
-  build/web/
+echo "==> Staging all changes..."
+git add .
 
 if git diff --cached --quiet; then
   echo "Nothing to commit. Web build is already up to date."
