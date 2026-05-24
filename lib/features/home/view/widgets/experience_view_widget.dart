@@ -189,8 +189,7 @@ class ExperienceViewWidget extends StatelessWidget {
             ),
             TimelineItem(
               title: 'East West University',
-              subtitle:
-                  'Teaching Assistant (Dept. of Electronics and Communications Engineering)',
+              subtitle: 'Teaching Assistant (Dept. of ECE)',
               icon: const Icon(
                 Icons.work_history_rounded,
                 color: Colors.black,
