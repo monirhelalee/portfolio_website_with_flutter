@@ -1,0 +1,53 @@
+{
+  "experiences": [
+    {
+      "company": "WingsFin Limited",
+      "role": "Senior Software Engineer (Flutter)",
+      "startYear": 2026,
+      "startMonth": 1,
+      "isPresent": true,
+      "bubbleColor": "green",
+      "isCurrent": true
+    },
+    {
+      "company": "WingsFin Limited",
+      "role": "Software Engineer (Flutter)",
+      "startYear": 2023,
+      "startMonth": 9,
+      "endYear": 2026,
+      "endMonth": 1,
+      "bubbleColor": "lightGreen",
+      "isCurrent": false
+    },
+    {
+      "company": "NDL",
+      "role": "Software Engineer (Flutter)",
+      "startYear": 2022,
+      "startMonth": 8,
+      "endYear": 2023,
+      "endMonth": 8,
+      "bubbleColor": "yellow",
+      "isCurrent": false
+    },
+    {
+      "company": "Ishraak Solutions Limited",
+      "role": "Junior Flutter Developer",
+      "startYear": 2020,
+      "startMonth": 12,
+      "endYear": 2022,
+      "endMonth": 6,
+      "bubbleColor": "purple",
+      "isCurrent": false
+    },
+    {
+      "company": "East West University",
+      "role": "Teaching Assistant (Dept. of ECE)",
+      "startYear": 2018,
+      "startMonth": 5,
+      "endYear": 2020,
+      "endMonth": 4,
+      "bubbleColor": "blueAccent",
+      "isCurrent": false
+    }
+  ]
+}
