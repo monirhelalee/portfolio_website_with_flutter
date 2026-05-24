@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:my_portfolio_flutter/core/constant.dart';
 
 class ExperienceItem {
   ExperienceItem({
@@ -73,37 +71,7 @@ class ExperienceRepository {
   static const _assetPath = 'assets/experience.json';
 
   static Future<List<ExperienceItem>> loadExperiences() async {
-    try {
-      final jsonString = await _fetchRemoteJson();
-      return _parseExperiences(jsonString);
-    } catch (error, stackTrace) {
-      debugPrint('Remote experience load failed: $error');
-      debugPrintStack(stackTrace: stackTrace);
-
-      final jsonString = await rootBundle.loadString(_assetPath);
-      return _parseExperiences(jsonString);
-    }
-  }
-
-  static Future<String> _fetchRemoteJson() async {
-    final uri = Uri.parse(Constant.experienceJsonUrl).replace(
-      queryParameters: {
-        't': DateTime.now().millisecondsSinceEpoch.toString(),
-      },
-    );
-
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
-
-    if (response.statusCode != 200) {
-      throw Exception(
-        'Failed to load experience data (${response.statusCode})',
-      );
-    }
-
-    return response.body;
-  }
-
-  static List<ExperienceItem> _parseExperiences(String jsonString) {
+    final jsonString = await rootBundle.loadString(_assetPath);
     final jsonMap = json.decode(jsonString) as Map<String, dynamic>;
     final experiences = jsonMap['experiences'] as List<dynamic>;
 

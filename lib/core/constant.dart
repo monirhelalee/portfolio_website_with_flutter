@@ -6,6 +6,4 @@ class Constant {
       'Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology';
   static const String resumeDownloadLink =
       'https://drive.google.com/file/d/14OyNsdPK1GRJd1y08_6jGgXP_RRyxJSJ/view?usp=sharing';
-  static const String experienceJsonUrl =
-      'https://raw.githubusercontent.com/monirhelalee/portfolio_website_with_flutter/master/assets/experience.json';
 }
