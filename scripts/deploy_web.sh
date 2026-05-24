@@ -73,6 +73,9 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
+echo "==> Cleaning Flutter build cache..."
+flutter clean
+
 echo "==> Building Flutter web (release)..."
 flutter build web --release
 
@@ -83,6 +86,9 @@ git add \
   assets/ \
   pubspec.yaml \
   pubspec.lock \
+  package.json \
+  vercel.json \
+  .nvmrc \
   build/web/
 
 if git diff --cached --quiet; then
