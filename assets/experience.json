@@ -48,16 +48,6 @@
       "endMonth": 4,
       "bubbleColor": "blueAccent",
       "isCurrent": false
-    },
-    {
-      "company": "East West University",
-      "role": "Under Grade Teaching Assistant (Dept. of ECE)",
-      "startYear": 2018,
-      "startMonth": 5,
-      "endYear": 2020,
-      "endMonth": 4,
-      "bubbleColor": "blueAccent",
-      "isCurrent": false
     }
   ]
 }
