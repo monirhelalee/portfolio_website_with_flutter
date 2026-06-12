@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
@@ -26,6 +25,13 @@ class ProjectCartWidget extends StatefulWidget {
   final bool isSvg;
   final bool isLink;
 
+  static const _playStoreIcon =
+      'https://img.icons8.com/fluency/96/google-play-store-new.png';
+  static const _appStoreIcon =
+      'https://img.icons8.com/fluency/144/apple-app-store.png';
+  static const _apkIcon =
+      'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png';
+
   @override
   State<ProjectCartWidget> createState() => _ProjectCartWidgetState();
 }
@@ -35,10 +41,6 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final showStores = _hovered ||
-        defaultTargetPlatform == TargetPlatform.iOS ||
-        defaultTargetPlatform == TargetPlatform.android;
-
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
@@ -81,38 +83,40 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                   ),
             ),
             const Spacer(),
-            AnimatedOpacity(
-              opacity: showStores ? 1 : 0,
-              duration: const Duration(milliseconds: 150),
-              child: Row(
+            if (_hasStoreLinks)
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (widget.playStoreLink != null)
                     _StoreButton(
                       url: widget.playStoreLink!,
-                      iconUrl:
-                          'https://img.icons8.com/fluency/96/google-play-store-new.png',
+                      iconUrl: ProjectCartWidget._playStoreIcon,
+                      tooltip: 'Play Store',
                     ),
                   if (widget.appStoreLink != null)
                     _StoreButton(
                       url: widget.appStoreLink!,
-                      iconUrl:
-                          'https://img.icons8.com/fluency/144/apple-app-store.png',
+                      iconUrl: ProjectCartWidget._appStoreIcon,
+                      tooltip: 'App Store',
                     ),
                   if (widget.apkLink != null)
                     _StoreButton(
                       url: widget.apkLink!,
-                      iconUrl:
-                          'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png',
+                      iconUrl: ProjectCartWidget._apkIcon,
+                      tooltip: 'APK',
                     ),
                 ],
               ),
-            ),
           ],
         ),
       ),
     );
   }
+
+  bool get _hasStoreLinks =>
+      widget.playStoreLink != null ||
+      widget.appStoreLink != null ||
+      widget.apkLink != null;
 
   Widget _buildIcon(double size) {
     if (widget.isSvg) {
@@ -141,10 +145,15 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
 }
 
 class _StoreButton extends StatelessWidget {
-  const _StoreButton({required this.url, required this.iconUrl});
+  const _StoreButton({
+    required this.url,
+    required this.iconUrl,
+    required this.tooltip,
+  });
 
   final String url;
   final String iconUrl;
+  final String tooltip;
 
   @override
   Widget build(BuildContext context) {
@@ -155,8 +164,8 @@ class _StoreButton extends StatelessWidget {
           await launchUrl(uri);
         }
       },
-      icon: Image.network(iconUrl, width: 28, height: 28),
-      tooltip: 'Open link',
+      tooltip: tooltip,
+      icon: Image.network(iconUrl, width: 26, height: 26),
     );
   }
 }
