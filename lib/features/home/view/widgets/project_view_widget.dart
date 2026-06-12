@@ -25,7 +25,7 @@ class ProjectViewWidget extends StatelessWidget {
               const SectionHeaderWidget(
                 title: 'Projects',
                 subtitle:
-                    'Mobile apps I have helped build and ship to production.',
+                    'Mobile and web apps I have helped build and ship to production.',
               ),
               const SizedBox(height: AppSpacing.lg),
               const _ProjectGrid(),
@@ -159,6 +159,14 @@ class _ProjectGrid extends StatelessWidget {
           isSvg: true,
           apkLink:
               'https://apkcombo.com/ar/labook-asistencia-de-empleados/com.labook.app/',
+        ),
+        ProjectCartWidget(
+          iconPath: Constant.helalePharmaLogo,
+          title: 'Helale Pharma',
+          isSvg: false,
+          isLink: false,
+          isAsset: true,
+          showWebIcon: true,
         ),
       ],
     );

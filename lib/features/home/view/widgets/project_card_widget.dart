@@ -14,6 +14,9 @@ class ProjectCartWidget extends StatefulWidget {
     this.appStoreLink,
     this.githubLink,
     this.apkLink,
+    this.webLink,
+    this.showWebIcon = false,
+    this.isAsset = false,
   });
 
   final String iconPath;
@@ -22,8 +25,11 @@ class ProjectCartWidget extends StatefulWidget {
   final String? appStoreLink;
   final String? githubLink;
   final String? apkLink;
+  final String? webLink;
+  final bool showWebIcon;
   final bool isSvg;
   final bool isLink;
+  final bool isAsset;
 
   static const _playStoreIcon =
       'https://img.icons8.com/fluency/96/google-play-store-new.png';
@@ -31,6 +37,8 @@ class ProjectCartWidget extends StatefulWidget {
       'https://img.icons8.com/fluency/144/apple-app-store.png';
   static const _apkIcon =
       'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png';
+  static const _webIcon =
+      'https://img.icons8.com/color/144/internet--v1.png';
 
   @override
   State<ProjectCartWidget> createState() => _ProjectCartWidgetState();
@@ -105,6 +113,12 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                       iconUrl: ProjectCartWidget._apkIcon,
                       tooltip: 'APK',
                     ),
+                  if (widget.webLink != null || widget.showWebIcon)
+                    _StoreButton(
+                      url: widget.webLink,
+                      iconUrl: ProjectCartWidget._webIcon,
+                      tooltip: 'Web',
+                    ),
                 ],
               ),
           ],
@@ -116,9 +130,20 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
   bool get _hasStoreLinks =>
       widget.playStoreLink != null ||
       widget.appStoreLink != null ||
-      widget.apkLink != null;
+      widget.apkLink != null ||
+      widget.webLink != null ||
+      widget.showWebIcon;
 
   Widget _buildIcon(double size) {
+    if (widget.isAsset) {
+      return Image.asset(
+        widget.iconPath,
+        height: size,
+        width: size,
+        fit: BoxFit.contain,
+      );
+    }
+
     if (widget.isSvg) {
       return widget.isLink
           ? SvgPicture.network(
@@ -151,19 +176,23 @@ class _StoreButton extends StatelessWidget {
     required this.tooltip,
   });
 
-  final String url;
+  final String? url;
   final String iconUrl;
   final String tooltip;
+
+  bool get _isEnabled => url != null && url!.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () async {
-        final uri = Uri.parse(url);
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri);
-        }
-      },
+      onPressed: _isEnabled
+          ? () async {
+              final uri = Uri.parse(url!);
+              if (await canLaunchUrl(uri)) {
+                await launchUrl(uri);
+              }
+            }
+          : null,
       tooltip: tooltip,
       icon: Image.network(iconUrl, width: 26, height: 26),
     );
