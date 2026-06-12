@@ -43,13 +43,6 @@ class SkillsWidget extends StatelessWidget {
           isLink: false,
           isAsset: true,
         ),
-        _SkillData(
-          iconPath: 'assets/hive.png',
-          title: 'Hive',
-          isSvg: false,
-          isLink: false,
-          isAsset: true,
-        ),
       ],
     ),
     (
@@ -75,10 +68,17 @@ class SkillsWidget extends StatelessWidget {
           iconPath: 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg',
           title: 'SQLite',
         ),
+        _SkillData(
+          iconPath: 'assets/hive.png',
+          title: 'Hive',
+          isSvg: false,
+          isLink: false,
+          isAsset: true,
+        ),
       ],
     ),
     (
-      title: 'Tools',
+      title: 'Tools & IDE',
       skills: [
         _SkillData(
           iconPath:
@@ -102,6 +102,12 @@ class SkillsWidget extends StatelessWidget {
           title: 'VS Code',
           isSvg: false,
         ),
+        _SkillData(
+          iconPath:
+              'https://img.icons8.com/color/144/android-studio--v2.png',
+          title: 'Android Studio',
+          isSvg: false,
+        ),
       ],
     ),
     (
@@ -111,12 +117,6 @@ class SkillsWidget extends StatelessWidget {
           iconPath:
               'https://img.icons8.com/external-those-icons-flat-those-icons/96/external-Android-logos-and-brands-those-icons-flat-those-icons.png',
           title: 'Android',
-          isSvg: false,
-        ),
-        _SkillData(
-          iconPath:
-              'https://img.icons8.com/color/144/android-studio--v2.png',
-          title: 'Android Studio',
           isSvg: false,
         ),
         _SkillData(
@@ -134,6 +134,11 @@ class SkillsWidget extends StatelessWidget {
           iconPath:
               'https://img.icons8.com/fluency/144/apple-app-store.png',
           title: 'App Store',
+          isSvg: false,
+        ),
+        _SkillData(
+          iconPath: 'https://img.icons8.com/color/144/internet--v1.png',
+          title: 'Web',
           isSvg: false,
         ),
       ],
