@@ -1,5 +1,5 @@
 export 'about_view_widget.dart';
-export 'blog_view_widget.dart';
+export 'contact_view_widget.dart';
 export 'column_menu_widget.dart';
 export 'experience_view_widget.dart';
 export 'footer_view_widget.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCartWidget extends StatefulWidget {
@@ -30,184 +31,132 @@ class ProjectCartWidget extends StatefulWidget {
 }
 
 class _ProjectCartWidgetState extends State<ProjectCartWidget> {
-  double deskHeight = 200;
-  double iconSizeDesk = 100;
-  double titleSizeDesk = 16;
-  double storeHeight = 0;
-  double scale = 1;
+  bool _hovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      onHover: (v) {
-        if (v) {
-          storeHeight = 30;
-          scale = 1.1;
-        } else {
-          storeHeight = 0;
-          scale = 1;
-        }
-        setState(() {});
-      },
-      hoverColor: Colors.transparent,
-      child: Transform.scale(
-        scale: scale,
-        child: Container(
-          height: deskHeight,
-          width: deskHeight,
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.blueGrey.shade900,
-            borderRadius: BorderRadius.circular(12),
+    final showStores = _hovered ||
+        defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.android;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        height: 220,
+        width: 200,
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: _hovered ? AppColors.surfaceElevated : AppColors.surface,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: _hovered
+                ? AppColors.accent.withValues(alpha: 0.4)
+                : AppColors.border,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              widget.isSvg
-                  ? (widget.isLink
-                      ? SvgPicture.network(
-                          widget.iconPath,
-                          height: iconSizeDesk,
-                          width: iconSizeDesk,
-                          fit: BoxFit.fill,
-                        )
-                      : SvgPicture.asset(
-                          widget.iconPath,
-                          height: iconSizeDesk,
-                          width: iconSizeDesk,
-                          fit: BoxFit.fill,
-                        ))
-                  : Image.network(
-                      widget.iconPath,
-                      height: iconSizeDesk,
-                      width: iconSizeDesk,
-                      fit: BoxFit.fill,
-                    ),
-              Text(
-                widget.title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontSize: titleSizeDesk,
-                      color: Colors.white,
-                    ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          boxShadow: _hovered
+              ? [
+                  BoxShadow(
+                    color: AppColors.accent.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                  ),
+                ]
+              : null,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildIcon(72),
+            const SizedBox(height: 12),
+            Text(
+              widget.title,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    fontSize: 14,
+                    color: AppColors.textPrimary,
+                  ),
+            ),
+            const Spacer(),
+            AnimatedOpacity(
+              opacity: showStores ? 1 : 0,
+              duration: const Duration(milliseconds: 150),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (widget.githubLink != null)
-                    InkWell(
-                      onTap: () async {
-                        String link = widget.playStoreLink ?? '';
-
-                        if (await canLaunchUrl(Uri.parse(link))) {
-                          await launchUrl(Uri.parse(link));
-                        } else {
-                          throw 'Could not launch $link';
-                        }
-                      },
-                      child: AnimatedContainer(
-                        height: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        width: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        duration: const Duration(milliseconds: 100),
-                        child: Image.network(
-                          'https://img.icons8.com/?size=100&id=80410&format=png&color=000000',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
                   if (widget.playStoreLink != null)
-                    InkWell(
-                      onTap: () async {
-                        String link = widget.playStoreLink ?? '';
-
-                        if (await canLaunchUrl(Uri.parse(link))) {
-                          await launchUrl(Uri.parse(link));
-                        } else {
-                          throw 'Could not launch $link';
-                        }
-                      },
-                      child: AnimatedContainer(
-                        height: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        width: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        duration: const Duration(milliseconds: 100),
-                        child: Image.network(
+                    _StoreButton(
+                      url: widget.playStoreLink!,
+                      iconUrl:
                           'https://img.icons8.com/fluency/96/google-play-store-new.png',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
                     ),
                   if (widget.appStoreLink != null)
-                    InkWell(
-                      onTap: () async {
-                        String link = widget.appStoreLink ?? '';
-
-                        if (await canLaunchUrl(Uri.parse(link))) {
-                          await launchUrl(Uri.parse(link));
-                        } else {
-                          throw 'Could not launch $link';
-                        }
-                      },
-                      child: AnimatedContainer(
-                        height: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        width: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        duration: const Duration(milliseconds: 100),
-                        child: Image.network(
+                    _StoreButton(
+                      url: widget.appStoreLink!,
+                      iconUrl:
                           'https://img.icons8.com/fluency/144/apple-app-store.png',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
                     ),
                   if (widget.apkLink != null)
-                    InkWell(
-                      onTap: () async {
-                        String link = widget.apkLink ?? '';
-
-                        if (await canLaunchUrl(Uri.parse(link))) {
-                          await launchUrl(Uri.parse(link));
-                        } else {
-                          throw 'Could not launch $link';
-                        }
-                      },
-                      child: AnimatedContainer(
-                        height: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        width: (defaultTargetPlatform == TargetPlatform.iOS ||
-                                defaultTargetPlatform == TargetPlatform.android)
-                            ? 30
-                            : storeHeight,
-                        duration: const Duration(milliseconds: 100),
-                        child: Image.network(
+                    _StoreButton(
+                      url: widget.apkLink!,
+                      iconUrl:
                           'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
                     ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  Widget _buildIcon(double size) {
+    if (widget.isSvg) {
+      return widget.isLink
+          ? SvgPicture.network(
+              widget.iconPath,
+              height: size,
+              width: size,
+            )
+          : SvgPicture.asset(
+              widget.iconPath,
+              height: size,
+              width: size,
+            );
+    }
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.network(
+        widget.iconPath,
+        height: size,
+        width: size,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+class _StoreButton extends StatelessWidget {
+  const _StoreButton({required this.url, required this.iconUrl});
+
+  final String url;
+  final String iconUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () async {
+        final uri = Uri.parse(url);
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
+        }
+      },
+      icon: Image.network(iconUrl, width: 28, height: 28),
+      tooltip: 'Open link',
     );
   }
 }

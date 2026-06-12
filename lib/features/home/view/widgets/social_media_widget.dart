@@ -1,148 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SocialMediaWidget extends StatefulWidget {
+class SocialMediaWidget extends StatelessWidget {
   const SocialMediaWidget({super.key});
 
   @override
-  State<SocialMediaWidget> createState() => _SocialMediaWidgetState();
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 12,
+      runSpacing: 12,
+      children: [
+        _SocialLink(
+          onTap: () => _launch(Uri(
+            scheme: 'mailto',
+            path: 'mdmonirhelale@gmail.com',
+          )),
+          iconUrl:
+              'https://img.icons8.com/external-others-inmotus-design/67/external-Email-round-icons-others-inmotus-design.png',
+        ),
+        _SocialLink(
+          onTap: () => _launch(Uri.parse('https://www.facebook.com/m.h.helalee')),
+          iconUrl: 'https://img.icons8.com/fluency/96/facebook-circled.png',
+        ),
+        _SocialLink(
+          onTap: () =>
+              _launch(Uri.parse('https://www.instagram.com/m.h.helalee/')),
+          iconUrl: 'https://img.icons8.com/fluency/96/instagram-new.png',
+        ),
+        _SocialLink(
+          onTap: () =>
+              _launch(Uri.parse('https://www.linkedin.com/in/helalee/')),
+          iconUrl: 'https://img.icons8.com/fluency/96/linkedin.png',
+        ),
+        _SocialLink(
+          onTap: () =>
+              _launch(Uri.parse('https://github.com/monirhelalee')),
+          iconUrl: 'https://img.icons8.com/sf-black-filled/128/github.png',
+        ),
+        _SocialLink(
+          onTap: () =>
+              _launch(Uri.parse('https://twitter.com/MonirHelale')),
+          iconUrl: 'https://img.icons8.com/ios-glyphs/90/twitterx--v2.png',
+        ),
+        _SocialLink(
+          onTap: () => _launch(Uri.parse('https://wa.me/+8801786416417')),
+          iconUrl: 'https://img.icons8.com/color/96/whatsapp--v1.png',
+        ),
+      ],
+    );
+  }
+
+  Future<void> _launch(Uri uri) async {
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
 }
 
-class _SocialMediaWidgetState extends State<SocialMediaWidget> {
+class _SocialLink extends StatefulWidget {
+  const _SocialLink({required this.onTap, required this.iconUrl});
+
+  final VoidCallback onTap;
+  final String iconUrl;
+
+  @override
+  State<_SocialLink> createState() => _SocialLinkState();
+}
+
+class _SocialLinkState extends State<_SocialLink> {
+  bool _hovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 44,
-      width: 105 + (28 * 7),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SocialIconWidget(
-            onTap: () async {
-              final uri = Uri(
-                scheme: 'mailto',
-                path: 'mdmonirhelale@gmail.com',
-                queryParameters: {'subject': '', 'body': ''},
-              );
-
-              if (await canLaunchUrl(uri)) {
-                await launchUrl(uri);
-              } else {
-                // Show an error message to the user
-              }
-            },
-            name: 'email',
-            isNetworkImage: true,
-            url:
-                'https://img.icons8.com/external-others-inmotus-design/67/external-Email-round-icons-others-inmotus-design.png',
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: InkWell(
+        onTap: widget.onTap,
+        borderRadius: BorderRadius.circular(10),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 150),
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: _hovered
+                ? AppColors.accent.withValues(alpha: 0.1)
+                : AppColors.background,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: _hovered ? AppColors.accent.withValues(alpha: 0.3) : AppColors.border,
+            ),
           ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              String facebookProfileLink =
-                  'https://www.facebook.com/m.h.helalee';
-
-              if (await canLaunchUrl(Uri.parse(facebookProfileLink))) {
-                await launchUrl(Uri.parse(facebookProfileLink));
-              } else {
-                throw 'Could not launch $facebookProfileLink';
-              }
-            },
-            name: 'facebook',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/fluency/96/facebook-circled.png',
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              String instagramProfileLink =
-                  'https://www.instagram.com/m.h.helalee/';
-
-              if (await canLaunchUrl(Uri.parse(instagramProfileLink))) {
-                await launchUrl(Uri.parse(instagramProfileLink));
-              } else {
-                throw 'Could not launch $instagramProfileLink';
-              }
-            },
-            name: 'instagram',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/fluency/96/instagram-new.png',
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              String linkedinProfileLink =
-                  'https://www.linkedin.com/in/helalee/';
-
-              if (await canLaunchUrl(Uri.parse(linkedinProfileLink))) {
-                await launchUrl(Uri.parse(linkedinProfileLink));
-              } else {
-                throw 'Could not launch $linkedinProfileLink';
-              }
-            },
-            name: 'linkedin',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/fluency/96/linkedin.png',
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              String githubProfileLink = 'https://github.com/monirhelalee';
-
-              if (await canLaunchUrl(Uri.parse(githubProfileLink))) {
-                await launchUrl(Uri.parse(githubProfileLink));
-              } else {
-                throw 'Could not launch $githubProfileLink';
-              }
-            },
-            name: 'github',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/sf-black-filled/128/github.png',
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              String xProfileLink = 'https://twitter.com/MonirHelale';
-
-              if (await canLaunchUrl(Uri.parse(xProfileLink))) {
-                await launchUrl(Uri.parse(xProfileLink));
-              } else {
-                throw 'Could not launch $xProfileLink';
-              }
-            },
-            name: 'x',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/ios-glyphs/90/twitterx--v2.png',
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          SocialIconWidget(
-            onTap: () async {
-              var contact = "+8801786416417";
-              var whatsappUrl = "https://wa.me/$contact";
-              if (await canLaunchUrl(Uri.parse(whatsappUrl))) {
-                await launchUrl(Uri.parse(whatsappUrl));
-              } else {
-                throw 'Could not launch $whatsappUrl';
-              }
-            },
-            name: 'whatsapp',
-            isNetworkImage: true,
-            url: 'https://img.icons8.com/color/96/whatsapp--v1.png',
-          ),
-        ],
+          child: Image.network(widget.iconUrl, width: 28, height: 28),
+        ),
       ),
     );
   }

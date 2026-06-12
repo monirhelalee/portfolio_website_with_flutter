@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio_flutter/core/expotrs.dart';
 
 class SkillCartWidget extends StatefulWidget {
   const SkillCartWidget({
@@ -22,76 +23,71 @@ class SkillCartWidget extends StatefulWidget {
 }
 
 class _SkillCartWidgetState extends State<SkillCartWidget> {
-  double deskHeight = 80;
-  double iconSizeDesk = 30;
-  double titleSizeDesk = 10;
-  double scale = 1;
+  bool _hovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      onHover: (v) {
-        if (v) {
-          scale = 1.2;
-        } else {
-          scale = 1;
-        }
-        setState(() {});
-      },
-      hoverColor: Colors.transparent,
-      child: Transform.scale(
-        scale: scale,
-        child: Container(
-          height: deskHeight,
-          width: deskHeight,
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.blueGrey.shade900,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              if (widget.isAsset)
-                Image.asset(
-                  widget.iconPath,
-                  height: iconSizeDesk,
-                  width: iconSizeDesk,
-                  fit: BoxFit.fill,
-                )
-              else
-                widget.isSvg
-                    ? (widget.isLink
-                        ? SvgPicture.network(
-                            widget.iconPath,
-                            height: iconSizeDesk,
-                            width: iconSizeDesk,
-                            fit: BoxFit.fill,
-                          )
-                        : SvgPicture.asset(
-                            widget.iconPath,
-                            height: iconSizeDesk,
-                            width: iconSizeDesk,
-                            fit: BoxFit.fill,
-                          ))
-                    : Image.network(
-                        widget.iconPath,
-                        height: iconSizeDesk,
-                        width: iconSizeDesk,
-                        fit: BoxFit.fill,
-                      ),
-              Text(
-                widget.title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontSize: titleSizeDesk,
-                      color: Colors.white,
-                    ),
-              ),
-            ],
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        height: 88,
+        width: 88,
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: _hovered
+              ? AppColors.accent.withValues(alpha: 0.08)
+              : AppColors.background,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: _hovered
+                ? AppColors.accent.withValues(alpha: 0.35)
+                : AppColors.border,
           ),
         ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildIcon(32),
+            const SizedBox(height: 6),
+            Text(
+              widget.title,
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 10,
+                    color: AppColors.textSecondary,
+                  ),
+            ),
+          ],
+        ),
       ),
+    );
+  }
+
+  Widget _buildIcon(double size) {
+    if (widget.isAsset) {
+      return Image.asset(
+        widget.iconPath,
+        height: size,
+        width: size,
+        fit: BoxFit.contain,
+      );
+    }
+
+    if (widget.isSvg) {
+      return widget.isLink
+          ? SvgPicture.network(widget.iconPath, height: size, width: size)
+          : SvgPicture.asset(widget.iconPath, height: size, width: size);
+    }
+
+    return Image.network(
+      widget.iconPath,
+      height: size,
+      width: size,
+      fit: BoxFit.contain,
     );
   }
 }

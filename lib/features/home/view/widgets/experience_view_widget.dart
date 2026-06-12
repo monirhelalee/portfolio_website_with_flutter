@@ -11,50 +11,62 @@ class ExperienceViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 48,
-        ),
-        _experience(context),
-        const PillShapeUnderTitleWidget(),
-        const SizedBox(
-          height: 12,
-        ),
-        FutureBuilder<List<ExperienceItem>>(
-          future: _experiencesFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Padding(
-                padding: EdgeInsets.all(24),
-                child: CircularProgressIndicator(),
-              );
-            }
+    final width = MediaQuery.sizeOf(context).width;
+    final padding = AppSpacing.sectionPadding(width);
 
-            if (snapshot.hasError || !snapshot.hasData) {
-              return const Padding(
-                padding: EdgeInsets.all(24),
-                child: Text(
-                  'Unable to load experience data.',
-                  style: TextStyle(color: Colors.white70),
-                ),
-              );
-            }
+    return Container(
+      width: double.infinity,
+      color: AppColors.surface,
+      padding: EdgeInsets.symmetric(
+        horizontal: padding,
+        vertical: AppSpacing.xl,
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: AppSpacing.contentMaxWidth(width)),
+          child: Column(
+            children: [
+              const SectionHeaderWidget(
+                title: 'Experience',
+                subtitle: 'A timeline of companies and roles I have worked with.',
+              ),
+              const SizedBox(height: AppSpacing.lg),
+              FutureBuilder<List<ExperienceItem>>(
+                future: _experiencesFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Padding(
+                      padding: EdgeInsets.all(AppSpacing.md),
+                      child: CircularProgressIndicator(
+                        color: AppColors.accent,
+                      ),
+                    );
+                  }
 
-            return BubbleTimeline(
-              bubbleSize: Responsive.isMobile(context) ? 80 : 100,
-              padding: const EdgeInsets.all(5),
-              dotSize: Responsive.isMobile(context) ? 20 : 30,
-              items: snapshot.data!
-                  .map((item) => _buildTimelineItem(context, item))
-                  .toList(),
-              stripColor: Colors.tealAccent,
-              dividerCircleColor: Colors.white,
-              spaceBetweenItems: Responsive.isMobile(context) ? 40 : 20,
-            );
-          },
+                  if (snapshot.hasError || !snapshot.hasData) {
+                    return Text(
+                      'Unable to load experience data.',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    );
+                  }
+
+                  return BubbleTimeline(
+                    bubbleSize: Responsive.isMobile(context) ? 80 : 100,
+                    padding: const EdgeInsets.all(5),
+                    dotSize: Responsive.isMobile(context) ? 20 : 30,
+                    items: snapshot.data!
+                        .map((item) => _buildTimelineItem(context, item))
+                        .toList(),
+                    stripColor: AppColors.accent,
+                    dividerCircleColor: AppColors.textPrimary,
+                    spaceBetweenItems: Responsive.isMobile(context) ? 40 : 20,
+                  );
+                },
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 
@@ -62,33 +74,23 @@ class ExperienceViewWidget extends StatelessWidget {
     return TimelineItem(
       title: item.company,
       subtitle: item.role,
-      icon: Icon(
-        item.icon,
-        color: Colors.black,
-      ),
+      icon: Icon(item.icon, color: AppColors.background),
       bubbleColor: item.color,
       description: item.periodLabel,
       titleStyle: TextStyle(
-        fontSize: Responsive.isMobile(context) ? 14 : 20,
+        fontSize: Responsive.isMobile(context) ? 14 : 18,
         fontWeight: FontWeight.w700,
+        color: AppColors.textPrimary,
       ),
       subtitleStyle: TextStyle(
-        fontSize: Responsive.isMobile(context) ? 12 : 16,
+        fontSize: Responsive.isMobile(context) ? 12 : 15,
         fontWeight: FontWeight.w500,
+        color: AppColors.textSecondary,
       ),
       descriptionStyle: TextStyle(
         fontSize: Responsive.isMobile(context) ? 10 : 12,
+        color: AppColors.textMuted,
       ),
-    );
-  }
-
-  Widget _experience(context) {
-    return Text(
-      'Experience',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 48,
-            color: Colors.white,
-          ),
     );
   }
 }

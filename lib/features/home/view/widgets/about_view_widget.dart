@@ -2,218 +2,98 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/skills_widget.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/social_media_widget.dart';
-import 'package:my_portfolio_flutter/features/home/view_model/home_view_model.dart';
 
 class AboutViewWidget extends StatelessWidget {
   const AboutViewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var homeVM = HomeViewModel.read(context);
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Responsive.isDesktop(context) || Responsive.isTablet(context)
-          ? Column(
-              children: [
-                _aboutMe(
-                  context,
-                ),
-                const PillShapeUnderTitleWidget(),
-                const SizedBox(
-                  height: 12,
-                ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width / 3,
-                  child: Text(
-                    Constant.aboutMeShort,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
+    final width = MediaQuery.sizeOf(context).width;
+    final padding = AppSpacing.sectionPadding(width);
+    final isWide = Responsive.isDesktop(context) || Responsive.isTablet(context);
+
+    return Container(
+      width: double.infinity,
+      color: AppColors.background,
+      padding: EdgeInsets.symmetric(
+        horizontal: padding,
+        vertical: AppSpacing.xl,
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: AppSpacing.contentMaxWidth(width)),
+          child: Column(
+            children: [
+              SectionHeaderWidget(
+                title: 'About Me',
+                subtitle: Constant.aboutMeShort,
+              ),
+              const SizedBox(height: AppSpacing.xl),
+              if (isWide)
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      children: [
-                        _getToKnowMe(context),
-                        const SizedBox(
-                          height: 24,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width / 3,
-                              child: Text(
-                                Constant.aboutMeLong,
-                                textAlign: TextAlign.left,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.copyWith(
-                                      fontSize: 18,
-                                      color: Colors.white60,
-                                    ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                            SizedBox(
-                              width: MediaQuery.sizeOf(context).width / 3,
-                              child: Text(
-                                'Feel free to Connect or Follow: ',
-                                textAlign: TextAlign.left,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.copyWith(
-                                      fontSize: 18,
-                                      color: Colors.white60,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                              ),
-                            ),
-                            const SocialMediaWidget(),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        _mySkills(context),
-                        const SizedBox(
-                          height: 12,
-                        ),
-                        SizedBox(
-                          width: MediaQuery.sizeOf(context).width / 2,
-                          child: const SkillsWidget(),
-                        ),
-                      ],
-                    ),
+                    Expanded(child: _aboutColumn(context)),
+                    const SizedBox(width: AppSpacing.lg),
+                    Expanded(child: _skillsColumn(context)),
                   ],
-                ),
+                )
+              else ...[
+                _aboutColumn(context),
+                const SizedBox(height: AppSpacing.lg),
+                _skillsColumn(context),
               ],
-            )
-          : Column(
-              children: [
-                _aboutMe(
-                  context,
-                ),
-                const PillShapeUnderTitleWidget(),
-                const SizedBox(
-                  height: 12,
-                ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width,
-                  child: Text(
-                    Constant.aboutMeShort,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 80,
-                ),
-                Column(
-                  children: [
-                    _getToKnowMe(context),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.sizeOf(context).width,
-                          child: Text(
-                            Constant.aboutMeLong,
-                            textAlign: TextAlign.left,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      fontSize: 18,
-                                      color: Colors.white60,
-                                    ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 12,
-                        ),
-                        SizedBox(
-                          width: MediaQuery.sizeOf(context).width,
-                          child: Text(
-                            'Feel free to Connect or Follow: ',
-                            textAlign: TextAlign.left,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      fontSize: 18,
-                                      color: Colors.white60,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                          ),
-                        ),
-                        const SocialMediaWidget(),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                Column(
-                  children: [
-                    _mySkills(context),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width,
-                      child: const SkillsWidget(),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
-  Widget _aboutMe(context) {
-    return Text(
-      'About Me',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 48,
-            color: Colors.white,
+  Widget _aboutColumn(BuildContext context) {
+    return GlassCardWidget(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Get to know me',
+            style: Theme.of(context).textTheme.titleLarge,
           ),
+          const SizedBox(height: AppSpacing.sm),
+          Text(
+            Constant.aboutMeLong,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          const SizedBox(height: AppSpacing.md),
+          Text(
+            'Feel free to connect or follow',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  fontStyle: FontStyle.italic,
+                  color: AppColors.textMuted,
+                ),
+          ),
+          const SizedBox(height: AppSpacing.sm),
+          const SocialMediaWidget(),
+        ],
+      ),
     );
   }
 
-  Widget _getToKnowMe(context) {
-    return Text(
-      'Get to know me!',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 24,
-            color: Colors.white,
+  Widget _skillsColumn(BuildContext context) {
+    return GlassCardWidget(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'My Skills',
+            style: Theme.of(context).textTheme.titleLarge,
           ),
-    );
-  }
-
-  Widget _mySkills(context) {
-    return Text(
-      'My skills',
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 24,
-            color: Colors.white,
-          ),
+          const SizedBox(height: AppSpacing.sm),
+          const SkillsWidget(),
+        ],
+      ),
     );
   }
 }

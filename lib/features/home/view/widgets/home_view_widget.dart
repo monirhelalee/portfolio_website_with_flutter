@@ -9,161 +9,191 @@ class HomeViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width;
+    final horizontalPadding = AppSpacing.sectionPadding(width);
+    final isWide = Responsive.isDesktop(context) || Responsive.isTablet(context);
+
     return Container(
-      color: Colors.blueGrey,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 64,
-          right: 24,
-          top: 24,
-        ),
-        child: Responsive.isDesktop(context) || Responsive.isTablet(context)
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Image.asset(
-                          'assets/my_logo.png',
-                          height: 100,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      _helloWorld(context),
-                      _name(context),
-                      _flutterDev(context),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      _resumeDownloadButton(),
-                    ],
-                  ),
-                  _animatedImage(context),
-                ],
-              )
-            : Column(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _helloWorld(context),
-                      _name(context),
-                      _flutterDev(context),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      _resumeDownloadButton(),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  _animatedImage(context),
-                ],
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        gradient: AppColors.heroGradient,
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: -80,
+            right: -60,
+            child: Container(
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.accent.withValues(alpha: 0.15),
+                    Colors.transparent,
+                  ],
+                ),
               ),
+            ),
+          ),
+          Positioned(
+            bottom: -100,
+            left: -80,
+            child: Container(
+              width: 350,
+              height: 350,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.accentSecondary.withValues(alpha: 0.12),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+              horizontalPadding,
+              120,
+              horizontalPadding,
+              AppSpacing.xl,
+            ),
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: AppSpacing.contentMaxWidth(width),
+                ),
+                child: isWide
+                    ? Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(child: _heroContent(context)),
+                          const SizedBox(width: AppSpacing.lg),
+                          Expanded(child: _heroImage(context)),
+                        ],
+                      )
+                    : Column(
+                        children: [
+                          _heroContent(context),
+                          const SizedBox(height: AppSpacing.md),
+                          _heroImage(context),
+                        ],
+                      ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _helloWorld(context) {
-    return AnimatedTextKit(
-      isRepeatingAnimation: true,
-      totalRepeatCount: 1000,
-      animatedTexts: [
-        TyperAnimatedText(
-          'Hello World! 🌍',
-          speed: const Duration(
-            milliseconds: 100,
-          ),
-          textStyle: const TextStyle(
-            fontSize: 28.0,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _name(context) {
-    return const Row(
+  Widget _heroContent(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SelectableText(
-          "I'm ",
-          style: TextStyle(
-            fontSize: 38,
-            color: Colors.white,
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+          decoration: BoxDecoration(
+            color: AppColors.accent.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: AppColors.accent.withValues(alpha: 0.3),
+            ),
+          ),
+          child: AnimatedTextKit(
+            isRepeatingAnimation: true,
+            totalRepeatCount: 1000,
+            animatedTexts: [
+              TyperAnimatedText(
+                'Hello, World! 👋',
+                speed: const Duration(milliseconds: 80),
+                textStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: AppColors.accent,
+                      fontSize: 14,
+                    ) ??
+                    const TextStyle(color: AppColors.accent),
+              ),
+            ],
           ),
         ),
-        SelectableText(
-          "Monir Haider",
-          style: TextStyle(
-            fontSize: 38,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+        const SizedBox(height: AppSpacing.md),
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Text(
+              "I'm ",
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    fontSize: Responsive.isMobile(context) ? 36 : 56,
+                    height: 1.1,
+                    color: AppColors.textPrimary,
+                  ),
+            ),
+            ShaderMask(
+              shaderCallback: (bounds) =>
+                  AppColors.accentGradient.createShader(bounds),
+              child: Text(
+                'Monir Haider',
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      fontSize: Responsive.isMobile(context) ? 36 : 56,
+                      height: 1.1,
+                      color: Colors.white,
+                    ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Text(
+          'Senior Software Engineer',
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                fontSize: Responsive.isMobile(context) ? 22 : 28,
+                color: AppColors.textSecondary,
+                fontWeight: FontWeight.w400,
+              ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Text(
+          'Building polished mobile experiences with Flutter — from idea to App Store.',
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontSize: 17,
+                color: AppColors.textMuted,
+              ),
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        ElevatedButton.icon(
+          onPressed: _openResume,
+          icon: const Icon(Icons.download_rounded, size: 20),
+          label: const Text('Download Resume'),
         ),
       ],
     );
   }
 
-  Widget _flutterDev(context) {
-    return SelectableText(
-      "Senior Software Engineer",
-      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-            fontSize: 28,
-            color: Colors.white,
-          ),
-    );
-  }
-
-  Widget _animatedImage(context) {
+  Widget _heroImage(BuildContext context) {
     return Stack(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       children: [
-        if (Responsive.isMobile(context))
-          Lottie.asset(
-            'assets/image_background.json',
-            fit: BoxFit.fitWidth,
-          )
-        else
-          Lottie.asset(
-            'assets/image_background.json',
-            height: 400,
-          ),
+        Lottie.asset(
+          'assets/image_background.json',
+          height: Responsive.isMobile(context) ? 280 : 400,
+          fit: BoxFit.contain,
+        ),
         Image.asset(
           'assets/my2.png',
-          height: 500,
-          fit: BoxFit.fitHeight,
-          // height: 500,
+          height: Responsive.isMobile(context) ? 320 : 480,
+          fit: BoxFit.contain,
         ),
       ],
     );
   }
 
-  Widget _resumeDownloadButton() {
-    return ElevatedButton(
-      onPressed: () async {
-        String resumeLink = Constant.resumeDownloadLink;
-
-        if (await canLaunchUrl(Uri.parse(resumeLink))) {
-          await launchUrl(Uri.parse(resumeLink));
-        } else {
-          throw 'Could not launch $resumeLink';
-        }
-      },
-      child: const Padding(
-        padding: EdgeInsets.all(12),
-        child: Text("Download Resume"),
-      ),
-    );
+  Future<void> _openResume() async {
+    final uri = Uri.parse(Constant.resumeDownloadLink);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
   }
 }

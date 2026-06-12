@@ -4,82 +4,78 @@ import 'package:scroll_pos/scroll_pos.dart';
 
 class RowMenuWidget extends StatelessWidget {
   const RowMenuWidget({super.key, required this.controller});
+
   final ScrollPosController controller;
+
+  static const _items = [
+    ('Home', 0),
+    ('About', 1),
+    ('Experience', 2),
+    ('Projects', 3),
+    ('Contact', 4),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _nameWidget(context, title: 'Home', onTap: () {
-          controller.scrollToStart();
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
+        for (final (title, index) in _items) ...[
+          _NavItem(
+            title: title,
+            onTap: () {
+              if (index == 0) {
+                controller.scrollToStart(animate: true);
+              } else {
+                controller.scrollToItem(index, animate: true);
+              }
+            },
           ),
-        ),
-        _nameWidget(context, title: 'About', onTap: () {
-          controller.scrollToItem(1, animate: true);
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
-          ),
-        ),
-        _nameWidget(context, title: 'Experience', onTap: () {
-          controller.scrollToItem(2, animate: true);
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
-          ),
-        ),
-        _nameWidget(context, title: 'Projects', onTap: () {
-          controller.scrollToItem(3, animate: true);
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
-          ),
-        ),
-        _nameWidget(context, title: 'Contact', onTap: () {
-          controller.scrollToItem(4, animate: true);
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
-          ),
-        ),
-        _nameWidget(context, title: 'Blog', onTap: () {
-          controller.scrollToEnd();
-        }),
-        AnimatedContainer(
-          width: Responsive.isDesktop(context) ? 30 : 15,
-          duration: const Duration(
-            milliseconds: 100,
-          ),
-        ),
+          if (index < _items.length - 1)
+            SizedBox(width: Responsive.isDesktop(context) ? 8 : 4),
+        ],
       ],
     );
   }
+}
 
-  Widget _nameWidget(context,
-      {required String title, required VoidCallback onTap}) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontSize: 18,
-                color: Colors.white,
-              ),
+class _NavItem extends StatefulWidget {
+  const _NavItem({required this.title, required this.onTap});
+
+  final String title;
+  final VoidCallback onTap;
+
+  @override
+  State<_NavItem> createState() => _NavItemState();
+}
+
+class _NavItemState extends State<_NavItem> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: InkWell(
+        onTap: widget.onTap,
+        borderRadius: BorderRadius.circular(8),
+        hoverColor: Colors.transparent,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 150),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            color: _hovered
+                ? AppColors.accent.withValues(alpha: 0.1)
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(
+            widget.title,
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  fontSize: 14,
+                  color: _hovered ? AppColors.accent : AppColors.textSecondary,
+                ),
+          ),
         ),
       ),
     );
