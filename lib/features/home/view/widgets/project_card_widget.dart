@@ -107,14 +107,12 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                         ),
                         child: Text(
                           'Tap for details',
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelLarge
-                              ?.copyWith(
-                                color: AppColors.accent,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.labelLarge?.copyWith(
+                                    color: AppColors.accent,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                         ),
                       ),
                     ),
@@ -203,8 +201,7 @@ class ProjectStoreButtons extends StatelessWidget {
       'https://img.icons8.com/fluency/144/apple-app-store.png';
   static const _apkIcon =
       'https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-APK-file-extension-bearicons-outline-color-bearicons.png';
-  static const _webIcon =
-      'https://img.icons8.com/color/144/internet--v1.png';
+  static const _webIcon = 'https://img.icons8.com/color/144/internet--v1.png';
 
   @override
   Widget build(BuildContext context) {
@@ -217,6 +214,7 @@ class ProjectStoreButtons extends StatelessWidget {
             iconUrl: _playStoreIcon,
             tooltip: 'Play Store',
             iconSize: iconSize,
+            enabled: project.storeLinksEnabled,
           ),
         if (project.appStoreLink != null)
           _StoreButton(
@@ -224,6 +222,7 @@ class ProjectStoreButtons extends StatelessWidget {
             iconUrl: _appStoreIcon,
             tooltip: 'App Store',
             iconSize: iconSize,
+            enabled: project.storeLinksEnabled,
           ),
         if (project.apkLink != null)
           _StoreButton(
@@ -250,14 +249,16 @@ class _StoreButton extends StatelessWidget {
     required this.iconUrl,
     required this.tooltip,
     required this.iconSize,
+    this.enabled = true,
   });
 
   final String? url;
   final String iconUrl;
   final String tooltip;
   final double iconSize;
+  final bool enabled;
 
-  bool get _isEnabled => url != null && url!.isNotEmpty;
+  bool get _isEnabled => enabled && url != null && url!.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {

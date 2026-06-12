@@ -23,6 +23,7 @@ class ProjectItem {
     this.showWebIcon = false,
     this.playStoreLink,
     this.appStoreLink,
+    this.storeLinksEnabled = true,
     this.githubLink,
     this.apkLink,
     this.webLink,
@@ -47,6 +48,7 @@ class ProjectItem {
   final bool showWebIcon;
   final String? playStoreLink;
   final String? appStoreLink;
+  final bool storeLinksEnabled;
   final String? githubLink;
   final String? apkLink;
   final String? webLink;
@@ -103,6 +105,7 @@ class ProjectItem {
       showWebIcon: json['showWebIcon'] as bool? ?? false,
       playStoreLink: json['playStoreLink'] as String?,
       appStoreLink: json['appStoreLink'] as String?,
+      storeLinksEnabled: json['storeLinksEnabled'] as bool? ?? true,
       githubLink: json['githubLink'] as String?,
       apkLink: json['apkLink'] as String?,
       webLink: json['webLink'] as String?,

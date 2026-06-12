@@ -5,7 +5,6 @@
       "title": "Tabby — AI Bookkeeper",
       "shortDescription": "All-in-one AI bookkeeping for freelancers, realtors, and small business owners.",
       "description": "Tabby is your all-in-one AI-powered bookkeeping and expense tracking app — built for freelancers, realtors, 1099 contractors and small business owners. Say goodbye to manual entry and tax-time panic. Built by accountants and developers who've worked with real clients.",
-      "contribution": "Built the mobile app from scratch using Flutter and Dart.",
       "category": "Fintech",
       "featured": true,
       "tags": ["Flutter", "Dart", "AI", "Bookkeeping", "iOS", "Android"],
@@ -124,6 +123,66 @@
     {
       "id": "muslim-minds",
       "title": "Muslim Minds",
+      "shortDescription": "Islamic lifestyle app for prayer, Quran, Qibla, and spiritual growth.",
+      "description": "Muslim Minds is your indispensable tool for enhancing your Islamic lifestyle and spiritual growth. Tailored for devout Muslims, it offers features to facilitate religious practices and rituals with ease and precision — from accurate Salah times to Quran recitations.",
+      "category": "Islamic Lifestyle",
+      "tags": ["Flutter", "Android", "Prayer", "Quran", "Ramadan"],
+      "features": [
+        {
+          "title": "Salah Times",
+          "description": "Accurate prayer times based on your location."
+        },
+        {
+          "title": "Ramadan Timings",
+          "description": "Sehri and Iftar schedules for the holy month."
+        },
+        {
+          "title": "Salah Calendar",
+          "description": "Monthly prayer calendar for daily planning."
+        },
+        {
+          "title": "Qibla Compass",
+          "description": "Find the Kaaba direction anywhere in the world."
+        },
+        {
+          "title": "Tasbih Counter",
+          "description": "Digital dhikr and supplication tracker."
+        },
+        {
+          "title": "Listen to Quran",
+          "description": "Audio recitations from renowned Qaris on demand."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Home Dashboard",
+          "imagePath": "assets/projects/muslim-minds/home.jpg"
+        },
+        {
+          "caption": "Salah Times",
+          "imagePath": "assets/projects/muslim-minds/salah_times.jpg"
+        },
+        {
+          "caption": "Salah Calendar",
+          "imagePath": "assets/projects/muslim-minds/salah_calendar.jpg"
+        },
+        {
+          "caption": "Qibla Compass",
+          "imagePath": "assets/projects/muslim-minds/qibla.jpg"
+        },
+        {
+          "caption": "Tasbih Counter",
+          "imagePath": "assets/projects/muslim-minds/tasbih.jpg"
+        },
+        {
+          "caption": "Listen to Quran",
+          "imagePath": "assets/projects/muslim-minds/quran.jpg"
+        },
+        {
+          "caption": "Dua & Niyat",
+          "imagePath": "assets/projects/muslim-minds/dua.jpg"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/07fxFTaHE3m-2-4dAKJEDSCPvh770ZBJgDJO9B8ieYI0E-wjS_z_y7vFzLQxobBG4jA-=w240-h480-rw",
       "isSvg": false,
       "playStoreLink": "https://play.google.com/store/apps/details?id=com.martechhouse.salahbd",
@@ -132,6 +191,54 @@
     {
       "id": "orca-marine",
       "title": "ORCA Marine",
+      "shortDescription": "Intelligent SaaS platform for marine survey and ship inspection management.",
+      "description": "ORCA Marine is a Survey Management System — an intelligent software automation solution for marine survey and inspection. Ships and container vessels require various surveys depending on circumstances; traditionally these are conducted largely manually, creating industry-wide inefficiency. ORCA Marine is a subscription-based SaaS product by Nodes Digital for marine survey and inspection firms in Bangladesh and abroad, replacing manual workflows with a cloud-based platform that eliminates complex software and hardware overhead for clients.",
+      "category": "Marine SaaS",
+      "tags": ["Flutter", "SaaS", "Marine", "Inspection", "Android"],
+      "features": [
+        {
+          "title": "Survey Management",
+          "description": "Automate and manage multiple types of marine surveys digitally."
+        },
+        {
+          "title": "Ship & Container Inspections",
+          "description": "Handle surveys for ships and container vessels based on circumstances."
+        },
+        {
+          "title": "Cloud SaaS Platform",
+          "description": "Subscription-based access via the internet — no on-premise software to maintain."
+        },
+        {
+          "title": "Digital Workflow",
+          "description": "Replace manual survey processes with streamlined digital operations."
+        },
+        {
+          "title": "Global Reach",
+          "description": "Built for marine survey firms in Bangladesh and internationally."
+        },
+        {
+          "title": "Custom Solutions",
+          "description": "Tailored configurations leveraged to each client's needs."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Dashboard Overview",
+          "imagePath": "assets/projects/orca-marine/dashboard.jpg"
+        },
+        {
+          "caption": "Attendance Reports",
+          "imagePath": "assets/projects/orca-marine/attendance_reports.jpg"
+        },
+        {
+          "caption": "Survey List",
+          "imagePath": "assets/projects/orca-marine/survey_list.jpg"
+        },
+        {
+          "caption": "Survey Report Creation",
+          "imagePath": "assets/projects/orca-marine/report_creation.jpg"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/peKaWiLMPyQrbMeSKhYX7Y23hxwFaNwA7-0fJz7iJcTQZ3oXnHfLMPNGb_lUUpE1kfw5=w480-h960-rw",
       "isSvg": false,
       "playStoreLink": "https://play.google.com/store/apps/details?id=com.nodesdigitalbd.orcamarine",
@@ -140,14 +247,135 @@
     {
       "id": "we-telly-bd",
       "title": "We Telly-BD",
+      "shortDescription": "Video streaming and sharing platform for discovering and recommending content.",
+      "description": "We Telly-BD is a video streaming and sharing platform where users discover, watch, and recommend video content. Built with a modern dark-themed experience, it supports user authentication, personalized recommendations, category-based exploration, channel profiles, and community-driven video suggestions from platforms like YouTube.",
+      "category": "Media & Entertainment",
+      "tags": ["Flutter", "Video Streaming", "iOS", "Android", "Social Login"],
+      "features": [
+        {
+          "title": "User Authentication",
+          "description": "Email, mobile, and social login with Google, Apple, Facebook, and Twitter."
+        },
+        {
+          "title": "Explore & Discover",
+          "description": "Search and filter videos by categories, tags, and sort options."
+        },
+        {
+          "title": "Recommended Videos",
+          "description": "Personalized video feed based on user interests."
+        },
+        {
+          "title": "Channel Profiles",
+          "description": "Creator profiles with about info, location, and content roles."
+        },
+        {
+          "title": "Recommend Video",
+          "description": "Submit YouTube URLs to suggest content to the platform."
+        },
+        {
+          "title": "Cross-Platform",
+          "description": "Available on Play Store and App Store."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Login",
+          "imagePath": "assets/projects/we-telly-bd/login.png"
+        },
+        {
+          "caption": "Sign Up",
+          "imagePath": "assets/projects/we-telly-bd/signup.png"
+        },
+        {
+          "caption": "Explore",
+          "imagePath": "assets/projects/we-telly-bd/explore.png"
+        },
+        {
+          "caption": "Channel Profile",
+          "imagePath": "assets/projects/we-telly-bd/profile.png"
+        },
+        {
+          "caption": "Recommended Videos",
+          "imagePath": "assets/projects/we-telly-bd/home.png"
+        },
+        {
+          "caption": "Recommend Video",
+          "imagePath": "assets/projects/we-telly-bd/recommend_video.jpg"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/BcVtmhXzsFik9R-J3qwa58M67U0NLWeQARURpDxzfzUlXoAswCR2GPewXaig9B6biA=w480-h960-rw",
       "isSvg": false,
+      "storeLinksEnabled": false,
       "playStoreLink": "https://play.google.com/store/apps/details?id=org.wetelly.wetelly",
       "appStoreLink": "https://apps.apple.com/us/app/we-telly-bd/id6466303189"
     },
     {
       "id": "agritech",
       "title": "Agritech",
+      "shortDescription": "IoT-powered smart farming app for real-time crop monitoring and precision agriculture.",
+      "description": "Agritech by Nodes Digital transforms traditional agriculture into a cutting-edge, data-driven, and sustainable practice. With IoT, machine learning, and advanced analytics, it delivers real-time insights, precise monitoring, and data-driven decision-making — whether you're a seasoned farmer or just starting. Boost productivity, optimize resource usage, and ensure healthy crop yields with a user-friendly companion built for farms of all sizes.",
+      "category": "AgriTech",
+      "tags": ["Flutter", "IoT", "Machine Learning", "Agriculture", "Android"],
+      "features": [
+        {
+          "title": "Real-Time Crop Monitoring",
+          "description": "24/7 sensor updates on temperature, humidity, soil moisture, water level, and EC."
+        },
+        {
+          "title": "Data-Driven Decisions",
+          "description": "Actionable insights for irrigation, fertilization, and pest control."
+        },
+        {
+          "title": "Smart Irrigation",
+          "description": "Precise watering based on crop needs and weather conditions."
+        },
+        {
+          "title": "Automated Pump Controller",
+          "description": "Schedule irrigation automatically from real-time farm data."
+        },
+        {
+          "title": "Crop Health Analysis",
+          "description": "Early detection of diseases, nutrient deficiencies, and stress factors."
+        },
+        {
+          "title": "Offline Support",
+          "description": "Access critical data and insights without a stable connection."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Login",
+          "imagePath": "assets/projects/agritech/login.jpg"
+        },
+        {
+          "caption": "e-Irrigation",
+          "imagePath": "assets/projects/agritech/e_irrigation.png"
+        },
+        {
+          "caption": "HarvestPro",
+          "imagePath": "assets/projects/agritech/harvest_pro.png"
+        },
+        {
+          "caption": "e-Fisheries",
+          "imagePath": "assets/projects/agritech/e_fisheries.png"
+        },
+        {
+          "caption": "Create Field",
+          "imagePath": "assets/projects/agritech/create_field.jpg"
+        },
+        {
+          "caption": "Crop Monitoring",
+          "imagePath": "assets/projects/agritech/crop_monitoring.jpg"
+        },
+        {
+          "caption": "Fertilizer Application",
+          "imagePath": "assets/projects/agritech/fertilizer.jpg"
+        },
+        {
+          "caption": "Pest Detection",
+          "imagePath": "assets/projects/agritech/pest_detection.png"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/mY2r0_alAV1sIIaSkQn-_wsPBpyZsEtC1jjTmZWpb_PjuLq_Ior1yhDcUs7J0YSOOpYh=w480-h960-rw",
       "isSvg": false,
       "playStoreLink": "https://play.google.com/store/apps/details?id=com.nodesdigitalbd.agritech",
