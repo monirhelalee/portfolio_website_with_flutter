@@ -28,3 +28,5 @@ flutter:
 
   assets:
     - assets/
+    - assets/projects/tabby/
+    - assets/projects/smart-sohay/

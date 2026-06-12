@@ -1,0 +1,220 @@
+{
+  "projects": [
+    {
+      "id": "tabby",
+      "title": "Tabby — AI Bookkeeper",
+      "shortDescription": "All-in-one AI bookkeeping for freelancers, realtors, and small business owners.",
+      "description": "Tabby is your all-in-one AI-powered bookkeeping and expense tracking app — built for freelancers, realtors, 1099 contractors and small business owners. Say goodbye to manual entry and tax-time panic. Built by accountants and developers who've worked with real clients.",
+      "contribution": "Built the mobile app from scratch using Flutter and Dart.",
+      "category": "Fintech",
+      "featured": true,
+      "tags": ["Flutter", "Dart", "AI", "Bookkeeping", "iOS", "Android"],
+      "features": [
+        {
+          "title": "AI Expense Tracking",
+          "description": "Auto-sort and categorize expenses with smart rules."
+        },
+        {
+          "title": "Receipt Scanning",
+          "description": "Snap a receipt and match it to transactions instantly."
+        },
+        {
+          "title": "Invoices",
+          "description": "Create branded invoices and track payments."
+        },
+        {
+          "title": "Cash Flow Dashboard",
+          "description": "Real-time view of income and expenses."
+        },
+        {
+          "title": "P&L Reports",
+          "description": "Tax-ready statements — no spreadsheets needed."
+        },
+        {
+          "title": "Simple UX",
+          "description": "No accounting jargon, easy for anyone."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Financial Dashboard",
+          "imagePath": "assets/projects/tabby/dashboard.png"
+        },
+        {
+          "caption": "Receipt Scanning",
+          "imagePath": "assets/projects/tabby/receipt_scan.png"
+        },
+        {
+          "caption": "Invoice Tracking",
+          "imagePath": "assets/projects/tabby/invoices.png"
+        },
+        {
+          "caption": "Tax-Ready Reports",
+          "imagePath": "assets/projects/tabby/tax_reports.png"
+        },
+        {
+          "caption": "Profit & Loss",
+          "imagePath": "assets/projects/tabby/profit_loss.png"
+        }
+      ],
+      "iconPath": "https://play-lh.googleusercontent.com/xpF8JkKuR2pUKXVKcyLJ20jr3-y_z54QA28aKe6t1lIQPLia8mGF5bXTk9iOjuHS_bE=w480-h960-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.usetabby.app",
+      "appStoreLink": "https://apps.apple.com/us/app/tabby-ai-bookkeeper/id6743497417"
+    },
+    {
+      "id": "smart-sohay",
+      "title": "Smart Sohay",
+      "shortDescription": "AI-powered exam prep for SSC, HSC, admission & job exams in Bangladesh.",
+      "description": "Smart Sohay is an AI-powered and data-driven app built to make exam preparation smarter, faster, and more effective for SSC, HSC (Science, Commerce, Arts), University Admission Tests, and Job Exams in Bangladesh. Designed for SSC & HSC students, university admission candidates (Medical, Engineering, IBA, Private & NU), and job exam aspirants (BCS, Bank, NTRCA, Govt & Non-Govt). Whether you're preparing for board exams, university admission, or competitive job tests, Smart Sohay helps you track, test, and transform your preparation.",
+      "category": "EdTech",
+      "tags": ["Flutter", "AI", "EdTech", "Bangladesh", "Android"],
+      "features": [
+        {
+          "title": "Personalized Exam Practice",
+          "description": "Custom tests based on your weak and strong topics."
+        },
+        {
+          "title": "AI Topic Suggestions",
+          "description": "AI analyzes performance and suggests what to study next."
+        },
+        {
+          "title": "Flashcards",
+          "description": "Quick revision with science-based flashcards for last-minute prep."
+        },
+        {
+          "title": "Doubt Solve with AI",
+          "description": "Photo or text questions with instant AI-powered explanations."
+        },
+        {
+          "title": "Question Bank",
+          "description": "5 lakh+ questions filtered by board, year, chapter, and topic."
+        },
+        {
+          "title": "Model Tests",
+          "description": "Full-length simulated exams with detailed analytics."
+        },
+        {
+          "title": "Similar Questions & AI Explanation",
+          "description": "Related question recommendations with simple concept breakdowns."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Performance Tracking",
+          "imagePath": "assets/projects/smart-sohay/performance.png"
+        },
+        {
+          "caption": "Flashcard Practice",
+          "imagePath": "assets/projects/smart-sohay/flashcards.png"
+        },
+        {
+          "caption": "Model Test",
+          "imagePath": "assets/projects/smart-sohay/model_test.png"
+        },
+        {
+          "caption": "Smart Question Bank",
+          "imagePath": "assets/projects/smart-sohay/question_bank.jpg"
+        }
+      ],
+      "iconPath": "https://play-lh.googleusercontent.com/4qiylGNgVdCTVqzJItOS3Nj52r23OXgX0evLXI7Fx_BAspNpe356RC0MXB6ef0veHTc=w480-h960-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.smartsohay.education"
+    },
+    {
+      "id": "muslim-minds",
+      "title": "Muslim Minds",
+      "iconPath": "https://play-lh.googleusercontent.com/07fxFTaHE3m-2-4dAKJEDSCPvh770ZBJgDJO9B8ieYI0E-wjS_z_y7vFzLQxobBG4jA-=w240-h480-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.martechhouse.salahbd",
+      "apkLink": "https://apkpure.net/ramadan-bd-2023/com.martechhouse.salahbd"
+    },
+    {
+      "id": "orca-marine",
+      "title": "ORCA Marine",
+      "iconPath": "https://play-lh.googleusercontent.com/peKaWiLMPyQrbMeSKhYX7Y23hxwFaNwA7-0fJz7iJcTQZ3oXnHfLMPNGb_lUUpE1kfw5=w480-h960-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.nodesdigitalbd.orcamarine",
+      "apkLink": "https://apkpure.net/orca-marine/com.nodesdigitalbd.orcamarine"
+    },
+    {
+      "id": "we-telly-bd",
+      "title": "We Telly-BD",
+      "iconPath": "https://play-lh.googleusercontent.com/BcVtmhXzsFik9R-J3qwa58M67U0NLWeQARURpDxzfzUlXoAswCR2GPewXaig9B6biA=w480-h960-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=org.wetelly.wetelly",
+      "appStoreLink": "https://apps.apple.com/us/app/we-telly-bd/id6466303189"
+    },
+    {
+      "id": "agritech",
+      "title": "Agritech",
+      "iconPath": "https://play-lh.googleusercontent.com/mY2r0_alAV1sIIaSkQn-_wsPBpyZsEtC1jjTmZWpb_PjuLq_Ior1yhDcUs7J0YSOOpYh=w480-h960-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.nodesdigitalbd.agritech",
+      "apkLink": "https://apkpure.net/agritech/com.nodesdigitalbd.agritech"
+    },
+    {
+      "id": "rakhsaani",
+      "title": "Rakhsaani",
+      "iconPath": "https://play-lh.googleusercontent.com/9BiAJdmRgWvbkZmDxp20FojPLHDOy0SyoJPPqYNoy4NcWMLVGCf2TuyKRW-aMr5xhrHs=w480-h960-rw",
+      "isSvg": false,
+      "appStoreLink": "https://apps.apple.com/sa/app/rakhsaani/id1665444120",
+      "apkLink": "https://apkpure.net/rakhsaani/org.rakhsaani.app"
+    },
+    {
+      "id": "jobxprss",
+      "title": "JobXprss",
+      "iconPath": "https://play-lh.googleusercontent.com/JDCXkDuZEqnm2kZgc_UGaUeMS9CXCWJY2RGr2obpW4e4GdctnA8aqzbh87os63-2codG=w240-h480-rw",
+      "isSvg": false,
+      "apkLink": "https://apkpure.net/jobxprss/com.ishraak.jobxprss"
+    },
+    {
+      "id": "skillxprss",
+      "title": "SkillXprss",
+      "iconPath": "https://image.winudf.com/v2/image1/Y29tLmlzaHJhYWsuc2tpbGx4cHJzc19pY29uXzE2MzIxMDEzODhfMDY4/icon.webp?w=280&fakeurl=1&type=.webp",
+      "isSvg": false,
+      "apkLink": "https://apkpure.net/skillxprss/com.ishraak.skillxprss"
+    },
+    {
+      "id": "amar-ischool",
+      "title": "Amar iSchool",
+      "iconPath": "https://image.winudf.com/v2/image1/Y29tLmFtYXJpc2Nob29sLmFtYXJpc2Nob29sX2ljb25fMTY2NDI4NTM1Ml8wMjg/icon.webp?w=280&fakeurl=1&type=.webp",
+      "isSvg": false,
+      "apkLink": "https://apkpure.net/amar-ischool/com.amarischool.amarischool"
+    },
+    {
+      "id": "picscanner",
+      "title": "PicScanner - PDF Maker",
+      "iconPath": "https://play-lh.googleusercontent.com/ziZdh_-IycQFxqlvdrlXC7y9o3YERbExHjIKsOCWzg_FBh5FkCIb2W3H0nbPBhFE0Q=w240-h480-rw",
+      "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=ltd.onesoft.pic_scanner_app"
+    },
+    {
+      "id": "labook-employee",
+      "title": "Labook Employee",
+      "iconPath": "assets/labook.svg",
+      "isSvg": true,
+      "isLink": false,
+      "isAsset": true,
+      "apkLink": "https://apkcombo.com/ar/labook-employee/com.labookempl.app/"
+    },
+    {
+      "id": "labook-attendance",
+      "title": "Labook Asistencia de Empleados",
+      "iconPath": "assets/labook.svg",
+      "isSvg": true,
+      "isLink": false,
+      "isAsset": true,
+      "apkLink": "https://apkcombo.com/ar/labook-asistencia-de-empleados/com.labook.app/"
+    },
+    {
+      "id": "helale-pharma",
+      "title": "Helale Pharma",
+      "iconPath": "assets/helale_pharma.png",
+      "isSvg": false,
+      "isLink": false,
+      "isAsset": true,
+      "showWebIcon": true
+    }
+  ]
+}
