@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -21,16 +20,16 @@ class HomeViewWidget extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: -80,
-            right: -60,
+            top: -60,
+            right: -40,
             child: Container(
-              width: 400,
-              height: 400,
+              width: 360,
+              height: 360,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    AppColors.accent.withValues(alpha: 0.15),
+                    AppColors.photoBlue.withValues(alpha: 0.22),
                     Colors.transparent,
                   ],
                 ),
@@ -38,16 +37,16 @@ class HomeViewWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: -100,
-            left: -80,
+            bottom: -80,
+            left: -60,
             child: Container(
-              width: 350,
-              height: 350,
+              width: 320,
+              height: 320,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    AppColors.accentSecondary.withValues(alpha: 0.12),
+                    AppColors.photoYellow.withValues(alpha: 0.1),
                     Colors.transparent,
                   ],
                 ),
@@ -72,14 +71,14 @@ class HomeViewWidget extends StatelessWidget {
                         children: [
                           Expanded(child: _heroContent(context)),
                           const SizedBox(width: AppSpacing.lg),
-                          Expanded(child: _heroImage(context)),
+                          Expanded(child: _heroPortrait(context)),
                         ],
                       )
                     : Column(
                         children: [
+                          _heroPortrait(context),
+                          const SizedBox(height: AppSpacing.lg),
                           _heroContent(context),
-                          const SizedBox(height: AppSpacing.md),
-                          _heroImage(context),
                         ],
                       ),
               ),
@@ -92,15 +91,16 @@ class HomeViewWidget extends StatelessWidget {
 
   Widget _heroContent(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          Responsive.isMobile(context) ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
           decoration: BoxDecoration(
-            color: AppColors.accent.withValues(alpha: 0.1),
+            color: AppColors.photoGreen.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: AppColors.accent.withValues(alpha: 0.3),
+              color: AppColors.photoGreen.withValues(alpha: 0.35),
             ),
           ),
           child: AnimatedTextKit(
@@ -111,10 +111,10 @@ class HomeViewWidget extends StatelessWidget {
                 'Hello, World! 👋',
                 speed: const Duration(milliseconds: 80),
                 textStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
-                      color: AppColors.accent,
+                      color: AppColors.photoYellow,
                       fontSize: 14,
                     ) ??
-                    const TextStyle(color: AppColors.accent),
+                    const TextStyle(color: AppColors.photoYellow),
               ),
             ],
           ),
@@ -122,6 +122,8 @@ class HomeViewWidget extends StatelessWidget {
         const SizedBox(height: AppSpacing.md),
         Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
+          alignment:
+              Responsive.isMobile(context) ? WrapAlignment.center : WrapAlignment.start,
           children: [
             Text(
               "I'm ",
@@ -148,6 +150,7 @@ class HomeViewWidget extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         Text(
           'Senior Software Engineer',
+          textAlign: Responsive.isMobile(context) ? TextAlign.center : TextAlign.start,
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontSize: Responsive.isMobile(context) ? 22 : 28,
                 color: AppColors.textSecondary,
@@ -157,6 +160,7 @@ class HomeViewWidget extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         Text(
           'Building polished mobile experiences with Flutter — from idea to App Store.',
+          textAlign: Responsive.isMobile(context) ? TextAlign.center : TextAlign.start,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 fontSize: 17,
                 color: AppColors.textMuted,
@@ -167,26 +171,53 @@ class HomeViewWidget extends StatelessWidget {
           onPressed: _openResume,
           icon: const Icon(Icons.download_rounded, size: 20),
           label: const Text('Download Resume'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.photoBlue,
+            foregroundColor: Colors.white,
+          ),
         ),
       ],
     );
   }
 
-  Widget _heroImage(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Lottie.asset(
-          'assets/image_background.json',
-          height: Responsive.isMobile(context) ? 280 : 400,
-          fit: BoxFit.contain,
+  Widget _heroPortrait(BuildContext context) {
+    final isMobile = Responsive.isMobile(context);
+    final frameWidth = isMobile ? 300.0 : 380.0;
+    const aspectRatio = 4 / 5;
+
+    return Center(
+      child: Container(
+        width: frameWidth,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: AppColors.accentGradient,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.photoBlue.withValues(alpha: 0.4),
+              blurRadius: 48,
+              offset: const Offset(0, 24),
+            ),
+            BoxShadow(
+              color: AppColors.photoYellow.withValues(alpha: 0.15),
+              blurRadius: 32,
+              spreadRadius: -4,
+            ),
+          ],
         ),
-        Image.asset(
-          'assets/my2.png',
-          height: Responsive.isMobile(context) ? 320 : 480,
-          fit: BoxFit.contain,
+        padding: const EdgeInsets.all(3),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(17),
+          child: AspectRatio(
+            aspectRatio: aspectRatio,
+            child: Image.asset(
+              Constant.profilePortrait,
+              fit: BoxFit.cover,
+              alignment: Alignment.centerRight,
+              filterQuality: FilterQuality.high,
+            ),
+          ),
         ),
-      ],
+      ),
     );
   }
 

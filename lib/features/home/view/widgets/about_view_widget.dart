@@ -56,9 +56,42 @@ class AboutViewWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Get to know me',
-            style: Theme.of(context).textTheme.titleLarge,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: AppColors.photoBlue.withValues(alpha: 0.4),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.photoBlue.withValues(alpha: 0.15),
+                      blurRadius: 16,
+                      offset: const Offset(0, 6),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(13),
+                  child: Image.asset(
+                    Constant.profilePortrait,
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.centerRight,
+                  ),
+                ),
+              ),
+              const SizedBox(width: AppSpacing.sm),
+              Expanded(
+                child: Text(
+                  'Get to know me',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: AppSpacing.sm),
           Text(
