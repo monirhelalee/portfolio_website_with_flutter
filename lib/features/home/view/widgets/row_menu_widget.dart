@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
-import 'package:scroll_pos/scroll_pos.dart';
 
 class RowMenuWidget extends StatelessWidget {
-  const RowMenuWidget({super.key, required this.controller});
+  const RowMenuWidget({super.key, required this.onSectionTap});
 
-  final ScrollPosController controller;
+  final Future<void> Function(int index) onSectionTap;
 
   static const _items = [
     ('Home', 0),
@@ -22,13 +21,7 @@ class RowMenuWidget extends StatelessWidget {
         for (final (title, index) in _items) ...[
           _NavItem(
             title: title,
-            onTap: () {
-              if (index == 0) {
-                controller.scrollToStart(animate: true);
-              } else {
-                controller.scrollToItem(index, animate: true);
-              }
-            },
+            onTap: () => onSectionTap(index),
           ),
           if (index < _items.length - 1)
             SizedBox(width: Responsive.isDesktop(context) ? 8 : 4),

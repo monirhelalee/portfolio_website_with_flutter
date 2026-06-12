@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
-import 'package:scroll_pos/scroll_pos.dart';
 
 class ColumnMenuWidget extends StatelessWidget {
-  const ColumnMenuWidget({super.key, required this.controller});
+  const ColumnMenuWidget({super.key, required this.onSectionTap});
 
-  final ScrollPosController controller;
+  final Future<void> Function(int index) onSectionTap;
 
   static const _items = [
     ('Home', 0),
@@ -33,13 +32,10 @@ class ColumnMenuWidget extends StatelessWidget {
               for (final (title, index) in _items) ...[
                 ListTile(
                   title: Text(title),
-                  onTap: () {
+                  onTap: () async {
                     Navigator.pop(context);
-                    if (index == 0) {
-                      controller.scrollToStart(animate: true);
-                    } else {
-                      controller.scrollToItem(index, animate: true);
-                    }
+                    await Future<void>.delayed(const Duration(milliseconds: 300));
+                    await onSectionTap(index);
                   },
                 ),
               ],

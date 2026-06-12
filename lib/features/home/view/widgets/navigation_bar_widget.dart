@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_flutter/core/expotrs.dart';
 import 'package:my_portfolio_flutter/features/home/view/widgets/exports.dart';
-import 'package:scroll_pos/scroll_pos.dart';
 
 class NavigationBarWidget extends StatelessWidget {
   const NavigationBarWidget({
     super.key,
-    required this.controller,
+    required this.onSectionTap,
     required this.onMenuTap,
   });
 
-  final ScrollPosController controller;
+  final Future<void> Function(int index) onSectionTap;
   final VoidCallback onMenuTap;
 
   @override
@@ -31,10 +30,10 @@ class NavigationBarWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          LogoWidget(controller: controller),
+          LogoWidget(onSectionTap: () => onSectionTap(0)),
           const Spacer(),
           if (Responsive.isDesktop(context) || Responsive.isTablet(context))
-            RowMenuWidget(controller: controller)
+            RowMenuWidget(onSectionTap: onSectionTap)
           else
             IconButton(
               onPressed: onMenuTap,
