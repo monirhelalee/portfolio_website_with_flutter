@@ -34,6 +34,10 @@ class SkillsWidget extends StatelessWidget {
           isSvg: false,
         ),
         SkillCartWidget(
+          iconPath: 'https://socket.io/images/logo-dark.svg',
+          title: 'Socket',
+        ),
+        SkillCartWidget(
           iconPath:
               'https://img.icons8.com/external-those-icons-flat-those-icons/96/external-Git-Logo-social-media-those-icons-flat-those-icons.png',
           title: 'Git',
@@ -129,6 +133,11 @@ class SkillsWidget extends StatelessWidget {
           isSvg: false,
           isLink: false,
           isAsset: true,
+        ),
+        SkillCartWidget(
+          iconPath:
+              'https://raw.githubusercontent.com/felangel/bloc/master/extensions/intellij/intellij_generator_plugin/src/main/resources/META-INF/pluginIcon.svg',
+          title: 'BLoC',
         ),
       ],
     );
