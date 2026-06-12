@@ -98,8 +98,18 @@ class SkillsWidget extends StatelessWidget {
         ),
         _SkillData(
           iconPath:
+              'https://dam-cdn.atl.orangelogic.com/AssetLink/np0j8d765ebc4a778s3tdr6bc7avc301/fl_keep_metadata/logo-light_Bitbucket_mark-tile_inverse_RGB.svg',
+          title: 'Bitbucket',
+        ),
+        _SkillData(
+          iconPath:
               'https://img.icons8.com/color/144/visual-studio-code-2019.png',
           title: 'VS Code',
+          isSvg: false,
+        ),
+        _SkillData(
+          iconPath: 'https://img.icons8.com/color/144/cursor-ai.png',
+          title: 'Cursor',
           isSvg: false,
         ),
         _SkillData(
