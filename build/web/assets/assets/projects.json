@@ -384,14 +384,133 @@
     {
       "id": "rakhsaani",
       "title": "Rakhsaani",
+      "shortDescription": "Spreading the message of the Holy Quran to diverse people worldwide.",
+      "description": "Rakhsaani is built on a dream to disseminate the message of the Holy Quran to diverse people across the globe — irrespective of race, culture, religion, Muslim or non-Muslim. The app presents the Quran in native languages for a clear understanding of its intense and accurate meaning, while promoting harmonious relations, communal peace, and goodwill so people can recognize its different aspects and resolve conflicts through goodness and virtue.",
+      "category": "Islamic Education",
+      "tags": ["Flutter", "Quran", "Android", "Multilingual"],
+      "features": [
+        {
+          "title": "Quran in Native Languages",
+          "description": "Clear, accurate Quran meaning accessible in local languages."
+        },
+        {
+          "title": "Global Reach",
+          "description": "Designed for diverse audiences across cultures and backgrounds."
+        },
+        {
+          "title": "Deep Understanding",
+          "description": "Helps users grasp the intense and accurate meaning of the Quran."
+        },
+        {
+          "title": "Communal Peace",
+          "description": "Promotes harmonious relations and goodwill among communities."
+        },
+        {
+          "title": "Virtue & Goodness",
+          "description": "Encourages resolving conflicts through established goodness and virtues."
+        },
+        {
+          "title": "Cross-Platform",
+          "description": "Available on Android via APK download."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Splash Screen",
+          "imagePath": "assets/projects/rakhsaani/splash.jpg"
+        },
+        {
+          "caption": "Select Language",
+          "imagePath": "assets/projects/rakhsaani/language.jpg"
+        },
+        {
+          "caption": "Surah List",
+          "imagePath": "assets/projects/rakhsaani/surah_list.jpg"
+        },
+        {
+          "caption": "Quran Player",
+          "imagePath": "assets/projects/rakhsaani/player.jpg"
+        },
+        {
+          "caption": "Bookmarks",
+          "imagePath": "assets/projects/rakhsaani/bookmarks.jpg"
+        },
+        {
+          "caption": "About Rakhsaani",
+          "imagePath": "assets/projects/rakhsaani/about.jpg"
+        },
+        {
+          "caption": "Navigation Menu",
+          "imagePath": "assets/projects/rakhsaani/navigation.jpg"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/9BiAJdmRgWvbkZmDxp20FojPLHDOy0SyoJPPqYNoy4NcWMLVGCf2TuyKRW-aMr5xhrHs=w480-h960-rw",
       "isSvg": false,
-      "appStoreLink": "https://apps.apple.com/sa/app/rakhsaani/id1665444120",
-      "apkLink": "https://apkpure.net/rakhsaani/org.rakhsaani.app"
+      "apkLink": "https://apkpure.com/rakhsaani/org.rakhsaanitrust.app"
     },
     {
       "id": "jobxprss",
       "title": "JobXprss",
+      "shortDescription": "Bangladesh's most advanced AI-driven job platform for software professionals.",
+      "description": "JobXprss is the most advanced job platform in Bangladesh. Intelligent technology matches the right people with thousands of latest job postings from numerous sources, while compiled resumes are sorted to meet client requirements. Unlike other job sites, information is shared and presented in a way that best serves professionals and organizations — so job seekers are more informed about the jobs and companies they apply to. JobXprss is available anywhere through its mobile apps.",
+      "category": "Job Platform",
+      "tags": ["Flutter", "AI", "Job Search", "Bangladesh", "Android"],
+      "features": [
+        {
+          "title": "Job Search",
+          "description": "Advanced tools automatically find the right position from numerous job sources."
+        },
+        {
+          "title": "Notifications",
+          "description": "Get notified for the latest job updates as they are posted."
+        },
+        {
+          "title": "Job Applications",
+          "description": "Apply for a job with a single tap on the Apply button."
+        },
+        {
+          "title": "Career Advice",
+          "description": "Interview tips and guidance to help you get hired faster."
+        },
+        {
+          "title": "JX Profile",
+          "description": "Build a shareable professional profile from your information."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "All Jobs in One Place",
+          "imagePath": "assets/projects/jobxprss/promo.png"
+        },
+        {
+          "caption": "Job Listings",
+          "imagePath": "assets/projects/jobxprss/jobs.png"
+        },
+        {
+          "caption": "Smart Search",
+          "imagePath": "assets/projects/jobxprss/smart_search.png"
+        },
+        {
+          "caption": "Research Company",
+          "imagePath": "assets/projects/jobxprss/companies.png"
+        },
+        {
+          "caption": "JX Profile",
+          "imagePath": "assets/projects/jobxprss/profile.png"
+        },
+        {
+          "caption": "Applied Jobs",
+          "imagePath": "assets/projects/jobxprss/applied_jobs.png"
+        },
+        {
+          "caption": "Favorite Jobs",
+          "imagePath": "assets/projects/jobxprss/favorite_jobs.png"
+        },
+        {
+          "caption": "Settings",
+          "imagePath": "assets/projects/jobxprss/settings.png"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/JDCXkDuZEqnm2kZgc_UGaUeMS9CXCWJY2RGr2obpW4e4GdctnA8aqzbh87os63-2codG=w240-h480-rw",
       "isSvg": false,
       "apkLink": "https://apkpure.net/jobxprss/com.ishraak.jobxprss"
@@ -399,6 +518,70 @@
     {
       "id": "skillxprss",
       "title": "SkillXprss",
+      "shortDescription": "Skill assessment, live online courses, and workshops for career development in Bangladesh.",
+      "description": "SkillXprss is a platform for skill assessment, live online courses, and workshops. An initiative by Ishraak Solutions Limited, it is one of Bangladesh's leading skill assessment and career development platforms — offering trending skill tests, cost-efficient training courses, and flexible workshops for professionals and learners. SkillXprss believes people have an innate potential to multiply their personal and professional skills, and addresses the massive demand for new skills driven by rapid changes in the job sector and technology. Courses are designed with industry-standard, up-to-date resources, delivered by proficient trainers who bring real professional experience to every live session.",
+      "category": "EdTech",
+      "tags": ["Flutter", "Android", "iOS", "EdTech", "Bangladesh", "Skill Assessment"],
+      "features": [
+        {
+          "title": "Free Basic Skill Tests",
+          "description": "Assess your skill level with free basic tests across multiple domains."
+        },
+        {
+          "title": "Live Training Courses",
+          "description": "Live online courses with trainers — not pre-recorded videos."
+        },
+        {
+          "title": "Weekend Workshops",
+          "description": "Flexible, weekend-based day-long workshops for busy professionals."
+        },
+        {
+          "title": "Affordable Pricing",
+          "description": "Courses and premium skill tests at a cost-efficient price point."
+        },
+        {
+          "title": "IT & Non-IT Courses",
+          "description": "Universally accepted courses spanning IT and non-IT fields."
+        },
+        {
+          "title": "Diverse Skill Tests",
+          "description": "Aptitude, math, language, programming, networking, and many more."
+        },
+        {
+          "title": "Instant Results",
+          "description": "Skill test results generated instantly after completion."
+        },
+        {
+          "title": "Cross-Platform App",
+          "description": "User-friendly Android and iOS app with easy enrollment."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Trending Skill Tests",
+          "imagePath": "assets/projects/skillxprss/skill_tests.png"
+        },
+        {
+          "caption": "Easy to Enroll",
+          "imagePath": "assets/projects/skillxprss/enrolled_tests.png"
+        },
+        {
+          "caption": "Test Instructions",
+          "imagePath": "assets/projects/skillxprss/test_instructions.png"
+        },
+        {
+          "caption": "Take Your Test",
+          "imagePath": "assets/projects/skillxprss/take_test.png"
+        },
+        {
+          "caption": "Recent Tests",
+          "imagePath": "assets/projects/skillxprss/recent_tests.png"
+        },
+        {
+          "caption": "Profile",
+          "imagePath": "assets/projects/skillxprss/profile.png"
+        }
+      ],
       "iconPath": "https://image.winudf.com/v2/image1/Y29tLmlzaHJhYWsuc2tpbGx4cHJzc19pY29uXzE2MzIxMDEzODhfMDY4/icon.webp?w=280&fakeurl=1&type=.webp",
       "isSvg": false,
       "apkLink": "https://apkpure.net/skillxprss/com.ishraak.skillxprss"
@@ -406,8 +589,77 @@
     {
       "id": "amar-ischool",
       "title": "Amar iSchool",
+      "shortDescription": "Online skill development platform with expert-taught tech courses anytime, anywhere.",
+      "description": "Amar iSchool is an online educational skill development platform. Advance your career by developing the skills you need to succeed — watch expert-taught courses in programming, IT, and much more, anytime and anywhere. Discover the most in-demand tech and creative skills with personalized recommendations and courses taught by industry experts, covering computer science, programming, web development, data science, engineering, software engineering, and more.",
+      "category": "EdTech",
+      "tags": ["Flutter", "Android", "EdTech", "Bangladesh", "Programming", "Data Science"],
+      "features": [
+        {
+          "title": "Expert-Led Courses",
+          "description": "Online classes in data science, blockchain, Python, project management, and more."
+        },
+        {
+          "title": "Personalized Recommendations",
+          "description": "Course suggestions tailored to your skills and career goals."
+        },
+        {
+          "title": "Quizzes & Exams",
+          "description": "Test your knowledge as you advance through each course."
+        },
+        {
+          "title": "Curated Learning Paths",
+          "description": "Explore guided course collections for structured learning."
+        },
+        {
+          "title": "Learn at Your Pace",
+          "description": "Watch entire courses or individual videos on the go."
+        },
+        {
+          "title": "Share Courses",
+          "description": "Share courses with your network."
+        },
+        {
+          "title": "Computer Science",
+          "description": "Programming, mobile, and web development courses."
+        },
+        {
+          "title": "Data Science",
+          "description": "Machine learning, statistics, probability, and data courses."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Home",
+          "imagePath": "assets/projects/amar-ischool/home.png"
+        },
+        {
+          "caption": "Explore Categories",
+          "imagePath": "assets/projects/amar-ischool/explore.png"
+        },
+        {
+          "caption": "About Course",
+          "imagePath": "assets/projects/amar-ischool/about_course.png"
+        },
+        {
+          "caption": "Cart",
+          "imagePath": "assets/projects/amar-ischool/cart.png"
+        },
+        {
+          "caption": "My Courses",
+          "imagePath": "assets/projects/amar-ischool/my_courses.png"
+        },
+        {
+          "caption": "Menu",
+          "imagePath": "assets/projects/amar-ischool/menu.png"
+        },
+        {
+          "caption": "Profile",
+          "imagePath": "assets/projects/amar-ischool/profile.png"
+        }
+      ],
       "iconPath": "https://image.winudf.com/v2/image1/Y29tLmFtYXJpc2Nob29sLmFtYXJpc2Nob29sX2ljb25fMTY2NDI4NTM1Ml8wMjg/icon.webp?w=280&fakeurl=1&type=.webp",
       "isSvg": false,
+      "playStoreLink": "https://play.google.com/store/apps/details?id=com.amarischool.course",
       "apkLink": "https://apkpure.net/amar-ischool/com.amarischool.amarischool"
     },
     {

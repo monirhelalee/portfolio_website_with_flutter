@@ -5,7 +5,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.10.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
@@ -34,3 +35,7 @@ flutter:
     - assets/projects/orca-marine/
     - assets/projects/we-telly-bd/
     - assets/projects/agritech/
+    - assets/projects/rakhsaani/
+    - assets/projects/jobxprss/
+    - assets/projects/skillxprss/
+    - assets/projects/amar-ischool/
