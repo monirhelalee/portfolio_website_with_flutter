@@ -664,7 +664,79 @@
     },
     {
       "id": "picscanner",
-      "title": "PicScanner - PDF Maker",
+      "title": "Pix Scan",
+      "shortDescription": "Free offline document scanner, OCR, PDF editor, and read-aloud app — no ads, no subscriptions.",
+      "description": "Pix Scan is a free, offline document scanner, OCR text recognizer, and PDF editor — all in one lightweight app. Turn your phone camera into a portable scanner, extract text from images with OCR, listen to documents with built-in read aloud, and create professional PDFs. No internet, no ads, no subscriptions. Every feature works without internet — documents stay on your device with no cloud uploads or account required.",
+      "category": "Productivity",
+      "tags": ["Flutter", "Android", "OCR", "PDF", "Offline"],
+      "features": [
+        {
+          "title": "Scan to PDF",
+          "description": "Auto-detect documents with batch scan, gallery import, and offline capture."
+        },
+        {
+          "title": "OCR Text Recognition",
+          "description": "Extract, copy, search, and share text from images — works offline."
+        },
+        {
+          "title": "Read Aloud",
+          "description": "Text-to-speech with voices, speed control, bookmarks, and sleep timer."
+        },
+        {
+          "title": "PDF Editor",
+          "description": "Reorder, crop, merge, replace pages, and optimize compression."
+        },
+        {
+          "title": "Text Editor & PDF Creator",
+          "description": "Rich text editor with A4, Letter, or custom page export to PDF."
+        },
+        {
+          "title": "PDF Viewer",
+          "description": "Multi-page reader with zoom, navigation, and open-from-share support."
+        },
+        {
+          "title": "Document Library",
+          "description": "Thumbnail library with page count, file size, date, and auto-import."
+        },
+        {
+          "title": "Easy Sharing",
+          "description": "Share PDFs or export pages as PNG via email, WhatsApp, or any app."
+        },
+        {
+          "title": "Privacy-First Offline",
+          "description": "100% free with no ads, subscriptions, cloud, or account required."
+        },
+        {
+          "title": "Light & Dark Theme",
+          "description": "Light mode, dark mode, or match your system setting."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Home",
+          "imagePath": "assets/projects/pix-scan/home.jpg"
+        },
+        {
+          "caption": "PDF Viewer",
+          "imagePath": "assets/projects/pix-scan/pdf_viewer.jpg"
+        },
+        {
+          "caption": "Auto Capture",
+          "imagePath": "assets/projects/pix-scan/scan_capture.jpg"
+        },
+        {
+          "caption": "Read Aloud",
+          "imagePath": "assets/projects/pix-scan/read_aloud.jpg"
+        },
+        {
+          "caption": "Scan Editor",
+          "imagePath": "assets/projects/pix-scan/scan_editor.jpg"
+        },
+        {
+          "caption": "Dark Mode",
+          "imagePath": "assets/projects/pix-scan/dark_mode.jpg"
+        }
+      ],
       "iconPath": "https://play-lh.googleusercontent.com/ziZdh_-IycQFxqlvdrlXC7y9o3YERbExHjIKsOCWzg_FBh5FkCIb2W3H0nbPBhFE0Q=w240-h480-rw",
       "isSvg": false,
       "playStoreLink": "https://play.google.com/store/apps/details?id=ltd.onesoft.pic_scanner_app"
@@ -672,6 +744,46 @@
     {
       "id": "labook-employee",
       "title": "Labook Employee",
+      "shortDescription": "Employee HR app for daily salary, attendance tracking, and payroll on mobile.",
+      "description": "If your company has invited you to use the Labook Employee App, you can download it and start using it immediately. Check your salary every day, track attendance, submit salary component requests, and access payroll information — all from your mobile phone.",
+      "category": "HR & Payroll",
+      "tags": ["Flutter", "Android", "HR", "Payroll", "Attendance"],
+      "features": [
+        {
+          "title": "Daily Salary View",
+          "description": "Check your salary every day directly from your phone."
+        },
+        {
+          "title": "Attendance Tracking",
+          "description": "View all attendance records and ensure no check-ins or approvals are missed."
+        },
+        {
+          "title": "Salary Components",
+          "description": "Submit requests for benefits, bonuses, and other salary components with one click."
+        },
+        {
+          "title": "Payroll & Payslips",
+          "description": "View and download payslips whenever you need them."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Login",
+          "imagePath": "assets/projects/labook-employee/login.png"
+        },
+        {
+          "caption": "Attendance",
+          "imagePath": "assets/projects/labook-employee/attendance.png"
+        },
+        {
+          "caption": "Salary Dashboard",
+          "imagePath": "assets/projects/labook-employee/salary.png"
+        },
+        {
+          "caption": "Payment Tracking",
+          "imagePath": "assets/projects/labook-employee/payments.png"
+        }
+      ],
       "iconPath": "assets/labook.svg",
       "isSvg": true,
       "isLink": false,
@@ -681,6 +793,70 @@
     {
       "id": "labook-attendance",
       "title": "Labook Asistencia de Empleados",
+      "shortDescription": "Real-time employee management, attendance tracking, and payroll processing.",
+      "description": "Labook is a real-time, all-in-one employee management solution that simplifies workforce management, attendance tracking, and payroll processing anytime, anywhere. Download and sign up for free using only your phone number and business profile. Powered by modern business technology, Labook helps companies monitor employee data in real time, save time on records and payroll, and gain valuable insights to improve employee retention and workforce management — with no hidden charges.",
+      "category": "HR & Payroll",
+      "tags": ["Flutter", "Android", "HR", "Payroll", "Attendance"],
+      "features": [
+        {
+          "title": "Quick Sign Up",
+          "description": "Register in 3 clicks with your phone number and business profile."
+        },
+        {
+          "title": "Employee Management",
+          "description": "Add, edit, or delete employee records, salary details, and payment cycles."
+        },
+        {
+          "title": "Payroll Calculation",
+          "description": "Automatic salary calculation from payment cycles, attendance, and income components."
+        },
+        {
+          "title": "Attendance Dashboard",
+          "description": "One-click attendance tracking with real-time salary auto-calculation."
+        },
+        {
+          "title": "Business Insights",
+          "description": "Workforce analytics to improve employee retention and management."
+        },
+        {
+          "title": "Free to Use",
+          "description": "Full employee management on your smartphone with no hidden charges."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Dashboard",
+          "imagePath": "assets/projects/labook-attendance/dashboard.png"
+        },
+        {
+          "caption": "Attendance Management",
+          "imagePath": "assets/projects/labook-attendance/attendance_management.png"
+        },
+        {
+          "caption": "Location Attendance",
+          "imagePath": "assets/projects/labook-attendance/location_attendance.png"
+        },
+        {
+          "caption": "Selfie Attendance",
+          "imagePath": "assets/projects/labook-attendance/selfie_attendance.png"
+        },
+        {
+          "caption": "Salary Adjustments",
+          "imagePath": "assets/projects/labook-attendance/salary_adjustments.png"
+        },
+        {
+          "caption": "Payments & Deductions",
+          "imagePath": "assets/projects/labook-attendance/payments_deductions.png"
+        },
+        {
+          "caption": "Add Transaction",
+          "imagePath": "assets/projects/labook-attendance/add_transaction.png"
+        },
+        {
+          "caption": "Attendance Reports",
+          "imagePath": "assets/projects/labook-attendance/attendance_reports.png"
+        }
+      ],
       "iconPath": "assets/labook.svg",
       "isSvg": true,
       "isLink": false,
