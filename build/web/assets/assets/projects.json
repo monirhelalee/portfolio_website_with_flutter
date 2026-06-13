@@ -792,7 +792,7 @@
     },
     {
       "id": "labook-attendance",
-      "title": "Labook Asistencia de Empleados",
+      "title": "Labook Attendance",
       "shortDescription": "Real-time employee management, attendance tracking, and payroll processing.",
       "description": "Labook is a real-time, all-in-one employee management solution that simplifies workforce management, attendance tracking, and payroll processing anytime, anywhere. Download and sign up for free using only your phone number and business profile. Powered by modern business technology, Labook helps companies monitor employee data in real time, save time on records and payroll, and gain valuable insights to improve employee retention and workforce management — with no hidden charges.",
       "category": "HR & Payroll",
@@ -865,11 +865,68 @@
     },
     {
       "id": "helale-pharma",
-      "title": "Helale Pharma",
+      "title": "Helale Pharmacy",
+      "shortDescription": "Pharmacy inventory management system for medicines, suppliers, and stock tracking.",
+      "description": "Helale Pharmacy is a pharmacy management dashboard for tracking inventory, monitoring stock levels, managing suppliers, and processing sales. Built with a modern dark-themed UI, it helps pharmacies stay on top of low stock alerts, expiring medicines, expired items, and total inventory value in real time.",
+      "category": "Pharmacy Management",
+      "tags": ["Flutter", "Web", "Pharmacy", "Inventory", "Dashboard"],
+      "features": [
+        {
+          "title": "Dashboard",
+          "description": "Real-time stats for inventory count, low stock, expiring, and total value."
+        },
+        {
+          "title": "Inventory Management",
+          "description": "Search, filter, and manage medicines with batch, box, and expiry tracking."
+        },
+        {
+          "title": "Low Stock Alerts",
+          "description": "Visual alerts for low stock, expiring soon, and expired items."
+        },
+        {
+          "title": "Supplier Management",
+          "description": "Manage pharmaceutical suppliers with search and quick add."
+        },
+        {
+          "title": "Archive",
+          "description": "Archive medicines removed from active inventory."
+        },
+        {
+          "title": "Settings & Reports",
+          "description": "Theme selection, activity log, sales reports, and sign-out."
+        }
+      ],
+      "screenshots": [
+        {
+          "caption": "Sign In",
+          "imagePath": "assets/projects/helale-pharma/login.jpg"
+        },
+        {
+          "caption": "Dashboard",
+          "imagePath": "assets/projects/helale-pharma/dashboard.jpg"
+        },
+        {
+          "caption": "Inventory",
+          "imagePath": "assets/projects/helale-pharma/inventory.jpg"
+        },
+        {
+          "caption": "Archive",
+          "imagePath": "assets/projects/helale-pharma/archive.jpg"
+        },
+        {
+          "caption": "Suppliers",
+          "imagePath": "assets/projects/helale-pharma/suppliers.jpg"
+        },
+        {
+          "caption": "Settings",
+          "imagePath": "assets/projects/helale-pharma/settings.jpg"
+        }
+      ],
       "iconPath": "assets/helale_pharma.png",
       "isSvg": false,
       "isLink": false,
       "isAsset": true,
+      "wideScreenshots": true,
       "showWebIcon": true
     }
   ]

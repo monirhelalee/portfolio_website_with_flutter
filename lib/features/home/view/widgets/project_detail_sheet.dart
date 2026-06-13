@@ -40,7 +40,9 @@ void _showDialog(BuildContext context, ProjectItem project) {
       insetPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          maxWidth: project.screenshots.isNotEmpty ? 720 : 560,
+          maxWidth: project.screenshots.isNotEmpty
+              ? (project.wideScreenshots ? 920 : 720)
+              : 560,
           maxHeight: 720,
         ),
         child: GlassCardWidget(
@@ -150,7 +152,10 @@ class _ProjectDetailContent extends StatelessWidget {
                   ),
             ),
             const SizedBox(height: AppSpacing.sm),
-            _ProjectScreenshotsGallery(screenshots: project.screenshots),
+            _ProjectScreenshotsGallery(
+              screenshots: project.screenshots,
+              wideScreenshots: project.wideScreenshots,
+            ),
           ],
           if (project.highlights.isNotEmpty) ...[
             const SizedBox(height: AppSpacing.md),
@@ -270,16 +275,26 @@ class _ProjectDetailContent extends StatelessWidget {
 }
 
 class _ProjectScreenshotsGallery extends StatelessWidget {
-  const _ProjectScreenshotsGallery({required this.screenshots});
+  const _ProjectScreenshotsGallery({
+    required this.screenshots,
+    this.wideScreenshots = false,
+  });
 
   final List<ProjectScreenshot> screenshots;
+  final bool wideScreenshots;
 
-  static const _imageWidth = 160.0;
-  static const _imageAspectRatio = 333 / 592;
+  static const _mobileImageWidth = 160.0;
+  static const _mobileAspectRatio = 333 / 592;
+  static const _webImageWidth = 300.0;
+  static const _webAspectRatio = 1024 / 510;
 
   @override
   Widget build(BuildContext context) {
-    final imageHeight = _imageWidth / _imageAspectRatio;
+    final imageWidth =
+        wideScreenshots ? _webImageWidth : _mobileImageWidth;
+    final aspectRatio =
+        wideScreenshots ? _webAspectRatio : _mobileAspectRatio;
+    final imageHeight = imageWidth / aspectRatio;
 
     return SizedBox(
       height: imageHeight + 48,
@@ -290,12 +305,12 @@ class _ProjectScreenshotsGallery extends StatelessWidget {
         itemBuilder: (context, index) {
           final screenshot = screenshots[index];
           return SizedBox(
-            width: _imageWidth,
+            width: imageWidth,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 AspectRatio(
-                  aspectRatio: _imageAspectRatio,
+                  aspectRatio: aspectRatio,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
@@ -308,7 +323,7 @@ class _ProjectScreenshotsGallery extends StatelessWidget {
                         screenshot.imagePath,
                         width: double.infinity,
                         height: double.infinity,
-                        fit: BoxFit.cover,
+                        fit: wideScreenshots ? BoxFit.contain : BoxFit.cover,
                         alignment: Alignment.center,
                         filterQuality: FilterQuality.high,
                       ),

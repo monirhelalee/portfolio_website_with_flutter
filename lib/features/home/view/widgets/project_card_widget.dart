@@ -6,10 +6,7 @@ import 'package:my_portfolio_flutter/features/home/view/widgets/project_detail_s
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCartWidget extends StatefulWidget {
-  const ProjectCartWidget({
-    super.key,
-    required this.project,
-  });
+  const ProjectCartWidget({super.key, required this.project});
 
   final ProjectItem project;
 
@@ -33,8 +30,8 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
             : null,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          height: 220,
-          width: 200,
+          height: 200,
+          width: 250,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: _hovered ? AppColors.surfaceElevated : AppColors.surface,
@@ -67,9 +64,9 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                          fontSize: 14,
-                          color: AppColors.textPrimary,
-                        ),
+                      fontSize: 14,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
                   const Spacer(),
                   if (project.hasStoreLinks)
@@ -107,12 +104,12 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
                         ),
                         child: Text(
                           'Tap for details',
-                          style:
-                              Theme.of(context).textTheme.labelLarge?.copyWith(
-                                    color: AppColors.accent,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          style: Theme.of(context).textTheme.labelLarge
+                              ?.copyWith(
+                                color: AppColors.accent,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ),
                     ),
@@ -127,11 +124,7 @@ class _ProjectCartWidgetState extends State<ProjectCartWidget> {
 }
 
 class ProjectIcon extends StatelessWidget {
-  const ProjectIcon({
-    super.key,
-    required this.project,
-    required this.size,
-  });
+  const ProjectIcon({super.key, required this.project, required this.size});
 
   final ProjectItem project;
   final double size;
@@ -140,11 +133,7 @@ class ProjectIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     if (project.isAsset) {
       if (project.isSvg) {
-        return SvgPicture.asset(
-          project.iconPath,
-          height: size,
-          width: size,
-        );
+        return SvgPicture.asset(project.iconPath, height: size, width: size);
       }
       return Image.asset(
         project.iconPath,
@@ -156,16 +145,8 @@ class ProjectIcon extends StatelessWidget {
 
     if (project.isSvg) {
       return project.isLink
-          ? SvgPicture.network(
-              project.iconPath,
-              height: size,
-              width: size,
-            )
-          : SvgPicture.asset(
-              project.iconPath,
-              height: size,
-              width: size,
-            );
+          ? SvgPicture.network(project.iconPath, height: size, width: size)
+          : SvgPicture.asset(project.iconPath, height: size, width: size);
     }
 
     return ClipRRect(
@@ -175,11 +156,8 @@ class ProjectIcon extends StatelessWidget {
         height: size,
         width: size,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => Icon(
-          Icons.apps_rounded,
-          size: size * 0.6,
-          color: AppColors.textMuted,
-        ),
+        errorBuilder: (_, __, ___) =>
+            Icon(Icons.apps_rounded, size: size, color: AppColors.textMuted),
       ),
     );
   }
@@ -267,10 +245,7 @@ class _StoreButton extends StatelessWidget {
           ? () async {
               final uri = Uri.parse(url!);
               if (await canLaunchUrl(uri)) {
-                await launchUrl(
-                  uri,
-                  mode: LaunchMode.externalApplication,
-                );
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
               }
             }
           : null,

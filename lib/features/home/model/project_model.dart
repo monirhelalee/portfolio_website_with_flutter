@@ -27,6 +27,7 @@ class ProjectItem {
     this.githubLink,
     this.apkLink,
     this.webLink,
+    this.wideScreenshots = false,
   });
 
   final String id;
@@ -52,6 +53,7 @@ class ProjectItem {
   final String? githubLink;
   final String? apkLink;
   final String? webLink;
+  final bool wideScreenshots;
 
   bool get hasDetails =>
       (description != null && description!.isNotEmpty) ||
@@ -109,6 +111,7 @@ class ProjectItem {
       githubLink: json['githubLink'] as String?,
       apkLink: json['apkLink'] as String?,
       webLink: json['webLink'] as String?,
+      wideScreenshots: json['wideScreenshots'] as bool? ?? false,
     );
   }
 }
